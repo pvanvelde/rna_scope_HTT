@@ -1,0 +1,215 @@
+====================================================================================================
+FIGURE: Comprehensive Negative Control Background Threshold Analysis
+====================================================================================================
+
+OVERVIEW
+----------------------------------------------------------------------------------------------------
+This figure provides a comprehensive analysis of negative control background thresholds
+across brain regions (Cortex vs Striatum), examining regional differences and their
+relationships with age, sample size, and brain atlas coordinates. Negative control
+thresholds define the intensity cutoff above which spots are considered true mRNA
+signals rather than non-specific background.
+
+BIOLOGICAL RATIONALE:
+- Negative controls use bacterial DapB probes not expressed in mammalian tissue
+- Any detected signal represents non-specific binding or autofluorescence
+- The 95th percentile of negative control intensities provides a conservative threshold
+- Regional differences may reflect tissue autofluorescence or composition
+
+====================================================================================================
+DATASET SUMMARY
+====================================================================================================
+
+Total paired samples (slide-channel combinations): 58
+Unique slides: 29
+Channels analyzed: green, orange
+  - green (488 nm): HTT1a probe - detects exon 1 of mutant huntingtin
+  - orange (548 nm): fl-HTT probe - detects full transcript
+Age range: 2 - 12 months
+Brain atlas coordinate range: 40.0 - 68.0 mm
+
+THRESHOLD CALCULATION METHOD:
+  - Quantile: 95th percentile of negative control spot intensities
+  - Quality filter: PFA (probability of false alarm) < 0.05
+  - Bootstrap iterations: 20 (for error estimation)
+  - Region-specific: Separate thresholds computed for Cortex and Striatum
+
+====================================================================================================
+QUANTITATIVE RESULTS
+====================================================================================================
+
+OVERALL REGIONAL COMPARISON (Cortex vs Striatum):
+  - Cortex threshold: 23,047.0 +/- 14,668.1 photons
+  - Striatum threshold: 21,947.1 +/- 15,269.1 photons
+  - Mean difference (Cortex - Striatum): +1,099.9 +/- 6,415.5 photons
+  - Paired t-test: t = 1.306, p = 0.1969
+  - Interpretation: No significant regional difference
+
+PER-CHANNEL STATISTICS:
+
+  GREEN CHANNEL (29 paired samples):
+    Cortex: 33,417.6 +/- 13,300.1 photons
+    Striatum: 32,235.5 +/- 15,276.1 photons
+    Difference: +1,182.1 photons
+    Paired t-test: t = 0.746, p = 0.4617
+
+  ORANGE CHANNEL (29 paired samples):
+    Cortex: 12,676.3 +/- 6,190.0 photons
+    Striatum: 11,658.7 +/- 4,689.5 photons
+    Difference: +1,017.7 photons
+    Paired t-test: t = 1.651, p = 0.1099
+
+CORRELATION ANALYSES:
+
+  Age correlations (testing for age-dependent threshold drift):
+    Age vs Cortex threshold: r = -0.067, p = 0.6167
+    Age vs Striatum threshold: r = -0.085, p = 0.5264
+    Age vs Regional difference: r = +0.049, p = 0.7171
+    Interpretation: Weak age dependence
+
+  Sample size correlations (testing for statistical power effects):
+    Sample size vs Cortex threshold: r = +0.175, p = 0.1889
+    Sample size vs Striatum threshold: r = -0.013, p = 0.921
+    Min sample size vs |Regional difference|: r = +0.071, p = 0.5946
+
+  Brain atlas coordinate correlations (testing for rostrocaudal gradients):
+    Atlas coord vs Cortex threshold: r = -0.050, p = 0.7097
+    Atlas coord vs Striatum threshold: r = +0.087, p = 0.5163
+    Atlas coord vs Regional difference: r = -0.321, p = 0.01396
+    Interpretation: Significant rostrocaudal gradient
+
+====================================================================================================
+PANEL DESCRIPTIONS
+====================================================================================================
+
+ROW 1 - REGIONAL COMPARISON:
+
+  Panel A: Regional Comparison by Channel
+    - Scatter plot of Cortex vs Striatum thresholds
+    - Each point represents one slide-channel combination
+    - Colors indicate detection channel (green = HTT1a, orange = fl-HTT)
+    - Dashed diagonal line indicates perfect agreement (unity line)
+    - Points above line: Striatum threshold > Cortex threshold
+    - Points below line: Cortex threshold > Striatum threshold
+    - OBSERVATION: Points cluster near unity line
+
+  Panel B: Threshold Difference Distribution
+    - Histogram of (Cortex - Striatum) threshold differences
+    - Red dashed line: zero difference (perfect regional agreement)
+    - Blue solid line: mean difference across all samples
+    - OBSERVATION: Distribution centered at +1,099.9 photons
+    - BIOLOGICAL IMPLICATION: Minimal systematic regional bias
+
+  Panel C: Difference by Channel
+    - Violin plots showing distribution of regional differences per channel
+    - Width indicates probability density at each difference value
+    - Red dashed line: zero difference
+    - Allows comparison of regional effects between probe targets
+
+ROW 2 - AGE DEPENDENCIES:
+
+  Panel D: Age vs Cortex Threshold
+    - Scatter plot with separate regression lines per channel
+    - Tests whether background increases/decreases with animal age
+    - OBSERVATION: No significant age trend
+    - BIOLOGICAL IMPLICATION: Cortical autofluorescence is stable across ages
+
+  Panel E: Age vs Striatum Threshold
+    - Same analysis for striatal regions
+    - OBSERVATION: No significant age trend
+    - BIOLOGICAL IMPLICATION: Striatal background is stable across ages
+
+  Panel F: Age vs Threshold Difference
+    - Tests whether regional difference changes with age
+    - OBSERVATION: r = +0.049 indicates no systematic age effect
+
+ROW 3 - BRAIN ATLAS COORDINATE DEPENDENCIES:
+
+  Panel H: Atlas Coordinate vs Cortex Threshold
+    - Tests for rostrocaudal gradients in cortical background
+    - X-axis: anterior-posterior position (mm from bregma)
+    - OBSERVATION: r = -0.050
+
+  Panel I: Atlas Coordinate vs Striatum Threshold
+    - Tests for rostrocaudal gradients in striatal background
+    - OBSERVATION: r = +0.087
+
+  Panel J: Atlas Coordinate vs Regional Difference
+    - CRITICAL PANEL: Tests whether cortex-striatum difference varies along brain axis
+    - OBSERVATION: r = -0.321, p = 0.01396
+    - BIOLOGICAL IMPLICATION: Significant anatomical gradient
+
+ROW 4 - PER-ANIMAL ANALYSIS:
+
+  Panel M: Cortex Threshold per Animal
+    - Box plots showing threshold distribution for each animal
+    - Each box represents all slides from one animal
+    - Allows assessment of inter-animal vs intra-animal variability
+    - Animals analyzed: n=9
+    - OBSERVATION: Variability within animals (intra-animal) vs between animals (inter-animal)
+
+  Panel N: Striatum Threshold per Animal
+    - Same analysis for striatal thresholds
+    - Enables comparison of regional consistency across animals
+
+  Panel O: Regional Difference per Animal
+    - Box plots of Cortex-Striatum difference for each animal
+    - Red dashed line indicates zero difference
+    - Tests whether regional bias is consistent across animals
+    - BIOLOGICAL IMPLICATION: Animal-to-animal consistency in regional differences
+
+ROW 5 - SAMPLE SIZE AND DISTRIBUTIONS:
+
+  Panel G: Sample Size vs Threshold
+    - Tests whether threshold estimates depend on number of spots analyzed
+    - X-axis: log-scale number of negative control spots
+    - Blue circles: Cortex, Red squares: Striatum
+    - OBSERVATION: Weak correlation (r ~ 0.17)
+    - IMPLICATION: Threshold estimates are stable regardless of sample size
+
+  Panel K: Threshold Distributions by Region
+    - Overlapping histograms comparing Cortex vs Striatum
+    - Dashed lines indicate mean values for each region
+    - OBSERVATION: Distributions overlap substantially
+
+  Panel L: Threshold Distributions by Channel
+    - Compares background levels between detection channels
+    - Green typically shows higher thresholds due to tissue autofluorescence at 488 nm
+    - Orange (548 nm) typically shows lower background
+
+====================================================================================================
+BIOLOGICAL INTERPRETATION
+====================================================================================================
+
+KEY FINDINGS:
+  1. NO significant regional difference (p = 0.1969)
+     -> Cortex and Striatum have similar background levels
+  2. NO significant age effect on regional difference
+     -> Age does not confound regional comparisons
+  3. SIGNIFICANT rostrocaudal gradient in regional difference (r = -0.321)
+     -> Regional threshold difference varies along anterior-posterior axis
+
+PRACTICAL IMPLICATIONS FOR mRNA QUANTIFICATION:
+  - Use region-specific thresholds when regional difference is significant
+  - Per-slide calibration accounts for slide-to-slide technical variation
+  - Green channel (488 nm) typically requires higher thresholds due to autofluorescence
+  - Sample size > 100 spots provides stable threshold estimates
+
+====================================================================================================
+METHODOLOGY
+====================================================================================================
+
+THRESHOLD DETERMINATION:
+  1. Collect all spot intensities from negative control (DapB) regions
+  2. Apply quality filter: PFA < 0.05 (probability of false alarm)
+  3. Compute 95th percentile as threshold
+  4. Bootstrap 20 times to estimate uncertainty
+
+STATISTICAL TESTS:
+  - Paired t-test: Compare Cortex vs Striatum thresholds within same slides
+  - Pearson correlation: Test linear relationships with continuous variables
+  - Linear regression: Quantify slopes and significance of trends
+
+====================================================================================================
+Generated: 2026-01-12 11:34:43
+====================================================================================================

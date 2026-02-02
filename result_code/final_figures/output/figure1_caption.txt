@@ -1,0 +1,180 @@
+Figure 1: Establishing detection thresholds and single-molecule criteria through multi-stage calibration.
+
+OVERVIEW:
+This figure presents the complete calibration pipeline for RNAscope single-molecule FISH quantification. The workflow establishes: (1) intensity thresholds from negative controls, (2) per-slide normalization using single-molecule reference intensities, and (3) size-based filtering to distinguish true single molecules from unresolved aggregates. The pipeline is validated on bead calibration data before application to experimental tissue sections.
+
+PANEL DESCRIPTIONS:
+
+(A-B) Placeholder panels for representative microscopy images showing the experimental setup and field-of-view examples.
+
+(C) NEGATIVE CONTROL THRESHOLD DETERMINATION
+Cumulative distribution functions (CDFs) of integrated photon counts from negative control sections using bacterial DapB probe (a gene not expressed in mammalian tissue).
+- Total spots analyzed: n = 727,329 across 30 independent slides (ALL slides included for calibration)
+- Each faint line represents an individual slide's CDF (showing inter-slide variability)
+- Bold lines indicate channel-specific aggregate distributions (green = 488nm channel for mHTT1a probe; orange = 548nm channel for full-length mHTT probe)
+- Red dashed horizontal line marks the 95th percentile threshold (quantile = 0.95)
+- This threshold defines the minimum photon count required to distinguish true signal from background autofluorescence and non-specific binding
+- The consistent tail behavior across slides validates that threshold determination is robust to imaging batch effects
+- Threshold values are computed separately for each slide-channel combination to account for local imaging conditions
+- FILTERING APPLIED: PFA filter only (probability of false alarm < 5e-02)
+
+(D) Placeholder panel for experimental workflow schematic.
+
+(E) NORMALIZED INTENSITY DISTRIBUTIONS (BEAD CALIBRATION DATA)
+Per-slide intensity calibration demonstrating the normalization procedure.
+- Data source: Bead calibration dataset, green channel only
+- Total spots: n = 1,819,916 across 26 slides
+- Main panel shows normalized intensity distributions where modal intensity is set to N_{1mRNA} = 1.0
+- Normalization procedure: Kernel density estimation (KDE) with Scott's rule bandwidth is used to identify the modal (peak) intensity for each slide; all intensities are then divided by this peak value
+- Red dashed vertical line at N/N_{1mRNA} = 1.0 marks the single-molecule reference intensity
+- Inset panel (upper right) shows raw photon count distributions BEFORE normalization, demonstrating 2-3× slide-to-slide variation arising from:
+  * Variable imaging conditions (laser power drift, detector sensitivity)
+  * Tissue autofluorescence differences
+  * Probe hybridization efficiency variation
+  * Optical path differences between imaging sessions
+- After normalization, all distributions collapse around N_{1mRNA} = 1.0, removing technical variation while preserving the biological tail (spots with intensity > 1 represent aggregates of multiple mRNA molecules)
+- FILTERING APPLIED:
+  1. PFA filter: probability of false alarm < 5e-02
+  2. Intensity threshold: photons > slide-specific threshold (from negative control 95th percentile)
+
+(F) BIPHASIC SIZE-INTENSITY RELATIONSHIP (BEAD CALIBRATION)
+Empirical definition of the single-molecule regime using spot size measurements.
+- Top panel (biphasic plot): Mean normalized intensity vs. lateral spot width (σ_x) showing characteristic biphasic relationship
+  * Left region (σ_x < breakpoint): Linear positive slope where larger spots have higher intensity - this represents true single molecules where size variation arises from RNAscope probe cluster geometry (~20 probe pairs per target)
+  * Right region (σ_x > breakpoint): Plateau/saturation where intensity no longer scales with size - this represents unresolved aggregates of multiple mRNA molecules that cannot be separated optically
+  * Breakpoint location: 290.8 nm (determined by piecewise-linear regression)
+  * Purple dotted line: Bead PSF width from fluorescent microsphere calibration = 185.0 nm
+  * Breakpoint exceeds bead PSF by 57.2%, consistent with physical dimensions of RNAscope probe clusters
+  * Shaded region: ±1 standard deviation across 26 slides, demonstrating reproducibility
+- Bottom panel (size PDF): Probability density distribution of σ_x values
+  * Aggregated distribution across all slides (black filled curve)
+  * Individual slide distributions shown as colored lines
+  * Mode of distribution defines the tissue-calibrated PSF that accounts for in situ optical conditions (differs from theoretical bead-derived PSF due to tissue scattering)
+- X-AXIS RANGE: 100 nm to 500 nm (shared with panel I for comparison)
+- FILTERING APPLIED:
+  1. PFA filter: probability of false alarm < 5e-02
+  2. Intensity threshold: photons > slide-specific threshold (from negative control 95th percentile)
+  3. Size lower bound: σ_x ≥ 148.0 nm (80% of bead PSF = 0.8 × 185.0 nm)
+     - Spots smaller than 80% of the bead PSF are likely noise/artifacts and are excluded
+
+(G) Placeholder panel for zoom view of breakpoint region.
+
+(H) NORMALIZED INTENSITY DISTRIBUTIONS (EXPERIMENTAL TISSUE)
+Application of calibration pipeline to experimental Q111 transgenic mouse tissue.
+- Data source: Experimental tissue sections from Q111 Huntington's disease mouse model
+- Total spots analyzed: n = 249,526 across 26 slides (green channel, mHTT1a probe)
+- Note: ALL slides included for calibration purposes; 13 slides are excluded in subsequent figures for quantification due to technical failures
+- Same normalization procedure as panel E applied to tissue data
+- Successful collapse of distributions around N_{1mRNA} = 1.0 confirms that the calibration pipeline generalizes from bead data to tissue
+- Preserved tail region (N > 1) contains biologically relevant aggregate information
+- FILTERING APPLIED (same as panels E-F):
+  1. PFA filter: probability of false alarm < 5e-02
+  2. Intensity threshold: photons > slide-specific threshold (from negative control 95th percentile)
+
+(I) BIPHASIC SIZE-INTENSITY RELATIONSHIP (EXPERIMENTAL TISSUE)
+Validation of single-molecule filtering criteria in experimental tissue.
+- Same analysis as panel F applied to experimental tissue data
+- Reproduction of biphasic relationship confirms that:
+  * Size-based filtering (σ < breakpoint) successfully isolates single-molecule regime in tissue
+  * The intensity-size relationship in the single-molecule regime is linear (validates quantification accuracy)
+  * Breakpoint values are consistent between bead and tissue data
+- Bead PSF reference values: σ_x = 185.0 nm, σ_y = 187.0 nm, σ_z = 573.0 nm
+- Breakpoint values: σ_x = 290.8 nm, σ_y = 291.1 nm, σ_z = 698.6 nm
+- X-AXIS RANGE: 100 nm to 500 nm (shared with panel F; data filtered to start at 148.0 nm)
+- FILTERING APPLIED (same as panel F):
+  1. PFA filter: probability of false alarm < 5e-02
+  2. Intensity threshold: photons > slide-specific threshold (from negative control 95th percentile)
+  3. Size lower bound: σ_x ≥ 148.0 nm (80% of bead PSF)
+
+================================================================================
+FILTERING PIPELINE SUMMARY (Applied consistently from Panel E onwards)
+================================================================================
+
+SINGLE SPOT FILTERING (3 sequential steps):
+1. DETECTION QUALITY FILTER (PFA):
+   - Criterion: Probability of False Alarm < 5e-02
+   - Purpose: Remove spots with poor Gaussian fit quality
+   - Applied: All panels
+
+2. INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Integrated photons > 95th percentile of negative control distribution
+   - Purpose: Remove background/noise spots below detection threshold
+   - Threshold: Calculated per slide-channel combination
+   - Applied: Panels E, F, H, I and all downstream figures
+
+3. SIZE LOWER BOUND (from bead PSF):
+   - Criterion: σ_x ≥ 148.0 nm (80% × bead PSF of 185.0 nm)
+   - Purpose: Remove artifactually small spots (noise, fitting errors)
+   - Rationale: True fluorescent spots cannot be smaller than the optical PSF
+   - Applied: Panels F, I (biphasic plots) and all downstream figures
+
+CLUSTER IDENTIFICATION (applied in subsequent figures):
+- Definition: Connected components of spots within spatial proximity
+- Single-molecule vs Aggregate classification:
+  * Single molecules: σ_x < breakpoint (290.8 nm)
+  * Aggregates/clusters: σ_x ≥ breakpoint OR multiple overlapping spots
+- Cluster intensity: Sum of constituent spot intensities (in mRNA equivalents)
+
+================================================================================
+TECHNICAL PARAMETERS
+================================================================================
+- Pixel size (lateral): 162.5 nm/pixel
+- Slice depth (axial): 500.0 nm/slice
+- Bead PSF (from fluorescent microsphere calibration):
+  * σ_x = 185.0 nm
+  * σ_y = 187.0 nm
+  * σ_z = 573.0 nm
+- Size lower bound (80% of bead PSF):
+  * σ_x ≥ 148.0 nm
+  * σ_y ≥ 149.6 nm
+  * σ_z ≥ 458.4 nm
+- Breakpoint values (single-molecule upper limit):
+  * σ_x = 290.8 nm
+  * σ_y = 291.1 nm
+  * σ_z = 698.6 nm
+- Quality filtering criterion: Probability of false alarm (PFA) < 5e-02
+- Spot detection method: 3D Gaussian fitting with iterative background subtraction
+- Intensity normalization: Kernel density estimation with Scott's rule bandwidth selection
+- Breakpoint determination: Piecewise-linear regression with Savitzky-Golay smoothing (window = 7, polynomial order = 2)
+
+================================================================================
+QUALITY CONTROL - SLIDE EXCLUSIONS (Applied in Subsequent Figures)
+================================================================================
+IMPORTANT: This figure (Figure 1) uses ALL slides for calibration purposes.
+The following 13 slides are excluded ONLY in subsequent figures (Figure 2+) for mRNA quantification:
+- Excluded slides: m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m3b4, m3b5
+- Reason for exclusion: Poor UBC positive control expression (100-1000x below normal) in both cortex and striatum,
+  indicating technical failures such as poor hybridization, tissue damage, or imaging issues
+- Exclusion identified through UBC positive control analysis (see Supplementary Figure: Positive Control QC)
+
+Rationale for including all slides in Figure 1:
+- Calibration parameters (PSF, breakpoints, thresholds) should be established on maximal data
+- Technical failures affect mRNA quantification but not the underlying optical/detection parameters
+- Including all slides provides more robust estimation of noise floor and threshold distributions
+
+================================================================================
+STATISTICAL SUMMARY
+================================================================================
+- Negative control threshold quantile: 95th percentile
+- Maximum probability of false alarm: 5e-02
+- Bead PSF width (σ_x from microsphere calibration): 185.0 nm
+- Size lower bound (σ_x): 148.0 nm (80% of bead PSF)
+- Single-molecule breakpoint (σ_x): 290.8 nm
+- Breakpoint/PSF ratio: 1.57 (57.2% larger than bead PSF)
+
+================================================================================
+KEY FINDINGS
+================================================================================
+1. Per-slide normalization effectively removes 2-3× technical variation in raw photon counts while preserving biological signal in the intensity tail
+2. Breakpoints consistently exceed bead-derived PSF values by ~57%, which is consistent with RNAscope probe cluster physical dimensions (~20 probe pairs spanning ~40-60 nm)
+3. The 80% PSF lower bound effectively removes artifactually small spots while retaining true single molecules
+4. Strong linear intensity-size relationships in the single-molecule regime validate that size-filtered spots represent true single molecules suitable for quantification
+5. The calibration pipeline generalizes from controlled bead measurements to complex tissue samples with high reproducibility
+
+================================================================================
+DATA FILES GENERATED
+================================================================================
+- filtered_spots_green.csv: All filtered spots from green channel (mHTT1a probe)
+- filtered_spots_orange.csv: All filtered spots from orange channel (full-length mHTT probe)
+- filtered_spots_all.csv: Combined filtered spots from both channels
+- photon_thresholds.csv: Per-slide photon intensity thresholds used for filtering

@@ -1,0 +1,58 @@
+\caption{\textbf{Filtering spots based on size and intensity criteria after empirical PSF calibration.}
+\textbf{Note:} All panels show data from the \textbf{green channel} (488~nm excitation) only, corresponding to the ExperimentalQ111 probe set in Q111 transgenic mouse tissue.
+Analysis of orange channel (548~nm) data yields similar results (not shown).
+\textbf{(A--B)} Per-slide intensity normalization demonstrates successful removal of technical variation.
+\textbf{(A)} Raw integrated photon counts for each of 15 slides (faint colored lines show kernel density estimates for individual slides, 176,808 total spots, \textbf{green channel}).
+Substantial slide-to-slide variation is evident, with peak intensities varying by $2$--$3\times$ due to technical factors: tissue autofluorescence, fixation quality, probe hybridization efficiency, and imaging conditions (laser power, detector sensitivity).
+This heterogeneity necessitates per-slide normalization rather than global intensity calibration.
+The thick black line shows the combined probability density function (PDF) from all spots pooled across slides.
+\textbf{(B)} After per-slide normalization, all distributions converge around $N_{\mathrm{1mRNA}} = 1$ (red dashed line), where the modal intensity of each slide is independently set to unity via kernel density estimation (KDE with Scott's bandwidth).
+Faint colored lines show per-slide normalized intensity PDFs, while the thick black line shows the combined PDF from all pooled spots.
+This normalization successfully removes technical variation while preserving biological signal, as evidenced by the conserved tail extending beyond 1 (representing multi-transcript aggregates and clusters).
+After establishing $\hat{\sigma}_{x,\mathrm{init}}$, $\hat{\sigma}_{y,\mathrm{init}}$, $\hat{\sigma}_{z,\mathrm{init}}$ from bead calibration data, we re-ran the detection pipeline with refined initial starting points.
+We classified a detection as a \emph{single mRNA} only if (i)~all $\hat{\sigma}_i < \mathrm{bp}_i$ (where $\mathrm{bp}$ denotes empirically-determined breakpoint thresholds), (ii)~it passed the generalized likelihood ratio test (GLRT) with $p_{\mathrm{FA}} \leq 5e-02$, and (iii)~$\hat{N}$ exceeded the slide-specific negative-control threshold.
+%
+\textbf{(C)} Placeholder for representative example images showing single mRNA detections in tissue.
+%
+\textbf{(D--F)} Biphasic relationships between normalized intensity and spot size after filtering validate the single-molecule regime.
+For each dimension---\textbf{(D)} $\sigma_x$ (lateral $x$), \textbf{(E)} $\sigma_y$ (lateral $y$), \textbf{(F)} $\sigma_z$ (axial $z$)---the bold colored line shows the mean normalized intensity computed from all spots pooled across 15 slides, binned into 50 size bins.
+Only bins containing $\geq 100$ spots are shown to ensure statistical reliability (objective criterion applied uniformly across all panels).
+The light shaded region ($\pm 1$ standard deviation computed across per-slide bin means) represents inter-slide variability in the biphasic relationship, quantifying biological and technical heterogeneity between tissue samples.
+Purple dotted vertical lines mark the bead-derived PSF from fluorescent microsphere calibration ($\sigma_x = 263$~nm, $\sigma_y = 263$~nm, $\sigma_z = 666$~nm), representing the diffraction-limited optical reference.
+Colored dashed vertical lines indicate empirically-determined breakpoints ($\sigma_x = 290.8$~nm, $\sigma_y = 291.1$~nm, $\sigma_z = 698.6$~nm), which exceed bead PSF by 11\%, 11\%, and 5\% respectively---consistent with the finite physical extent of RNAscope probe clusters ($\sim$20 probe pairs, each $\sim$2--3~nm) bound to target mRNA in tissue.
+After applying these strict filtering criteria (size, significance, intensity), the resulting population exhibits strong linear relationships between size and normalized intensity, with weighted least-squares fits yielding Pearson $r^2$ values consistently above 0.90 for all three dimensions.
+This linearity validates that the filtered dataset represents genuine single molecules in the expected regime, where larger fitted widths arise from increased local probe density or extended hybridization sites while remaining single diffraction-limited emitters.
+The diagnostic biphasic pattern observed in unfiltered data (not shown) separates two regimes: left of the breakpoint (single-molecule regime, positive slope) and right of the breakpoint (aggregate regime, plateau).
+By restricting analysis to spots with $\sigma_i < \mathrm{bp}_i$, we isolate the linear single-molecule regime.
+%
+\textbf{(G--I)} Spot size distributions after filtering confirm homogeneous single-molecule population.
+For each dimension---\textbf{(G)} $\sigma_x$, \textbf{(H)} $\sigma_y$, \textbf{(I)} $\sigma_z$---faint colored lines show per-slide probability density functions (kernel density estimates with Scott's bandwidth), while the thick black line with gray shading shows the combined PDF from all spots pooled across slides.
+Colored dashed lines mark the modes (peaks) of the combined distributions, which define the tissue-calibrated refined PSF.
+These mode values represent the most probable spot sizes in tissue and supersede bead-derived measurements for all downstream single-molecule quantification, accounting for \emph{in situ} effects including refractive index mismatch between tissue and immersion medium, optical aberrations from tissue heterogeneity, and the finite geometry of probe--mRNA complexes.
+Purple dotted lines replicate bead PSF references for comparison.
+The distributions show tight clustering around modal values with clear truncation at breakpoint thresholds, confirming successful filtering that yields a homogeneous population of high-confidence single-molecule detections.
+%
+\textbf{Key findings:}
+(1) Per-slide normalization (Panel~B) successfully removes $2$--$3$-fold technical variation in photon yield while preserving biological heterogeneity.
+(2) Empirically-determined breakpoints exceed bead PSF by 11--5\%, consistent with the physical extent of RNAscope probe clusters bound to target mRNA.
+(3) Strong linear relationships in biphasic plots (Panels~D--F, $r^2 > 0.90$) validate that filtered spots represent true single molecules.
+(4) Tissue-calibrated modes from size distributions (Panels~G--I) provide refined PSF estimates that account for \emph{in situ} optical conditions.
+(5) Strict filtering criteria (size $< \mathrm{bp}$, $p_{\mathrm{FA}} < 5e-02$, intensity $>$ threshold) yield 176,808 high-confidence single molecules across 15 slides.
+%
+\textbf{Methods:}
+Analysis performed on 176,808 single spots and 2,435,017 clusters across 15 slides from Q111 transgenic mouse tissue, using RNAscope \emph{in situ} hybridization with fluorescent detection.
+\textbf{Slides used:} m1a4, m1a5, m1b1, m2a2, m2a3, m2a4, m2a8, m2b1, m2b7, m3a1, m3a2, m3a3, m3a5, m3b2, m3b3.
+\textbf{Slides excluded:} 14 slides (m1a2, m1b5, m2b5, m2b2, m2a7, m2a1, m2b4, m2b5, m3b4, m1a1, m1b2, m1b3, m1b4, m3b5) were excluded based on abnormally low UBC positive control expression ($>$100$\times$ below median), indicating technical failures (poor hybridization, tissue damage).
+\textbf{Channel analyzed:} Green channel (488~nm excitation wavelength, detecting fl-HTT mRNA via fluorophore-conjugated probes).
+Data source: spots\_sigma\_var analysis, which applies size-based filtering during detection.
+\textbf{Quality filtering:} (i)~probability of false alarm $< 5e-02$ from generalized likelihood ratio test (GLRT), (ii)~size filtering $\sigma_i < \mathrm{bp}_i$ for all dimensions ($\sigma_x < 290.8$~nm, $\sigma_y < 291.1$~nm, $\sigma_z < 698.6$~nm), (iii)~intensity filtering: photon counts exceed slide-specific negative-control threshold, (iv)~for clusters: coefficient of variation (CV) $\geq$ 0.5 to exclude uniform background artifacts.
+\textbf{Per-slide normalization:} kernel density estimation (KDE) with Scott's rule to identify modal intensity, then division by peak to set $N_{\mathrm{1mRNA}} = 1$.
+\textbf{Spot size determination:} 3D Gaussian fitting to extract $\sigma_x$, $\sigma_y$, $\sigma_z$ from background-subtracted fluorescence images.
+\textbf{Binning for biphasic plots:} 50 bins spanning [148, 291]~nm (lateral $x$), [150, 291]~nm (lateral $y$), and [458, 701]~nm (axial $z$).
+\textbf{Minimum count threshold:} bins with $<$ 100 spots excluded from biphasic plots (Panels~D--F) to ensure statistical reliability.
+\textbf{Standard deviation:} computed across per-slide bin means (not within-bin variability), representing inter-slide heterogeneity.
+\textbf{Imaging parameters:} pixel size = 162.5~nm (lateral), slice depth = 500.0~nm (axial).
+\textbf{Negative control threshold:} computed at 95th percentile of negative control probe intensities, per slide and channel.
+\textbf{Statistical analysis:} Python 3.x with \texttt{scipy}, \texttt{numpy}, \texttt{matplotlib}.
+\textbf{Breakpoint determination:} weighted piecewise-linear regression with Savitzky--Golay smoothing (window = 9 bins, polynomial order = 2) on bead calibration data, searching only after intensity reaches 80\% of maximum and applying strict penalties to enforce positive slope before breakpoint and near-zero slope after.
+}

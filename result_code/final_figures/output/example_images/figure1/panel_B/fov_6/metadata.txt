@@ -1,0 +1,82 @@
+============================================================
+PANEL B - NEGATIVE CONTROL FOV 6
+============================================================
+
+FOV Key: q11110slidesno2june2025newillumination--m1b3--region016--1316395--n0012
+Slide: m1b3
+Mouse ID: Q111 12mo #3 aCSF Mid STR
+Genotype: Q111
+Age: 12.0 months
+Region: Striatum - undefined
+Probe Set: Negative Control
+NPZ path: /media/grunwaldlab/SG Skyhawk AI 24TB/Q111 raw data/Q111_10slidesno2_june2025_new_illumination/exported/Slide M1 - B3/Region 016/Slide M1 - B3_Region_16_FOV_395.npz
+
+CELL AND SPOT COUNTS
+────────────────────────────────────────────────────────────
+  Nuclei: 312
+  Total spots: 4020
+  Green spots (mHTT1a): 3613
+  Orange spots (full-length): 407
+
+SCALE BARS
+────────────────────────────────────────────────────────────
+  Overview images: 50 µm (307 pixels)
+  Zoom images:     10 µm (61 pixels)
+
+EXPERIMENTAL COMPARISON
+────────────────────────────────────────────────────────────
+  Slide: m1b3
+  FOV Key: q11110slidesno2june2025newillumination--m1b3--region012--1312303--n0002
+  NPZ path: /media/grunwaldlab/SG Skyhawk AI 24TB/Q111 raw data/Q111_10slidesno2_june2025_new_illumination/exported/Slide M1 - B3/Region 012/Slide M1 - B3_Region_12_FOV_303.npz
+
+IMAGE DYNAMIC RANGES
+────────────────────────────────────────────────────────────
+
+  EXPERIMENTAL (auto-range, used for matched_range images):
+    DAPI (blue):          6233.0 - 31215.4
+    mHTT1a (green):       523.0 - 2362.0
+    full-length (orange): 142.0 - 419.0
+
+  NEGATIVE CONTROL (auto-range):
+    DAPI (blue):          4156.0 - 22463.0
+    mHTT1a (green):       389.0 - 1800.0
+    full-length (orange): 134.0 - 269.0
+
+IMAGE FILES
+────────────────────────────────────────────────────────────
+
+  Experimental images (auto-range):
+    experimental_DAPI.tif:        blue, 6233.0 - 31215.4
+    experimental_mHTT1a.tif:      green, 523.0 - 2362.0
+    experimental_full_length.tif: orange, 142.0 - 419.0
+    experimental_merged.tif:      RGB merged
+    experimental_mHTT1a_with_spots.tif:      green + spots (white=passed, red=failed)
+    experimental_full_length_with_spots.tif: orange + spots (white=passed, red=failed)
+
+  Negative control - MATCHED RANGE (same as experimental):
+    negative_DAPI_matched_range.tif:        blue, 6233.0 - 31215.4
+    negative_mHTT1a_matched_range.tif:      green, 523.0 - 2362.0
+    negative_full_length_matched_range.tif: orange, 142.0 - 419.0
+    negative_merged_matched_range.tif:      RGB merged with exp ranges
+
+  Negative control - AUTO RANGE:
+    negative_DAPI_auto_range.tif:        blue, 4156.0 - 22463.0
+    negative_mHTT1a_auto_range.tif:      green, 389.0 - 1800.0
+    negative_full_length_auto_range.tif: orange, 134.0 - 269.0
+    negative_merged_auto_range.tif:      RGB merged with auto ranges
+    negative_mHTT1a_with_spots.tif:      green + spots, auto-range (white=passed, red=failed)
+    negative_full_length_with_spots.tif: orange + spots, auto-range (white=passed, red=failed)
+    negative_mHTT1a_with_spots_matched_range.tif:      green + spots, exp range (white=passed, red=failed)
+    negative_full_length_with_spots_matched_range.tif: orange + spots, exp range (white=passed, red=failed)
+
+ZOOM COMPARISON
+────────────────────────────────────────────────────────────
+  Center (x, y): (1390, 1465)
+  Size: 256 x 256 pixels
+  Size (µm): 41.6 x 41.6 µm
+  Location: zoom_comparison/ subdirectory
+  See zoom_comparison/zoom_metadata.txt for detailed zoom ranges
+
+NOTE: 'matched_range' images use EXPERIMENTAL dynamic range
+      for direct visual comparison. Negative control should
+      appear darker since true signal is absent.

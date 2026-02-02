@@ -1,0 +1,58 @@
+ZOOM COMPARISON METADATA - UPPER_LEFT
+============================================================
+
+Zoom region:
+  Location: upper_left
+  Center (x, y): (463, 488)
+  Size: 256 x 256 pixels
+  Size (µm): 41.6 x 41.6 µm
+  Scale bar: 10 µm (61 pixels)
+
+EXPERIMENTAL (slide: m1b1)
+────────────────────────────────────────────────────────────
+  FOV Key: q11110slidesno2june2025newillumination--m1b1--region012--1112277--n0010
+  Dynamic ranges (min, max intensity):
+    DAPI (blue):        1058.0 - 31029.0
+    mHTT1a (green):     173.0 - 4249.0
+    full-length (orange): 120.0 - 552.0
+
+NEGATIVE CONTROL (slide: m1b1)
+────────────────────────────────────────────────────────────
+  FOV Key: q11110slidesno2june2025newillumination--m1b1--region019--1119365--n0003
+  Auto-range (negative control zoom region):
+    DAPI (blue):        8035.7 - 18552.6
+    mHTT1a (green):     470.0 - 2079.3
+    full-length (orange): 163.0 - 332.0
+
+IMAGE FILES
+────────────────────────────────────────────────────────────
+  Experimental (no spots):
+    experimental_mHTT1a_zoom.tif:           green channel, auto-range
+    experimental_full_length_zoom.tif:      orange channel, auto-range
+    experimental_merged_zoom.tif:           RGB merged, auto-range
+
+  Experimental (with spots, white=passed, red=failed):
+    experimental_mHTT1a_zoom_with_spots.tif:      green + spots
+    experimental_full_length_zoom_with_spots.tif: orange + spots
+
+  Negative control - MATCHED RANGE (no spots):
+    negative_mHTT1a_zoom_matched_range.tif:      green, exp dynamic range
+    negative_full_length_zoom_matched_range.tif: orange, exp dynamic range
+    negative_merged_zoom_matched_range.tif:      RGB, exp dynamic range
+
+  Negative control - MATCHED RANGE (with spots, white=passed, red=failed):
+    negative_mHTT1a_zoom_with_spots_matched_range.tif:      green + spots
+    negative_full_length_zoom_with_spots_matched_range.tif: orange + spots
+
+  Negative control - AUTO RANGE (no spots):
+    negative_mHTT1a_zoom_auto_range.tif:         green, auto-range
+    negative_full_length_zoom_auto_range.tif:    orange, auto-range
+    negative_merged_zoom_auto_range.tif:         RGB, auto-range
+
+  Negative control - AUTO RANGE (with spots, white=passed, red=failed):
+    negative_mHTT1a_zoom_with_spots_auto_range.tif:      green + spots
+    negative_full_length_zoom_with_spots_auto_range.tif: orange + spots
+
+NOTE: 'matched_range' images use experimental dynamic range
+      for direct visual comparison. Negative control should
+      appear darker since signal is lower/absent.

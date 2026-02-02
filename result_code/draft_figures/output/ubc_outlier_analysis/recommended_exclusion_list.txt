@@ -1,0 +1,26 @@
+RECOMMENDED SLIDES TO EXCLUDE FROM ANALYSIS
+============================================================
+
+Total outlier slides identified: 0
+
+Slide IDs:
+
+============================================================
+JUSTIFICATION:
+============================================================
+
+These slides show abnormally low UBC expression in BOTH Cortex and Striatum.
+UBC is a high-expression housekeeping gene that should show consistent strong signal.
+Such extreme low values (100-1000× below normal) indicate technical failures:
+  • Poor probe hybridization
+  • Tissue damage or degradation
+  • Processing artifacts
+  • Incomplete tissue coverage in imaging FOV
+
+Including these slides would:
+  1. Artificially inflate variance in expression measurements
+  2. Bias mean expression estimates downward
+  3. Obscure true biological signal
+  4. Compromise statistical power
+
+RECOMMENDATION: Exclude these slides from all downstream analyses.

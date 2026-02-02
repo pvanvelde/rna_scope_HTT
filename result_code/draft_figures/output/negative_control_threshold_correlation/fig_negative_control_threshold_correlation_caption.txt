@@ -1,0 +1,130 @@
+====================================================================================================
+FIGURE: Negative Control Threshold vs Experimental mRNA Expression
+====================================================================================================
+
+OVERVIEW
+----------------------------------------------------------------------------------------------------
+This figure tests whether negative control background thresholds correlate with
+experimental mRNA expression levels. A LACK of correlation validates that the
+experimental signal represents true biological mRNA, not technical artifacts
+influenced by background levels.
+
+BIOLOGICAL RATIONALE:
+- Negative control thresholds (from DapB probe) represent non-specific background
+- Experimental mRNA signal should be independent of background threshold
+- If correlated: suggests threshold-dependent bias in quantification
+- If uncorrelated: validates that mRNA counts reflect true expression
+
+====================================================================================================
+DATASET SUMMARY
+====================================================================================================
+
+Total unique slides: 18
+  Q111 (transgenic): 15 slides
+  Wildtype: 3 slides
+Channels: HTT1a (488 nm, exon 1), fl-HTT (548 nm, full transcript)
+Regions: Cortex, Striatum
+Excluded slides: ['m1a2', 'm1b5', 'm2b5', 'm2b2', 'm2a7', 'm2a1', 'm2b4', 'm2b5', 'm3b4', 'm1a1', 'm1b2', 'm1b3', 'm1b4', 'm3b5']
+
+THRESHOLD CALCULATION:
+  - Merged threshold = average of Cortex and Striatum thresholds
+  - Based on 95th percentile of DapB negative control intensities
+  - Per-slide calibration accounts for technical variation
+
+====================================================================================================
+PANEL DESCRIPTIONS
+====================================================================================================
+
+Panel A: HTT1a (488 nm) - Cortex
+--------------------------------------------------
+  Sample sizes: Q111 n=14, Wildtype n=3
+  Q111 mRNA: 15.02 +/- 14.49 mRNA/nucleus
+  Wildtype mRNA: 8.02 +/- 3.70 mRNA/nucleus
+  Q111 threshold range: ~34k photons
+  Q111 correlation: r = -0.275, p = 0.3413
+  OBSERVATION: Weak/no correlation - validates quantification
+  BIOLOGICAL IMPLICATION: Cortical HTT1a expression is independent of background
+
+Panel B: HTT1a (488 nm) - Striatum
+--------------------------------------------------
+  Sample sizes: Q111 n=15, Wildtype n=3
+  Q111 mRNA: 16.73 +/- 16.35 mRNA/nucleus
+  Wildtype mRNA: 3.92 +/- 1.77 mRNA/nucleus
+  Q111 correlation: r = -0.283, p = 0.3063
+  BIOLOGICAL IMPLICATION: Striatal HTT1a expression is independent of background
+
+Panel C: fl-HTT (548 nm) - Cortex
+--------------------------------------------------
+  Sample sizes: Q111 n=14, Wildtype n=3
+  Q111 mRNA: 25.27 +/- 22.96 mRNA/nucleus
+  Wildtype mRNA: 18.62 +/- 9.91 mRNA/nucleus
+  Q111 correlation: r = 0.255, p = 0.3791
+  BIOLOGICAL IMPLICATION: Cortical fl-fl-HTT expression is independent of background
+
+Panel D: fl-HTT (548 nm) - Striatum
+--------------------------------------------------
+  Sample sizes: Q111 n=15, Wildtype n=3
+  Q111 mRNA: 22.18 +/- 17.22 mRNA/nucleus
+  Wildtype mRNA: 10.67 +/- 6.15 mRNA/nucleus
+  Q111 correlation: r = 0.284, p = 0.3050
+  BIOLOGICAL IMPLICATION: Striatal fl-fl-HTT expression is independent of background
+
+====================================================================================================
+KEY FINDINGS
+====================================================================================================
+
+Q111 (transgenic mice):
+  4/4 channel-region combinations show weak correlation (|r| < 0.3)
+  Mean |r| across all combinations: 0.274
+
+Wildtype mice:
+  Sample size too small (n=3) for reliable correlation analysis
+  Data points shown for reference but correlation not reported
+
+INTERPRETATION:
+  - Q111 mice show weak/no correlation: experimental signal is VALIDATED
+  - Weak correlation confirms mRNA quantification is independent of threshold
+  - This validates that observed mRNA levels reflect true biological expression
+
+====================================================================================================
+METHODOLOGY
+====================================================================================================
+
+DATA SOURCES:
+  - FOV-level mRNA data: from fig_expression_analysis_q111.py
+  - Threshold data: from fig_negative_control_comprehensive.py
+
+STATISTICAL ANALYSIS:
+
+  Pearson correlation coefficient (r):
+    - Measures strength and direction of linear relationship between two variables
+    - Range: -1 (perfect negative) to +1 (perfect positive), 0 = no correlation
+    - Computed as: r = cov(X,Y) / (std(X) * std(Y))
+    - Interpretation thresholds:
+        |r| < 0.3: weak correlation (acceptable)
+        |r| 0.3-0.5: moderate correlation (potential concern)
+        |r| > 0.5: strong correlation (problematic)
+
+  P-value:
+    - Tests null hypothesis that true correlation = 0
+    - p < 0.05: correlation is statistically significant
+    - p > 0.05: cannot reject null hypothesis (no significant correlation)
+    - For this analysis, p > 0.05 is DESIRED (confirms no correlation)
+
+  Regression lines:
+    - Ordinary least squares (OLS) linear fit
+    - Shows trend direction and magnitude visually
+    - Only shown for Q111 (Wildtype n=3 too small for reliable fit)
+
+AGGREGATION:
+  - Data aggregated to slide-region level (mean across FOVs)
+  - One point per slide per region per channel
+
+NUCLEAR VOLUME NORMALIZATION:
+  - Mean nuclear volume: 716 um^3
+  - mRNA counts normalized per nucleus (not per cell)
+  - Accounts for 3D sectioning of nuclei in tissue sections
+
+====================================================================================================
+Generated: 2026-01-12 11:52:59
+====================================================================================================

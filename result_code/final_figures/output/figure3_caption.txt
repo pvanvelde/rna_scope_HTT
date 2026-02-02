@@ -1,0 +1,359 @@
+Figure 3: Regional expression patterns and total mRNA quantification in Q111 and WT mice.
+
+OVERVIEW:
+This figure presents a comprehensive analysis of mRNA expression patterns across brain regions, age groups, anatomical coordinates, and individual animals. The analysis compares Q111 Huntington's disease transgenic mice with wildtype (WT) controls, examining both mHTT1a (mutant huntingtin exon 1, detected in green channel) and full-length mHTT (complete mutant huntingtin transcript, detected in orange channel) probes. The data reveal regional heterogeneity in expression levels and demonstrate reproducibility across biological replicates.
+
+PANEL DESCRIPTIONS:
+
+(A) ANATOMICAL OVERVIEW AND SUBREGION LABELS
+Representative images showing the brain regions analyzed in this study.
+- Left half-brain: Striatum highlighted in red, identified using DARPP-32 RNA probe as a cell-type marker
+- Yellow box: Zoomed region showing imaging FOV locations
+- Right half-brain: Schematic showing all imaged subregions labeled with lowercase letters (a-i)
+
+SUBREGION LABEL KEY (referenced in Panel B x-axis):
+  Striatum (identified via DARPP-32 marker):
+    a: dorsomedial striatum
+    b: dorsolateral striatum
+    c: ventrolateral striatum
+    d: ventromedial striatum
+  Cortex (approximate regions - no cell-type markers available):
+    e: primary/secondary motor area (M1/M2)
+    f: primary somatosensory area, upper limb (S1)
+    g: primary somatosensory area, nose (S1)
+    h: gustatory area / agranular insular area
+    i: piriform area (olfactory cortex)
+
+NOTE: Cortical region assignments are APPROXIMATE based on anatomical landmarks.
+Without cell-type specific markers for cortex, these labels broadly indicate the
+different cortical areas sampled to capture regional heterogeneity, but are not
+definitive cell-type identifications.
+
+(B) SUB-REGIONAL EXPRESSION ANALYSIS
+Detailed breakdown of mRNA expression across cortical and striatal subregions.
+- Data source: Regional analysis at subregion level from 250 measurements
+- X-axis: Brain subregions labeled with lowercase letters (a-i) corresponding to Panel A
+  * Cortex (left): e, f, g, h, i (sorted alphabetically)
+  * Striatum (right): a, b, c, d (sorted alphabetically)
+- Y-axis: mRNA expression per nucleus (mRNA/nucleus)
+- Cortical subregions (approximate, no cell markers):
+  * e: primary/secondary motor area
+  * f: primary somatosensory area, upper limb
+  * g: primary somatosensory area, nose
+  * h: gustatory/agranular insular area
+  * i: piriform area
+- Striatal subregions (DARPP-32 identified):
+  * a: dorsomedial striatum
+  * b: dorsolateral striatum
+  * c: ventrolateral striatum
+  * d: ventromedial striatum
+- Color coding:
+  * Green boxes: mHTT1a probe (mutant huntingtin exon 1)
+  * Orange boxes: Full-length mHTT probe (complete mutant huntingtin)
+  * Solid fill: Cortex subregions
+  * Hatched fill (///): Striatum subregions
+- Statistical representation: Box plots show median (center line), interquartile range (box), and whiskers extending to 1.5× IQR
+- Vertical dashed line separates Cortex (left) from Striatum (right) regions
+- Key observations:
+  * Expression levels vary across subregions within each major region
+  * mHTT1a and full-length mHTT show similar patterns but different absolute levels
+  * Striatum generally shows higher expression than cortex
+
+(C) EXAMPLE FOV IMAGES - LOW, MEDIUM, HIGH EXPRESSION
+Representative microscopy images showing the range of mRNA expression levels observed.
+- Three columns: Low expression, Medium expression, High expression FOVs
+- Each column shows FOV overview and zoomed regions
+- Expression values annotated in green (mHTT1a) and orange (full-length mHTT) as mRNA/nucleus
+- DAPI nuclear stain shown in blue
+- Demonstrates the biological heterogeneity in expression levels across FOVs
+
+(D) TOTAL mRNA EXPRESSION BY AGE (per-slide aggregation)
+Age-dependent expression analysis comparing Q111 transgenic and WT control mice.
+- DATA AGGREGATION: To avoid pseudoreplication, FOVs are first averaged within each slide.
+  Each bar shows mean ± SEM across slides (n = number of slides, not FOVs).
+  See sample size table below for n per condition.
+- Age groups analyzed: 2 months, 6 months, 12 months
+- Data visualization: Bar plots showing mean ± standard error of the mean (SEM)
+- Color coding for Q111 mice:
+  * Green: mHTT1a probe
+  * Orange: Full-length mHTT probe
+- Color coding for WT mice:
+  * Blue: mHTT1a probe
+  * Purple: Full-length mHTT probe
+- Pattern coding:
+  * Solid bars: Cortex region
+  * Hatched bars (///): Striatum region
+- Number of mice: 22 Q111 mice, 4 WT mice
+- Interpretation:
+  * Age-related changes in expression can be detected by comparing bar heights across age groups
+  * Q111 vs WT comparison reveals disease-associated expression differences
+  * Region-specific patterns (Cortex vs Striatum) may indicate differential vulnerability
+
+(E) TOTAL mRNA EXPRESSION BY BRAIN ATLAS COORDINATE, GROUPED BY AGE (all FOVs merged)
+Anterior-posterior expression gradient analysis organized by age brackets (2mo, 6mo, 12mo).
+- DATA AGGREGATION: All FOVs per atlas coordinate are merged together (not per-slide).
+  Each bar shows mean ± SEM across all FOVs at that coordinate.
+  This provides maximum spatial resolution but n reflects FOV count, not biological replicates.
+- X-axis: Brain atlas coordinate in 25 μm units from Bregma, grouped by age
+  * Age brackets (bold labels at top): 2mo, 6mo, 12mo
+  * Within each age bracket: Q111 coordinates (left), WT coordinates (right)
+  * Q (e.g., Q38, Q44): Q111 transgenic mouse coordinates
+  * W (e.g., W38, W44): Wildtype mouse coordinates
+- Y-axis: Total mRNA per nucleus
+- Data visualization: Grouped bar plots showing mean ± SEM across FOVs
+- Color and pattern coding: Same as panel D
+- Separator lines:
+  * Solid vertical lines: Separate age brackets
+  * Dashed vertical lines: Separate Q111 from WT within each age bracket
+- Interpretation:
+  * Within-age comparisons: Q111 vs WT at each coordinate within the same age
+  * Across-age comparisons: Same coordinates can be compared between age brackets
+  * Anterior-posterior gradients visible within each age group
+  * Age-related changes in expression gradient patterns may indicate disease progression
+
+(F) PER-SLIDE BREAKDOWN, GROUPED BY AGE (individual slides shown)
+Per-slide analysis organized by age brackets (2mo, 6mo, 12mo).
+- DATA AGGREGATION: Each bar represents one slide. FOVs within each slide are averaged,
+  and each slide is shown as a separate entry. Error bars show SEM across FOVs within that slide.
+  This is the most granular view of biological variability at the slide level.
+- X-axis: Individual slide identifiers, grouped by age
+  * Age brackets (bold labels at top): 2mo, 6mo, 12mo
+  * Within each age bracket: Q111 slides (left), WT slides (right)
+  * Q#1.1, Q#1.2: Slide-level labels within each mouse (mouse.slide notation)
+  * W#1.1, W#1.2: Same notation for WT mice
+- Y-axis: Total mRNA per nucleus
+- Data visualization: Grouped bar plots showing mean ± SEM per slide (across FOVs within slide)
+- Each entry has 4 bars: mHTT1a Cortex, mHTT1a Striatum, full-length Cortex, full-length Striatum
+- Color and pattern coding: Same as panels D and E
+- Separator lines:
+  * Solid vertical lines: Separate age brackets
+  * Dashed vertical lines: Separate Q111 from WT within each age bracket
+- Key observations:
+  * Within-age variability: Inter-individual differences within the same age group
+  * Age-related patterns: Comparison of mouse-level expression across ages
+  * Mice are grouped by biological age, facilitating age-matched comparisons
+  * Reproducibility across mice of the same age supports statistical validity
+
+================================================================================
+MOUSE ID MAPPING TABLE
+================================================================================
+The following table maps anonymized mouse IDs used in panel F to actual mouse identifiers.
+This mapping is consistent with Figure 4, panel F.
+
+Q111 MICE:
+  Q#1 → Q111 2mo #1 UNT Late STR
+  Q#1 → Q111 2mo #1 UNT Mid STR
+  Q#2 → Q111 2mo #2 UNT Early STR
+  Q#2 → Q111 2mo #2 UNT Mid STR
+  Q#2 → Q111 2mo #2 UNT early STR
+  Q#3 → Q111 2mo #3 UNT Early STR
+  Q#3 → Q111 2mo #3 UNT Late STR
+  Q#3 → Q111 2mo #3 UNT Mid STR
+  Q#4 → Q111 6mo #1 NTC Early STR
+  Q#4 → Q111 6mo #1 NTC Late STR
+  Q#5 → Q111 6mo #2 NTC Late STR
+  Q#5 → Q111 6mo #2 NTC Mid STR
+  Q#6 → Q111 6mo #3 NTC Early STR
+  Q#6 → Q111 6mo #3 NTC Late STR
+  Q#6 → Q111 6mo #3 NTC Mid STR
+  Q#7 → Q111 12mo #1 aCSF Early STR
+  Q#7 → Q111 12mo #1 aCSF Late STR
+  Q#7 → Q111 12mo #1 aCSF Mid STR
+  Q#8 → Q111 12mo #2 aCSF Early STR
+  Q#8 → Q111 12mo #2 aCSF Late STR
+  Q#9 → Q111 12mo #3 aCSF Late STR
+  Q#9 → Q111 12mo #3 aCSF Mid STR
+
+WILDTYPE (WT) MICE:
+  W#1 → WT 2mo #2 UNT Early STR
+  W#1 → WT 2mo #2 UNT Late STR
+  W#2 → WT 12mo #3 aCSF Late STR
+  W#2 → WT 12mo #3 aCSF Mid STR
+
+DATA SUMMARY:
+- Total Q111 FOV measurements: 2668
+- Total WT FOV measurements: 566
+- Number of Q111 mice: 22
+- Number of WT mice: 4
+- Subregion-level measurements: 250
+- Age groups analyzed: 3 (2mo, 6mo, 12mo)
+
+SAMPLE SIZE TABLE (n slides / n FOVs per condition)
++----------+------+----------+------------------+-----------------+-----------------+
+| Genotype | Age  | Region   | mHTT1a           | full-length     | Total FOVs      |
+|          |      |          | (slides/FOVs)    | (slides/FOVs)   | per region      |
++----------+------+----------+------------------+-----------------+-----------------+
+| Q111     | 2mo  | Cortex   | 6/335           | 6/335          | 670             |
+| Q111     | 2mo  | Striatum | 6/180           | 6/180          | 360             |
+| Q111     | 6mo  | Cortex   | 4/193           | 4/193          | 386             |
+| Q111     | 6mo  | Striatum | 5/284           | 5/284          | 568             |
+| Q111     | 12mo  | Cortex   | 4/169           | 4/169          | 338             |
+| Q111     | 12mo  | Striatum | 4/173           | 4/173          | 346             |
+| WT       | 2mo  | Cortex   | 1/51            | 1/51           | 102             |
+| WT       | 2mo  | Striatum | 1/45            | 1/45           | 90              |
+| WT       | 12mo  | Cortex   | 2/83            | 2/83           | 166             |
+| WT       | 12mo  | Striatum | 2/104           | 2/104          | 208             |
++----------+------+----------+------------------+-----------------+-----------------+
+
+================================================================================
+FILTERING APPLIED (consistent with Figure 1, panels E onwards)
+================================================================================
+
+FOV-LEVEL ANALYSIS:
+This figure analyzes mRNA expression at the FOV (field-of-view) level, aggregating cluster intensities per FOV and normalizing by nucleus count.
+
+UPSTREAM SPOT FILTERING (applied before cluster identification):
+1. DETECTION QUALITY FILTER (PFA):
+   - Criterion: Probability of False Alarm < 0.05
+   - Purpose: Remove spots with poor Gaussian fit quality
+
+2. INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Integrated photons > 95th percentile of negative control distribution
+   - Purpose: Remove background/noise spots below detection threshold
+   - Threshold: Calculated per slide-channel combination
+
+3. SIZE LOWER BOUND (from bead PSF):
+   - Criterion: σ_x ≥ 148.0 nm (80% × bead PSF of 185.0 nm)
+   - Purpose: Remove artifactually small spots (noise, fitting errors)
+
+CLUSTER IDENTIFICATION:
+- Method: 3D connected component analysis on intensity-thresholded images
+- Cluster intensity: Sum of all voxel intensities, normalized to mRNA equivalents
+
+4. CLUSTER INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Cluster total intensity > 95th percentile of negative control distribution
+   - Purpose: Remove clusters with intensity below the noise floor (false positive clusters)
+   - Threshold: Calculated per slide-channel combination (same threshold as spot filter)
+
+5. CLUSTER CV (COEFFICIENT OF VARIATION) THRESHOLD:
+   - Criterion: Cluster CV >= 0.5 (CV = standard deviation / mean of voxel intensities)
+   - Purpose: Remove clusters with low intensity heterogeneity (likely noise or artifacts)
+   - Rationale: True mRNA aggregates show spatial variation in signal; uniform low-variance regions are noise
+   - See Figure 2 caption for detailed cluster discard statistics
+
+FOV-LEVEL AGGREGATION:
+- Total mRNA per FOV: Sum of all cluster intensities in the FOV
+- mRNA per nucleus: (Total mRNA per FOV) / (Number of DAPI-positive nuclei)
+- Minimum nuclei threshold: FOVs with < 40 nuclei are excluded
+
+TECHNICAL NOTES:
+- FOV = Field of View (single microscopy image)
+- mRNA/nucleus calculated as: (total mRNA in FOV) / (number of DAPI-positive nuclei in FOV)
+- Bead PSF: σ_x = 185.0 nm, σ_y = 187.0 nm, σ_z = 573.0 nm
+- Size lower bound: σ ≥ 80% of bead PSF (148.0 nm for σ_x)
+- Excluded slides: ['m1a2', 'm1b5', 'm2b5', 'm2b2', 'm2a7', 'm2a1', 'm2b4', 'm2b5', 'm3b4', 'm1a1', 'm1b2', 'm1b3', 'm1b4', 'm3b5'] (technical failures - imaging artifacts or tissue damage)
+- SEM calculation: standard deviation / sqrt(n) where n = number of FOVs per condition
+- Broken y-axis used when outlier values would compress the main distribution visualization
+- Atlas coordinates reference: Franklin & Paxinos Mouse Brain Atlas, 3rd edition
+
+COLOR SCHEME SUMMARY:
+| Probe | Q111 Color | WT Color |
+|-------|------------|----------|
+| mHTT1a (exon 1) | Green (#2ecc71) | Blue (#3498db) |
+| Full-length mHTT | Orange (#f39c12) | Purple (#9b59b6) |
+
+| Region | Pattern |
+|--------|---------|
+| Cortex | Solid fill |
+| Striatum | Hatched (///) |
+
+================================================================================
+STATISTICAL ANALYSIS
+================================================================================
+
+Statistical tests were performed to assess three biological questions:
+1. Does expression differ between brain regions (Cortex vs Striatum)?
+2. Does expression change with age?
+3. Is there a genotype effect (Q111 vs WT)?
+
+METHODS:
+- Data aggregation: To avoid pseudoreplication, FOV-level measurements were first
+  averaged within each slide. Each slide is treated as an independent observation
+  unit, and n reported in the tables below refers to the number of slides, not FOVs.
+  This is important because multiple FOVs from the same slide are not truly
+  independent observations.
+- Region comparisons: Mann-Whitney U test (two-sided, non-parametric) comparing Cortex vs Striatum
+- Age comparisons: Pairwise Mann-Whitney U tests between consecutive age groups (2mo vs 6mo, 6mo vs 12mo)
+- Genotype comparisons: Mann-Whitney U test (two-sided, non-parametric) comparing Q111 vs WT
+- Significance levels: * p<0.05, ** p<0.01, *** p<0.001, ns = not significant
+
+IMPORTANT NOTE ON SAMPLE SIZES:
+- Q111 mice: n=4-6 slides per condition - sufficient for exploratory analysis but limited statistical power
+- WT mice: n=1-2 slides per condition - TOO SMALL to draw meaningful statistical conclusions
+  The WT data is included for descriptive comparison only. Any WT comparisons (region, age, or
+  genotype) should be interpreted with extreme caution due to inadequate sample sizes. Additional
+  WT samples would be needed to validate any observed differences.
+
+TABLE 1: REGION COMPARISON (Cortex vs Striatum)
++----------+------------------+------+-------------------+--------------------+--------+---------+------+
+| Genotype | Channel          | Age  | Cortex median     | Striatum median    | U      | p-value | Sig  |
++----------+------------------+------+-------------------+--------------------+--------+---------+------+
+| Q111     | mHTT1a           | 2mo  | 6.3 (n=6)         | 5.4 (n=6)          | 22     | 0.589   | ns   |
+| Q111     | mHTT1a           | 6mo  | 9.5 (n=4)         | 17.0 (n=5)         | 6      | 0.413   | ns   |
+| Q111     | mHTT1a           | 12mo | 25.3 (n=4)        | 25.7 (n=4)         | 9      | 0.886   | ns   |
+| Q111     | full-length mHTT | 2mo  | 13.3 (n=6)        | 13.4 (n=6)         | 15     | 0.699   | ns   |
+| Q111     | full-length mHTT | 6mo  | 22.9 (n=4)        | 23.9 (n=5)         | 10     | 1.000   | ns   |
+| Q111     | full-length mHTT | 12mo | 42.3 (n=4)        | 36.2 (n=4)         | 10     | 0.686   | ns   |
+| WT       | mHTT1a           | 2mo  | 3.9 (n=1)         | 1.9 (n=1)          | 1      | 1.000   | ns   |
+| WT       | mHTT1a           | 12mo | 10.0 (n=2)        | 4.9 (n=2)          | 4      | 0.333   | ns   |
+| WT       | full-length mHTT | 2mo  | 9.7 (n=1)         | 4.9 (n=1)          | 1      | 1.000   | ns   |
+| WT       | full-length mHTT | 12mo | 23.1 (n=2)        | 13.6 (n=2)         | 3      | 0.667   | ns   |
++----------+------------------+------+-------------------+--------------------+--------+---------+------+
+
+Key finding: With per-slide aggregation (n=4-6 slides per group), no significant regional differences were detected, likely due to limited statistical power with small sample sizes.
+
+TABLE 2: AGE EFFECT (pairwise Mann-Whitney U tests between consecutive ages)
++----------+------------------+----------+-------------+-------------------+-------------------+--------+---------+------+
+| Genotype | Channel          | Region   | Comparison  | Earlier median    | Later median      | U      | p-value | Sig  |
++----------+------------------+----------+-------------+-------------------+-------------------+--------+---------+------+
+| Q111     | mHTT1a           | Cortex   | 2→6mo       | 6.3 (n=6)         | 9.5 (n=4)         | 8      | 0.476   | ns   |
+| Q111     | mHTT1a           | Cortex   | 6→12mo      | 9.5 (n=4)         | 25.3 (n=4)        | 6      | 0.686   | ns   |
+| Q111     | mHTT1a           | Striatum | 2→6mo       | 5.4 (n=6)         | 17.0 (n=5)        | 4      | 0.052   | ns   |
+| Q111     | mHTT1a           | Striatum | 6→12mo      | 17.0 (n=5)        | 25.7 (n=4)        | 8      | 0.730   | ns   |
+| Q111     | full-length mHTT | Cortex   | 2→6mo       | 13.3 (n=6)        | 22.9 (n=4)        | 7      | 0.352   | ns   |
+| Q111     | full-length mHTT | Cortex   | 6→12mo      | 22.9 (n=4)        | 42.3 (n=4)        | 4      | 0.343   | ns   |
+| Q111     | full-length mHTT | Striatum | 2→6mo       | 13.4 (n=6)        | 23.9 (n=5)        | 7      | 0.177   | ns   |
+| Q111     | full-length mHTT | Striatum | 6→12mo      | 23.9 (n=5)        | 36.2 (n=4)        | 7      | 0.556   | ns   |
+| WT       | mHTT1a           | Cortex   | 2→12mo      | 3.9 (n=1)         | 10.0 (n=2)        | 0      | 0.667   | ns   |
+| WT       | mHTT1a           | Striatum | 2→12mo      | 1.9 (n=1)         | 4.9 (n=2)         | 0      | 0.667   | ns   |
+| WT       | full-length mHTT | Cortex   | 2→12mo      | 9.7 (n=1)         | 23.1 (n=2)        | 0      | 0.667   | ns   |
+| WT       | full-length mHTT | Striatum | 2→12mo      | 4.9 (n=1)         | 13.6 (n=2)        | 0      | 0.667   | ns   |
++----------+------------------+----------+-------------+-------------------+-------------------+--------+---------+------+
+
+Key finding: With per-slide aggregation (n=4-6 slides per age group), no significant pairwise age differences were detected, likely due to limited statistical power with small sample sizes. However, median values consistently increase with age across conditions.
+
+TABLE 3: GENOTYPE COMPARISON (Q111 vs WT)
++------------------+----------+------+-------------------+-------------------+--------+---------+------+
+| Channel          | Region   | Age  | Q111 median       | WT median         | U      | p-value | Sig  |
++------------------+----------+------+-------------------+-------------------+--------+---------+------+
+| mHTT1a           | Cortex   | 2mo  | 6.3 (n=6)         | 3.9 (n=1)         | 5      | 0.571   | ns   |
+| mHTT1a           | Cortex   | 12mo | 25.3 (n=4)        | 10.0 (n=2)        | 6      | 0.533   | ns   |
+| mHTT1a           | Striatum | 2mo  | 5.4 (n=6)         | 1.9 (n=1)         | 5      | 0.571   | ns   |
+| mHTT1a           | Striatum | 12mo | 25.7 (n=4)        | 4.9 (n=2)         | 6      | 0.533   | ns   |
+| full-length mHTT | Cortex   | 2mo  | 13.3 (n=6)        | 9.7 (n=1)         | 5      | 0.571   | ns   |
+| full-length mHTT | Cortex   | 12mo | 42.3 (n=4)        | 23.1 (n=2)        | 6      | 0.533   | ns   |
+| full-length mHTT | Striatum | 2mo  | 13.4 (n=6)        | 4.9 (n=1)         | 5      | 0.571   | ns   |
+| full-length mHTT | Striatum | 12mo | 36.2 (n=4)        | 13.6 (n=2)        | 7      | 0.267   | ns   |
++------------------+----------+------+-------------------+-------------------+--------+---------+------+
+
+Key finding: With per-slide aggregation (n=4-6 Q111 slides, n=1-2 WT slides), no significant genotype differences were detected due to limited statistical power. However, Q111 consistently showed higher expression than WT (e.g., mHTT1a in striatum at 12mo: 5.2-fold difference, 25.7 vs 4.9 mRNA/nucleus).
+
+================================================================================
+
+KEY OBSERVATIONS (descriptive, based on median values):
+Note: Statistical tests using per-slide aggregation did not reach significance due to limited
+sample sizes (n=4-6 slides per Q111 group, n=1-2 for WT). The observations below describe
+trends visible in the data that would require larger sample sizes to confirm statistically.
+
+1. REGIONAL PATTERNS: mHTT1a median expression tends to be higher in striatum than cortex
+   in Q111 mice at later ages (6-12mo), while full-length mHTT shows similar levels in both regions
+2. AGE-RELATED TRENDS: Both probes show increasing median expression with age across conditions,
+   consistent with progressive mRNA accumulation during disease progression
+3. GENOTYPE DIFFERENCES: Q111 median expression values are consistently higher than WT
+   (e.g., 5.2-fold for mHTT1a in striatum at 12mo), but statistical power is insufficient to confirm
+4. PROBE-SPECIFIC PATTERNS: mHTT1a and full-length mHTT show different regional patterns in Q111
+5. BIOLOGICAL REPRODUCIBILITY: Per-mouse analysis (Panel F) shows consistent patterns across slides
+6. ANATOMICAL GRADIENTS: Atlas coordinate analysis (Panel E) reveals anterior-posterior variation
+
+DATA CACHING:
+Processed data is cached to figure3_data.pkl for fast subsequent runs. Set FORCE_RELOAD = True to regenerate from raw data.

@@ -1,0 +1,125 @@
+================================================================================
+FIGURE S14: Cluster Size Distributions - fl-HTT
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents probability density functions (PDFs) showing the distribution
+of cluster sizes (mRNA equivalents per cluster) for fl-HTT transcripts in
+Q111 transgenic mice compared to wildtype controls.
+
+DATA SOURCE:
+--------------------------------------------------------------------------------
+HDF5 file: /home/grunwaldlab/UMass Medical School Dropbox/Pieter Fop Van Velde/rna_scope_data_v3_including_cv/global_merged_20251216_060124.h5
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total FOVs analyzed: 1617
+  Q111: 1333 FOVs
+  Wildtype: 284 FOVs
+Total clusters analyzed: 1,544,325
+  Q111: 1,337,233 clusters
+  Wildtype: 207,092 clusters
+
+Cortex:
+  Q111: 695 FOVs, 683,974 clusters
+  WT: 134 FOVs, 122,476 clusters
+Striatum:
+  Q111: 638 FOVs, 653,259 clusters
+  WT: 150 FOVs, 84,616 clusters
+
+STATISTICAL SUMMARY:
+--------------------------------------------------------------------------------
+Cluster size is measured in mRNA equivalents (cluster intensity / single spot peak).
+Higher values indicate larger mRNA aggregates containing more transcripts.
+
+Q111 (1,337,233 clusters):
+  Mean ± SD: 6.10 ± 17.21 mRNA/cluster
+  Median [IQR]: 3.76 [2.06 - 7.07]
+  Range (5th-95th percentile): 1.09 - 18.25
+  Full range: 0.64 - 10247.17
+
+Wildtype (207,092 clusters):
+  Mean ± SD: 5.14 ± 10.03 mRNA/cluster
+  Median [IQR]: 3.08 [1.73 - 6.04]
+  Range (5th-95th percentile): 1.01 - 15.78
+  Full range: 0.74 - 2019.75
+
+Genotype Comparison (Q111 vs Wildtype):
+  Mean difference: 0.96 mRNA/cluster
+  Fold change (Q111/WT): 1.19x
+  Effect size (Cohen's d): 0.07
+
+Statistics Definitions:
+  - Mean: Average cluster size across all clusters
+  - SD: Standard deviation, measures spread of cluster sizes
+  - Median: Middle value; 50% of clusters are smaller, 50% are larger
+  - IQR: Interquartile range (25th-75th percentile), captures central 50%
+  - P95: 95th percentile; only 5% of clusters are larger than this value
+  - Cohen's d: Effect size; |d|>0.8 is large, |d|>0.5 is medium, |d|>0.2 is small
+
+FILTERING APPLIED:
+--------------------------------------------------------------------------------
+1. Excluded slides (technical failures): m1a2, m1b5, m2b5, m2b2, m2a7, m2a1, m2b4, m2b5, m3b4, m1a1, m1b2, m1b3, m1b4, m3b5
+2. Cluster CV threshold: CV >= 0.5
+   (Clusters with low coefficient of variation are excluded as likely noise)
+3. Intensity threshold: Cluster intensity > 95th percentile of negative control
+4. Minimum clusters per FOV: 5
+5. Minimum spots for peak calculation: 50
+
+MOUSE ID MAPPING:
+--------------------------------------------------------------------------------
+Labels use Q#X.Y format for Q111 mice and W#X.Y for Wildtype mice,
+where X = mouse number (sorted by age: 1-3=2mo, 4-6=6mo, 7-9=12mo), Y = slide number.
+
+Q111 mice: (Mouse IDs not available in metadata)
+Wildtype mice: (Mouse IDs not available in metadata)
+
+PANEL DESCRIPTIONS:
+--------------------------------------------------------------------------------
+
+ROW 1 (A-B): OVERALL DISTRIBUTIONS BY REGION
+Probability density functions showing the full distribution of cluster sizes.
+
+Cortex Q111: n=683,974 clusters, mean=6.42, median=3.77, P95=19.56, 36.86 clusters/nucleus
+Cortex WT: n=122,476 clusters, mean=5.32, median=3.11, P95=16.53, 13.56 clusters/nucleus
+Striatum Q111: n=653,259 clusters, mean=5.77, median=3.74, P95=16.97, 23.75 clusters/nucleus
+Striatum WT: n=84,616 clusters, mean=4.89, median=3.04, P95=14.70, 12.83 clusters/nucleus
+
+ROWS 2-3 (C-H): DISTRIBUTIONS BY AGE
+Cluster size distributions separated by age (2, 6, 12 months).
+
+Cortex:
+  2mo Q111: n=218,107, mean=6.14, med=3.42, 36.28/nuc
+  6mo Q111: n=235,845, mean=4.38, med=2.95, 11.03/nuc
+  12mo Q111: n=230,022, mean=8.77, med=5.42, 66.57/nuc
+Striatum:
+  2mo Q111: n=120,930, mean=5.83, med=3.75, 29.48/nuc
+  6mo Q111: n=306,103, mean=4.57, med=3.15, 9.63/nuc
+  12mo Q111: n=226,226, mean=7.35, med=4.83, 40.68/nuc
+
+ROWS 4-5 (I-P): DISTRIBUTIONS BY MOUSE ID
+Cluster size distributions for individual mice (top 2 Q111 and top 2 WT per region).
+Labels use Q#/W# format (see MOUSE ID MAPPING above).
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Q111: Orange (orange)
+Wildtype: Purple (#9b59b6)
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Cluster size calculation:
+  - Cluster intensity = sum of all voxel intensities in a cluster
+  - Single spot peak intensity = mode of KDE-fitted intensity distribution
+  - Cluster size (mRNA equivalents) = Cluster intensity / Single spot peak
+  - Normalization is slide-specific to account for batch effects
+
+Cluster filtering:
+  - CV threshold: CV >= 0.5 (removes low-variance noise)
+  - Intensity threshold: > 95th percentile of negative control
+  - Minimum 5 valid clusters per FOV for inclusion
+
+================================================================================
+Generated: 2026-01-12 11:36:23
+================================================================================

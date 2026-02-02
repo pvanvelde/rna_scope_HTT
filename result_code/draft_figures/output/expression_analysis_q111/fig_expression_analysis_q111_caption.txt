@@ -1,0 +1,312 @@
+================================================================================
+FIGURE: Comprehensive mRNA Expression Analysis (Q111 mice)
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents a detailed analysis of HTT1a and fl-HTT transcript
+expression in Q111 transgenic mice across cortical and striatal regions. The figure
+is organized into three rows, each examining a different quantification metric:
+total mRNA, single mRNA, and clustered mRNA per cell. For each metric, regional
+comparisons (cortex vs striatum) and per-mouse breakdowns are provided.
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total Q111 FOVs: 2668
+  Cortex: 1394 FOVs
+  Striatum: 1274 FOVs
+
+Q111 mice analyzed (n=15):
+  Q111 12mo #1 aCSF Early STR: 200 FOVs (12.0 months)
+  Q111 12mo #1 aCSF Late STR: 168 FOVs (12.0 months)
+  Q111 12mo #1 aCSF Mid STR: 146 FOVs (12.0 months)
+  Q111 12mo #2 aCSF Late STR: 170 FOVs (12.0 months)
+  Q111 2mo #1 UNT Late STR: 184 FOVs (2.0 months)
+  Q111 2mo #2 UNT Mid STR: 204 FOVs (2.0 months)
+  Q111 2mo #2 UNT early STR: 140 FOVs (2.0 months)
+  Q111 2mo #3 UNT Early STR: 194 FOVs (2.0 months)
+  Q111 2mo #3 UNT Late STR: 128 FOVs (2.0 months)
+  Q111 2mo #3 UNT Mid STR: 180 FOVs (2.0 months)
+  Q111 6mo #1 NTC Late STR: 164 FOVs (6.0 months)
+  Q111 6mo #2 NTC Late STR: 220 FOVs (6.0 months)
+  Q111 6mo #2 NTC Mid STR: 234 FOVs (6.0 months)
+  Q111 6mo #3 NTC Late STR: 86 FOVs (6.0 months)
+  Q111 6mo #3 NTC Mid STR: 250 FOVs (6.0 months)
+
+PANEL ORGANIZATION:
+--------------------------------------------------------------------------------
+Row 1 - TOTAL mRNA PER CELL (Panels A-B):
+  Panel A: Box plots comparing cortex vs striatum for HTT1a and full-length
+  Panel B: Bar plots showing per-mouse expression levels
+
+Row 2 - SINGLE mRNA PER CELL (Panels C-D):
+  Panel C: Box plots comparing cortex vs striatum for HTT1a and full-length
+  Panel D: Bar plots showing per-mouse expression levels
+
+Row 3 - CLUSTERED mRNA PER CELL (Panels E-F):
+  Panel E: Box plots comparing cortex vs striatum for HTT1a and full-length
+  Panel F: Bar plots showing per-mouse expression levels
+
+TOTAL MRNA STATISTICS (Panels A-B):
+--------------------------------------------------------------------------------
+
+Cortex:
+  HTT1a: n=697, mean=13.44±15.01, median=7.96, IQR=[4.25, 15.25]
+  fl-HTT: n=697, mean=22.74±23.51, median=14.88, IQR=[8.62, 27.78]
+
+Striatum:
+  HTT1a: n=637, mean=20.11±19.54, median=12.56, IQR=[4.88, 30.31]
+  fl-HTT: n=637, mean=25.48±20.00, median=19.56, IQR=[10.95, 36.88]
+
+Per-Mouse Means (Panel B):
+  Q111 12mo #1 aCSF Early STR | Cortex | HTT1a: mean=25.88±1.56 (n=50)
+  Q111 12mo #1 aCSF Early STR | Cortex | fl-HTT: mean=50.74±2.45 (n=50)
+  Q111 12mo #1 aCSF Early STR | Striatum | HTT1a: mean=30.62±1.74 (n=50)
+  Q111 12mo #1 aCSF Early STR | Striatum | fl-HTT: mean=47.90±2.10 (n=50)
+  Q111 12mo #1 aCSF Late STR | Cortex | HTT1a: mean=54.43±5.40 (n=29)
+  Q111 12mo #1 aCSF Late STR | Cortex | fl-HTT: mean=80.59±7.25 (n=29)
+  Q111 12mo #1 aCSF Late STR | Striatum | HTT1a: mean=54.12±2.72 (n=55)
+  Q111 12mo #1 aCSF Late STR | Striatum | fl-HTT: mean=57.88±1.75 (n=55)
+  Q111 12mo #1 aCSF Mid STR | Cortex | HTT1a: mean=24.45±2.22 (n=40)
+  Q111 12mo #1 aCSF Mid STR | Cortex | fl-HTT: mean=34.17±3.49 (n=40)
+  Q111 12mo #1 aCSF Mid STR | Striatum | HTT1a: mean=20.45±1.71 (n=33)
+  Q111 12mo #1 aCSF Mid STR | Striatum | fl-HTT: mean=24.74±1.52 (n=33)
+  Q111 12mo #2 aCSF Late STR | Cortex | HTT1a: mean=4.28±0.19 (n=50)
+  Q111 12mo #2 aCSF Late STR | Cortex | fl-HTT: mean=13.61±0.63 (n=50)
+  Q111 12mo #2 aCSF Late STR | Striatum | HTT1a: mean=3.64±0.12 (n=35)
+  Q111 12mo #2 aCSF Late STR | Striatum | fl-HTT: mean=12.62±0.40 (n=35)
+  Q111 2mo #1 UNT Late STR | Cortex | HTT1a: mean=2.97±0.13 (n=55)
+  Q111 2mo #1 UNT Late STR | Cortex | fl-HTT: mean=12.53±0.59 (n=55)
+  Q111 2mo #1 UNT Late STR | Striatum | HTT1a: mean=1.90±0.10 (n=37)
+  Q111 2mo #1 UNT Late STR | Striatum | fl-HTT: mean=7.91±0.45 (n=37)
+  Q111 2mo #2 UNT Mid STR | Cortex | HTT1a: mean=4.71±0.29 (n=61)
+  Q111 2mo #2 UNT Mid STR | Cortex | fl-HTT: mean=14.18±0.79 (n=61)
+  Q111 2mo #2 UNT Mid STR | Striatum | HTT1a: mean=4.72±0.31 (n=41)
+  Q111 2mo #2 UNT Mid STR | Striatum | fl-HTT: mean=17.45±0.88 (n=41)
+  Q111 2mo #2 UNT early STR | Cortex | HTT1a: mean=5.59±0.32 (n=49)
+  Q111 2mo #2 UNT early STR | Cortex | fl-HTT: mean=9.86±0.67 (n=49)
+  Q111 2mo #2 UNT early STR | Striatum | HTT1a: mean=6.06±0.37 (n=21)
+  Q111 2mo #2 UNT early STR | Striatum | fl-HTT: mean=11.00±0.35 (n=21)
+  Q111 2mo #3 UNT Early STR | Cortex | HTT1a: mean=10.34±0.39 (n=57)
+  Q111 2mo #3 UNT Early STR | Cortex | fl-HTT: mean=12.98±0.62 (n=57)
+  Q111 2mo #3 UNT Early STR | Striatum | HTT1a: mean=9.64±0.43 (n=40)
+  Q111 2mo #3 UNT Early STR | Striatum | fl-HTT: mean=14.73±0.65 (n=40)
+  Q111 2mo #3 UNT Late STR | Cortex | HTT1a: mean=7.04±0.44 (n=50)
+  Q111 2mo #3 UNT Late STR | Cortex | fl-HTT: mean=14.30±1.29 (n=50)
+  Q111 2mo #3 UNT Late STR | Striatum | HTT1a: mean=13.72±0.75 (n=14)
+  Q111 2mo #3 UNT Late STR | Striatum | fl-HTT: mean=17.97±1.10 (n=14)
+  Q111 2mo #3 UNT Mid STR | Cortex | HTT1a: mean=15.02±1.50 (n=63)
+  Q111 2mo #3 UNT Mid STR | Cortex | fl-HTT: mean=6.44±0.62 (n=63)
+  Q111 2mo #3 UNT Mid STR | Striatum | HTT1a: mean=1.07±0.22 (n=27)
+  Q111 2mo #3 UNT Mid STR | Striatum | fl-HTT: mean=0.39±0.03 (n=27)
+  Q111 6mo #1 NTC Late STR | Cortex | HTT1a: mean=6.20±0.25 (n=47)
+  Q111 6mo #1 NTC Late STR | Cortex | fl-HTT: mean=13.86±0.89 (n=47)
+  Q111 6mo #1 NTC Late STR | Striatum | HTT1a: mean=8.33±0.72 (n=35)
+  Q111 6mo #1 NTC Late STR | Striatum | fl-HTT: mean=16.56±1.00 (n=35)
+  Q111 6mo #2 NTC Late STR | Cortex | HTT1a: mean=12.71±0.29 (n=47)
+  Q111 6mo #2 NTC Late STR | Cortex | fl-HTT: mean=31.50±0.82 (n=47)
+  Q111 6mo #2 NTC Late STR | Striatum | HTT1a: mean=16.72±0.72 (n=63)
+  Q111 6mo #2 NTC Late STR | Striatum | fl-HTT: mean=24.65±0.85 (n=63)
+  Q111 6mo #2 NTC Mid STR | Cortex | HTT1a: mean=5.63±0.75 (n=50)
+  Q111 6mo #2 NTC Mid STR | Cortex | fl-HTT: mean=1.46±0.21 (n=50)
+  Q111 6mo #2 NTC Mid STR | Striatum | HTT1a: mean=6.77±0.48 (n=67)
+  Q111 6mo #2 NTC Mid STR | Striatum | fl-HTT: mean=3.84±0.33 (n=67)
+  Q111 6mo #3 NTC Late STR | Striatum | HTT1a: mean=26.03±0.91 (n=43)
+  Q111 6mo #3 NTC Late STR | Striatum | fl-HTT: mean=23.81±0.81 (n=43)
+  Q111 6mo #3 NTC Mid STR | Cortex | HTT1a: mean=31.06±1.41 (n=49)
+  Q111 6mo #3 NTC Mid STR | Cortex | fl-HTT: mean=57.60±2.41 (n=49)
+  Q111 6mo #3 NTC Mid STR | Striatum | HTT1a: mean=47.17±1.35 (n=76)
+  Q111 6mo #3 NTC Mid STR | Striatum | fl-HTT: mean=51.19±1.30 (n=76)
+
+SINGLE MRNA STATISTICS (Panels C-D):
+--------------------------------------------------------------------------------
+
+Cortex:
+  HTT1a: n=697, mean=0.39±0.35, median=0.27, IQR=[0.13, 0.55]
+  fl-HTT: n=697, mean=1.75±1.41, median=1.37, IQR=[0.70, 2.44]
+
+Striatum:
+  HTT1a: n=637, mean=0.49±0.34, median=0.46, IQR=[0.16, 0.74]
+  fl-HTT: n=637, mean=1.83±1.30, median=1.50, IQR=[0.80, 2.69]
+
+Per-Mouse Means (Panel D):
+  Q111 12mo #1 aCSF Early STR | Cortex | HTT1a: mean=0.40±0.02 (n=50)
+  Q111 12mo #1 aCSF Early STR | Cortex | fl-HTT: mean=2.96±0.15 (n=50)
+  Q111 12mo #1 aCSF Early STR | Striatum | HTT1a: mean=0.70±0.03 (n=50)
+  Q111 12mo #1 aCSF Early STR | Striatum | fl-HTT: mean=2.92±0.13 (n=50)
+  Q111 12mo #1 aCSF Late STR | Cortex | HTT1a: mean=0.53±0.05 (n=29)
+  Q111 12mo #1 aCSF Late STR | Cortex | fl-HTT: mean=3.90±0.31 (n=29)
+  Q111 12mo #1 aCSF Late STR | Striatum | HTT1a: mean=0.80±0.03 (n=55)
+  Q111 12mo #1 aCSF Late STR | Striatum | fl-HTT: mean=3.11±0.12 (n=55)
+  Q111 12mo #1 aCSF Mid STR | Cortex | HTT1a: mean=0.26±0.02 (n=40)
+  Q111 12mo #1 aCSF Mid STR | Cortex | fl-HTT: mean=2.22±0.15 (n=40)
+  Q111 12mo #1 aCSF Mid STR | Striatum | HTT1a: mean=0.31±0.03 (n=33)
+  Q111 12mo #1 aCSF Mid STR | Striatum | fl-HTT: mean=1.42±0.10 (n=33)
+  Q111 12mo #2 aCSF Late STR | Cortex | HTT1a: mean=0.11±0.01 (n=50)
+  Q111 12mo #2 aCSF Late STR | Cortex | fl-HTT: mean=0.68±0.04 (n=50)
+  Q111 12mo #2 aCSF Late STR | Striatum | HTT1a: mean=0.10±0.00 (n=35)
+  Q111 12mo #2 aCSF Late STR | Striatum | fl-HTT: mean=0.58±0.02 (n=35)
+  Q111 2mo #1 UNT Late STR | Cortex | HTT1a: mean=0.10±0.01 (n=55)
+  Q111 2mo #1 UNT Late STR | Cortex | fl-HTT: mean=0.73±0.04 (n=55)
+  Q111 2mo #1 UNT Late STR | Striatum | HTT1a: mean=0.09±0.00 (n=37)
+  Q111 2mo #1 UNT Late STR | Striatum | fl-HTT: mean=0.47±0.03 (n=37)
+  Q111 2mo #2 UNT Mid STR | Cortex | HTT1a: mean=0.07±0.01 (n=61)
+  Q111 2mo #2 UNT Mid STR | Cortex | fl-HTT: mean=0.90±0.05 (n=61)
+  Q111 2mo #2 UNT Mid STR | Striatum | HTT1a: mean=0.11±0.01 (n=41)
+  Q111 2mo #2 UNT Mid STR | Striatum | fl-HTT: mean=1.05±0.05 (n=41)
+  Q111 2mo #2 UNT early STR | Cortex | HTT1a: mean=0.12±0.01 (n=49)
+  Q111 2mo #2 UNT early STR | Cortex | fl-HTT: mean=1.62±0.08 (n=49)
+  Q111 2mo #2 UNT early STR | Striatum | HTT1a: mean=0.14±0.01 (n=21)
+  Q111 2mo #2 UNT early STR | Striatum | fl-HTT: mean=1.79±0.05 (n=21)
+  Q111 2mo #3 UNT Early STR | Cortex | HTT1a: mean=0.23±0.01 (n=57)
+  Q111 2mo #3 UNT Early STR | Cortex | fl-HTT: mean=1.52±0.06 (n=57)
+  Q111 2mo #3 UNT Early STR | Striatum | HTT1a: mean=0.23±0.01 (n=40)
+  Q111 2mo #3 UNT Early STR | Striatum | fl-HTT: mean=1.39±0.06 (n=40)
+  Q111 2mo #3 UNT Late STR | Cortex | HTT1a: mean=0.54±0.04 (n=50)
+  Q111 2mo #3 UNT Late STR | Cortex | fl-HTT: mean=2.09±0.10 (n=50)
+  Q111 2mo #3 UNT Late STR | Striatum | HTT1a: mean=0.92±0.05 (n=14)
+  Q111 2mo #3 UNT Late STR | Striatum | fl-HTT: mean=2.26±0.16 (n=14)
+  Q111 2mo #3 UNT Mid STR | Cortex | HTT1a: mean=0.86±0.07 (n=63)
+  Q111 2mo #3 UNT Mid STR | Cortex | fl-HTT: mean=0.36±0.04 (n=63)
+  Q111 2mo #3 UNT Mid STR | Striatum | HTT1a: mean=0.16±0.02 (n=27)
+  Q111 2mo #3 UNT Mid STR | Striatum | fl-HTT: mean=0.19±0.01 (n=27)
+  Q111 6mo #1 NTC Late STR | Cortex | HTT1a: mean=0.41±0.01 (n=47)
+  Q111 6mo #1 NTC Late STR | Cortex | fl-HTT: mean=2.91±0.16 (n=47)
+  Q111 6mo #1 NTC Late STR | Striatum | HTT1a: mean=0.54±0.03 (n=35)
+  Q111 6mo #1 NTC Late STR | Striatum | fl-HTT: mean=3.85±0.19 (n=35)
+  Q111 6mo #2 NTC Late STR | Cortex | HTT1a: mean=0.71±0.02 (n=47)
+  Q111 6mo #2 NTC Late STR | Cortex | fl-HTT: mean=4.52±0.10 (n=47)
+  Q111 6mo #2 NTC Late STR | Striatum | HTT1a: mean=0.78±0.04 (n=63)
+  Q111 6mo #2 NTC Late STR | Striatum | fl-HTT: mean=3.45±0.14 (n=63)
+  Q111 6mo #2 NTC Mid STR | Cortex | HTT1a: mean=0.66±0.06 (n=50)
+  Q111 6mo #2 NTC Mid STR | Cortex | fl-HTT: mean=0.40±0.05 (n=50)
+  Q111 6mo #2 NTC Mid STR | Striatum | HTT1a: mean=0.72±0.04 (n=67)
+  Q111 6mo #2 NTC Mid STR | Striatum | fl-HTT: mean=1.06±0.08 (n=67)
+  Q111 6mo #3 NTC Late STR | Striatum | HTT1a: mean=0.60±0.02 (n=43)
+  Q111 6mo #3 NTC Late STR | Striatum | fl-HTT: mean=1.62±0.07 (n=43)
+  Q111 6mo #3 NTC Mid STR | Cortex | HTT1a: mean=0.48±0.03 (n=49)
+  Q111 6mo #3 NTC Mid STR | Cortex | fl-HTT: mean=1.68±0.11 (n=49)
+  Q111 6mo #3 NTC Mid STR | Striatum | HTT1a: mean=0.53±0.02 (n=76)
+  Q111 6mo #3 NTC Mid STR | Striatum | fl-HTT: mean=1.30±0.10 (n=76)
+
+CLUSTERED MRNA STATISTICS (Panels E-F):
+--------------------------------------------------------------------------------
+
+Cortex:
+  HTT1a: n=697, mean=13.05±14.88, median=7.50, IQR=[4.04, 14.58]
+  fl-HTT: n=697, mean=20.98±22.60, median=13.33, IQR=[7.67, 24.82]
+
+Striatum:
+  HTT1a: n=637, mean=19.62±19.36, median=11.94, IQR=[4.68, 29.83]
+  fl-HTT: n=637, mean=23.65±19.36, median=17.64, IQR=[9.56, 34.86]
+
+Per-Mouse Means (Panel F):
+  Q111 12mo #1 aCSF Early STR | Cortex | HTT1a: mean=25.48±1.55 (n=50)
+  Q111 12mo #1 aCSF Early STR | Cortex | fl-HTT: mean=47.79±2.31 (n=50)
+  Q111 12mo #1 aCSF Early STR | Striatum | HTT1a: mean=29.92±1.71 (n=50)
+  Q111 12mo #1 aCSF Early STR | Striatum | fl-HTT: mean=44.97±1.97 (n=50)
+  Q111 12mo #1 aCSF Late STR | Cortex | HTT1a: mean=53.89±5.35 (n=29)
+  Q111 12mo #1 aCSF Late STR | Cortex | fl-HTT: mean=76.69±6.96 (n=29)
+  Q111 12mo #1 aCSF Late STR | Striatum | HTT1a: mean=53.31±2.70 (n=55)
+  Q111 12mo #1 aCSF Late STR | Striatum | fl-HTT: mean=54.76±1.65 (n=55)
+  Q111 12mo #1 aCSF Mid STR | Cortex | HTT1a: mean=24.19±2.20 (n=40)
+  Q111 12mo #1 aCSF Mid STR | Cortex | fl-HTT: mean=31.95±3.37 (n=40)
+  Q111 12mo #1 aCSF Mid STR | Striatum | HTT1a: mean=20.14±1.69 (n=33)
+  Q111 12mo #1 aCSF Mid STR | Striatum | fl-HTT: mean=23.33±1.44 (n=33)
+  Q111 12mo #2 aCSF Late STR | Cortex | HTT1a: mean=4.17±0.19 (n=50)
+  Q111 12mo #2 aCSF Late STR | Cortex | fl-HTT: mean=12.93±0.59 (n=50)
+  Q111 12mo #2 aCSF Late STR | Striatum | HTT1a: mean=3.54±0.12 (n=35)
+  Q111 12mo #2 aCSF Late STR | Striatum | fl-HTT: mean=12.05±0.38 (n=35)
+  Q111 2mo #1 UNT Late STR | Cortex | HTT1a: mean=2.88±0.12 (n=55)
+  Q111 2mo #1 UNT Late STR | Cortex | fl-HTT: mean=11.80±0.56 (n=55)
+  Q111 2mo #1 UNT Late STR | Striatum | HTT1a: mean=1.82±0.10 (n=37)
+  Q111 2mo #1 UNT Late STR | Striatum | fl-HTT: mean=7.45±0.43 (n=37)
+  Q111 2mo #2 UNT Mid STR | Cortex | HTT1a: mean=4.64±0.29 (n=61)
+  Q111 2mo #2 UNT Mid STR | Cortex | fl-HTT: mean=13.28±0.75 (n=61)
+  Q111 2mo #2 UNT Mid STR | Striatum | HTT1a: mean=4.61±0.31 (n=41)
+  Q111 2mo #2 UNT Mid STR | Striatum | fl-HTT: mean=16.41±0.83 (n=41)
+  Q111 2mo #2 UNT early STR | Cortex | HTT1a: mean=5.47±0.32 (n=49)
+  Q111 2mo #2 UNT early STR | Cortex | fl-HTT: mean=8.24±0.60 (n=49)
+  Q111 2mo #2 UNT early STR | Striatum | HTT1a: mean=5.92±0.37 (n=21)
+  Q111 2mo #2 UNT early STR | Striatum | fl-HTT: mean=9.21±0.32 (n=21)
+  Q111 2mo #3 UNT Early STR | Cortex | HTT1a: mean=10.11±0.38 (n=57)
+  Q111 2mo #3 UNT Early STR | Cortex | fl-HTT: mean=11.46±0.57 (n=57)
+  Q111 2mo #3 UNT Early STR | Striatum | HTT1a: mean=9.40±0.42 (n=40)
+  Q111 2mo #3 UNT Early STR | Striatum | fl-HTT: mean=13.33±0.60 (n=40)
+  Q111 2mo #3 UNT Late STR | Cortex | HTT1a: mean=6.50±0.41 (n=50)
+  Q111 2mo #3 UNT Late STR | Cortex | fl-HTT: mean=12.21±1.22 (n=50)
+  Q111 2mo #3 UNT Late STR | Striatum | HTT1a: mean=12.81±0.74 (n=14)
+  Q111 2mo #3 UNT Late STR | Striatum | fl-HTT: mean=15.71±0.98 (n=14)
+  Q111 2mo #3 UNT Mid STR | Cortex | HTT1a: mean=14.16±1.46 (n=63)
+  Q111 2mo #3 UNT Mid STR | Cortex | fl-HTT: mean=6.09±0.59 (n=63)
+  Q111 2mo #3 UNT Mid STR | Striatum | HTT1a: mean=0.91±0.21 (n=27)
+  Q111 2mo #3 UNT Mid STR | Striatum | fl-HTT: mean=0.20±0.03 (n=27)
+  Q111 6mo #1 NTC Late STR | Cortex | HTT1a: mean=5.79±0.24 (n=47)
+  Q111 6mo #1 NTC Late STR | Cortex | fl-HTT: mean=10.95±0.75 (n=47)
+  Q111 6mo #1 NTC Late STR | Striatum | HTT1a: mean=7.79±0.70 (n=35)
+  Q111 6mo #1 NTC Late STR | Striatum | fl-HTT: mean=12.72±0.85 (n=35)
+  Q111 6mo #2 NTC Late STR | Cortex | HTT1a: mean=12.01±0.28 (n=47)
+  Q111 6mo #2 NTC Late STR | Cortex | fl-HTT: mean=26.98±0.76 (n=47)
+  Q111 6mo #2 NTC Late STR | Striatum | HTT1a: mean=15.94±0.68 (n=63)
+  Q111 6mo #2 NTC Late STR | Striatum | fl-HTT: mean=21.20±0.74 (n=63)
+  Q111 6mo #2 NTC Mid STR | Cortex | HTT1a: mean=4.97±0.71 (n=50)
+  Q111 6mo #2 NTC Mid STR | Cortex | fl-HTT: mean=1.06±0.16 (n=50)
+  Q111 6mo #2 NTC Mid STR | Striatum | HTT1a: mean=6.05±0.44 (n=67)
+  Q111 6mo #2 NTC Mid STR | Striatum | fl-HTT: mean=2.78±0.27 (n=67)
+  Q111 6mo #3 NTC Late STR | Striatum | HTT1a: mean=25.43±0.89 (n=43)
+  Q111 6mo #3 NTC Late STR | Striatum | fl-HTT: mean=22.19±0.77 (n=43)
+  Q111 6mo #3 NTC Mid STR | Cortex | HTT1a: mean=30.58±1.39 (n=49)
+  Q111 6mo #3 NTC Mid STR | Cortex | fl-HTT: mean=55.91±2.34 (n=49)
+  Q111 6mo #3 NTC Mid STR | Striatum | HTT1a: mean=46.63±1.33 (n=76)
+  Q111 6mo #3 NTC Mid STR | Striatum | fl-HTT: mean=49.88±1.24 (n=76)
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+HTT1a: Green
+fl-HTT: Orange
+Cortex: Higher opacity (alpha=0.7)
+Striatum: Lower opacity (alpha=0.5)
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  (Slides excluded due to poor UBC positive control expression indicating technical failures)
+CV threshold for cluster filtering: CV >= 0.5
+Minimum nuclei per FOV: 40.0
+Intensity threshold: Per-slide, determined from negative control at quantile=0.95, max PFA=0.05
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Total mRNA per cell:
+  Total = N_spots + (I_cluster_total / I_single_peak) / N_nuclei
+  Where I_single_peak is slide-specific peak intensity from KDE
+
+Single mRNA per cell:
+  Single = N_spots / N_nuclei
+  Represents diffraction-limited individual transcripts
+
+Clustered mRNA per cell:
+  Clustered = Total - Single
+  Represents aggregated/high-density transcript populations
+
+Peak intensity normalization:
+  - Kernel Density Estimation (KDE) with Scott's bandwidth
+  - Slide-specific normalization accounts for technical variation
+  - Minimum 50 spots required for reliable peak estimation
+
+STATISTICAL NOTES:
+--------------------------------------------------------------------------------
+Box plots (Panels A, C, E):
+  - Box: Interquartile range (IQR, 25th-75th percentile)
+  - Median: Black horizontal line
+  - Whiskers: Extend to 1.5×IQR
+  - Individual points: Overlaid with transparency for distribution visualization
+
+Bar plots (Panels B, D, F):
+  - Height: Mean expression across FOVs for each mouse
+  - Error bars: SEM (standard error of the mean)
+  - Each mouse contributes multiple FOVs
+
+================================================================================
+Generated: 2026-01-12 11:37:04
+================================================================================

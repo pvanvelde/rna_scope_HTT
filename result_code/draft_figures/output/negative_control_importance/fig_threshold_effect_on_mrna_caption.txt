@@ -1,0 +1,231 @@
+====================================================================================================
+SUPPLEMENTARY FIGURE: Effect of Threshold Calibration Method on Total mRNA Quantification
+====================================================================================================
+
+OVERVIEW
+----------------------------------------------------------------------------------------------------
+This figure evaluates whether per-slide negative control calibration is necessary for accurate
+mRNA quantification, or whether per-session (pooled) thresholds provide equivalent results.
+We compare Total mRNA per nucleus calculated using two threshold approaches:
+  1. SLIDE-SPECIFIC thresholds: 95th percentile of negative control intensities per slide
+  2. SESSION-MEAN thresholds: Average of slide-specific thresholds within each imaging session
+
+The analysis addresses a practical question: Can researchers simplify their calibration protocol
+by using a single threshold per imaging session, rather than requiring negative control sections
+on every experimental slide?
+
+====================================================================================================
+QUANTITATIVE ASSESSMENT
+====================================================================================================
+
+DATASET:
+  - Total FOVs analyzed: 2,668
+  - Imaging sessions: 3 (Session 1: n=634, Session 2: n=1072, Session 3: n=962)
+  - Brain regions: Cortex (n=1394), Striatum (n=1274)
+  - Channels: HTT1a (n=1334), fl-HTT (n=1334)
+
+QUALITY CONTROL EXCLUSIONS:
+  - Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  - Reason for exclusion: Poor UBC positive control expression (100-1000x below normal),
+    indicating technical failures such as poor hybridization, tissue damage, or imaging issues
+  - Cluster CV filter: CV >= 0.5 (excludes clusters with low intensity variance)
+
+AGREEMENT BETWEEN METHODS:
+  - Pearson correlation: r = 0.9700 (p < 1e-100)
+    → Near-perfect linear agreement between methods
+
+  - Mean % difference (session-mean - slide-specific): -0.11% ± 23.73%
+  - Median % difference: -2.66% (IQR: 28.60%)
+    → Small systematic bias toward slightly lower values with session-mean thresholds
+
+  - Paired t-test: t = 5.639, p = 1.89e-08
+    → Statistically significant difference (due to large sample size)
+  - Cohen's d effect size: -0.005
+    → Negligible effect size
+
+BLAND-ALTMAN ANALYSIS (Panel H):
+  - Mean difference: -0.542 mRNA/nucleus
+  - 95% Limits of agreement: [-10.27, 9.19] mRNA/nucleus
+    → Most FOVs fall within ±9.7 mRNA/nucleus of each other
+
+DISTRIBUTION OF DIFFERENCES:
+  - FOVs with >10% difference: 67.1%
+  - FOVs with >20% difference: 35.4%
+  - FOVs with >50% difference: 5.2%
+
+EXTREME VALUES (IMPORTANT!):
+  - Maximum individual FOV difference: 94.1%
+  - Range of differences: -65.6% to +94.1%
+  - 5th to 95th percentile range: -34.8% to +46.2%
+  - NOTE: While the MEAN difference is small, individual FOVs can differ by up to 60% or more!
+    This variability is substantial and may affect biological conclusions for individual samples.
+
+PER-SESSION BREAKDOWN:
+  - Session 1: +3.53% ± 17.10% (n=634)
+  - Session 2: -4.41% ± 19.61% (n=1072)
+  - Session 3: +2.29% ± 30.10% (n=962)
+
+PER-SLIDE VARIABILITY (Panel G):
+  - Number of slides: 15
+  - Maximum per-slide bias: 48.0% (slide: m3a3)
+  - Slides with >10% mean bias: 10 (66.7%)
+  - Slides with >20% mean bias: 6 (40.0%)
+
+====================================================================================================
+INTERPRETATION AND RECOMMENDATIONS
+====================================================================================================
+
+IS SLIDE-SPECIFIC CALIBRATION NECESSARY?
+----------------------------------------------------------------------------------------------------
+
+ANSWER: YES - SLIDE-SPECIFIC CALIBRATION IS STRONGLY RECOMMENDED
+
+Despite the small mean difference (-0.1%), individual FOVs show LARGE variability:
+  - 35.4% of FOVs differ by >20%
+  - Maximum difference observed: 94.1%
+  - This means some individual measurements could be off by more than half!
+
+STATISTICAL EVIDENCE:
+  1. CORRELATION: r = 0.970 indicates near-perfect linear agreement.
+     Both methods rank FOVs identically; relative comparisons are unaffected.
+
+  2. SYSTEMATIC BIAS: Mean difference of -0.11% is negligible.
+     This bias is unlikely to affect biological conclusions.
+
+  3. INDIVIDUAL VARIABILITY: 35.4% of FOVs differ by >20%.
+     A substantial minority of measurements show large differences.
+
+  4. PER-SLIDE EFFECTS: 6 of 15 slides (40.0%) show >20% mean bias.
+     Some slides show substantial systematic differences between methods.
+
+----------------------------------------------------------------------------------------------------
+PRACTICAL RECOMMENDATIONS FOR FUTURE USERS:
+----------------------------------------------------------------------------------------------------
+
+1. FOR HIGHEST ACCURACY (Recommended for publication-quality data):
+   → Use SLIDE-SPECIFIC thresholds from per-slide negative control sections
+   → This eliminates any potential slide-to-slide calibration artifacts
+   → Required effort: One negative control section per experimental slide
+
+2. FOR PRACTICAL EFFICIENCY (Acceptable for screening or exploratory work):
+   → Use SESSION-MEAN thresholds (one negative control per imaging session)
+   → Expected accuracy: r = 0.970 correlation with slide-specific values
+   → Expected bias: -0.11% ± 23.73% systematic difference
+   → Required effort: One negative control section per imaging session
+
+3. CRITICAL CONSIDERATIONS:
+   → Session 2 shows the largest systematic bias (-4.4%)
+   → If comparing samples ACROSS sessions, slide-specific calibration is strongly recommended
+   → If comparing samples WITHIN a single session, session-mean thresholds are acceptable
+
+4. STUDY DESIGN IMPLICATIONS:
+   → Ensure experimental groups are balanced across imaging sessions
+   → If using session-mean thresholds, verify that biological groups are not confounded with sessions
+   → Report which calibration method was used in methods section
+
+====================================================================================================
+PANEL DESCRIPTIONS
+====================================================================================================
+
+ROW 1 - SCATTER PLOTS (Panels A-C):
+Comparison of Total mRNA per nucleus calculated with slide-specific (x-axis) vs session-mean
+(y-axis) thresholds. Each point represents one field-of-view (FOV). Dashed line indicates
+perfect agreement (x=y). Points above the line indicate higher values with session-mean thresholds.
+
+  Panel A: HTT1a channel (488 nm) - exon 1 transcript
+  Panel B: fl-HTT channel (548 nm) - full-length transcript
+  Panel C: Both channels combined
+
+ROW 2 - DISTRIBUTION OF DIFFERENCES (Panels D-F):
+Violin plots showing the distribution of percentage differences between methods.
+Horizontal dashed line at 0% indicates no difference. Positive values indicate session-mean
+thresholds yield higher mRNA counts; negative values indicate lower counts.
+
+  Panel D: By imaging session - reveals session-specific calibration effects
+  Panel E: By brain region - tests whether bias differs between cortex and striatum
+  Panel F: By channel - tests whether bias differs between probe targets
+
+ROW 3 - PER-SLIDE AND BLAND-ALTMAN ANALYSIS (Panels G-H):
+
+  Panel G: Per-slide mean difference
+  Bar plot showing the mean percentage difference for each slide, grouped by session.
+  Reveals which specific slides show the largest calibration differences.
+
+  Panel H: Bland-Altman plot
+  X-axis: Mean of both methods (average mRNA/nucleus from both approaches)
+  Y-axis: Difference between methods (session-mean minus slide-specific)
+  Red solid line: Mean difference (systematic bias)
+  Red dashed lines: 95% limits of agreement (±1.96 SD)
+  This plot reveals whether the difference between methods depends on the magnitude of expression.
+
+====================================================================================================
+METHODOLOGY
+====================================================================================================
+
+THRESHOLD CALCULATION:
+  - Quantile: 95th percentile of negative control spot intensities
+  - Negative control: Bacterial DapB probe (not expressed in mammalian tissue)
+  - Slide-specific: Calculated independently for each slide-channel combination
+  - Session-mean: Average of slide-specific thresholds within each imaging session
+    (computed ONLY from included slides, excluding problematic slides listed above)
+
+TOTAL mRNA PER NUCLEUS CALCULATION:
+  Formula: Total mRNA per nucleus = (N_spots + I_clusters / I_peak) / N_nuclei
+
+  Step-by-step breakdown:
+  1. COUNT SINGLE SPOTS (N_spots):
+     - Filter spots by intensity > threshold (from negative control)
+     - Filter spots by detection quality (PFA < 0.05)
+     - Count remaining spots as single mRNA molecules
+
+  2. QUANTIFY CLUSTERED mRNA (I_clusters / I_peak):
+     - I_clusters = Sum of integrated intensities from all clusters
+     - Clusters must pass: intensity > threshold AND CV >= 0.5
+     - I_peak = Mode of spot intensity distribution (from KDE)
+     - I_peak represents the intensity of a single mRNA molecule
+     - Division converts total cluster intensity to mRNA equivalents
+
+  3. ESTIMATE NUCLEI COUNT (N_nuclei):
+     - Segment DAPI channel to identify nuclear regions
+     - Calculate total DAPI volume: V_DAPI = sum(label_sizes) × voxel_size
+     - Estimate nuclei: N_nuclei = V_DAPI / mean_nuclear_volume
+     - Mean nuclear volume = 716.0 µm³ (from literature)
+
+  4. NORMALIZE TO PER-NUCLEUS:
+     - Divide total mRNA (spots + cluster equivalents) by N_nuclei
+     - Result: mRNA molecules per nucleus
+
+  KEY INSIGHT: The threshold affects BOTH N_spots AND I_peak:
+  - Higher threshold → fewer spots pass → lower N_spots
+  - Higher threshold → higher I_peak (excludes low-intensity spots from KDE)
+  - These effects partially cancel, but not perfectly
+
+PERCENTAGE DIFFERENCE CALCULATION:
+  Formula: % Difference = (mRNA_session − mRNA_slide) / mRNA_slide × 100
+
+  Where:
+    mRNA_session = Total mRNA/nucleus using session-mean threshold
+    mRNA_slide = Total mRNA/nucleus using slide-specific threshold
+
+  Interpretation:
+    - Positive % → session-mean threshold gives HIGHER mRNA estimate
+    - Negative % → session-mean threshold gives LOWER mRNA estimate
+    - 0% → both methods give identical results
+
+  Example: If slide-specific gives 50 mRNA/nucleus and session-mean gives 55:
+    % Difference = (55 − 50) / 50 × 100 = +10%
+
+CLUSTER QUALITY FILTERING:
+  - Coefficient of Variation (CV) threshold: >= 0.5
+  - Rationale: Clusters with low CV may represent uniform background or artifacts
+  - True mRNA clusters show intensity heterogeneity due to multiple overlapping molecules
+
+STATISTICAL TESTS:
+  - Pearson correlation: Linear agreement between methods
+  - Paired t-test: Systematic difference between methods
+  - Cohen's d: Standardized effect size
+  - Bland-Altman: Agreement analysis with limits of agreement
+
+====================================================================================================
+Generated: 2026-01-12 11:14:31
+====================================================================================================

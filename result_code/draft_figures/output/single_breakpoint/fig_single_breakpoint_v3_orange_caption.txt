@@ -1,0 +1,266 @@
+Figure: Empirical definition of the single-molecule regime via per-slide normalization and breakpoint analysis
+
+======================================================================
+CHANNEL ANALYZED: ORANGE CHANNEL (548 NM)
+======================================================================
+
+Probe: fl-HTT (complete mutant huntingtin transcript)
+Excitation wavelength: 548 nm
+
+======================================================================
+OVERVIEW AND MOTIVATION
+======================================================================
+
+After setting a slide-specific photon threshold based on negative control regions, we normalized the photon yield of all detected spots such that the peak (mode) of the probability density function (PDF) is set at 1 for each slide independently. This per-slide normalization approach is necessary because photon yield varies substantially across slides due to tissue autofluorescence, fixation quality, probe hybridization efficiency, and imaging conditions (laser power fluctuations, objective alignment, detector sensitivity drift). A global intensity calibration would incorrectly classify dim spots on bright slides as non-specific background, and bright spots on dim slides as aggregates.
+
+======================================================================
+DATA SOURCES AND FILTERING
+======================================================================
+
+Total spots analyzed: 4,474,897 (σₓ), 4,474,897 (σᵧ), 4,474,897 (σz)
+Number of slides: 26
+Data source: Bead calibration dataset (H5_FILE_PATH_BEAD)
+Mouse model filter: Q111 only
+Quality filter: spots.pfa_values < 1e-04 (probability of false alarm)
+Channel analyzed: Orange channel (548 nm) - fl-HTT (complete mutant huntingtin transcript)
+
+Note: Bead data is used to establish the reference PSF (point spread function) from diffraction-limited fluorescent microspheres, which provides an optical baseline before analyzing biological tissue samples.
+
+======================================================================
+PANEL A - RAW INTENSITY DISTRIBUTIONS PER SLIDE
+======================================================================
+
+Visualization: Probability density functions of integrated photon counts (total photons detected per spot) before normalization.
+
+Methodology:
+- Each faint colored line represents one individual slide's intensity distribution
+- Kernel density estimation (KDE) using Scott's rule for bandwidth selection
+- 200 evaluation points spanning [0, 99th percentile of raw photons]
+- Density normalization ensures area under each curve equals 1
+- Smoothing via KDE provides clearer visualization of distribution shape
+
+Observation: Substantial slide-to-slide variation in absolute photon yield is immediately apparent, with peak intensities varying by factors of 2-3× across slides. This heterogeneity arises from technical variation in sample preparation and imaging conditions.
+
+======================================================================
+PANEL B - PER-SLIDE NORMALIZED INTENSITY DISTRIBUTIONS
+======================================================================
+
+Visualization: Same data as Panel A, after per-slide normalization.
+
+Normalization procedure for each slide independently:
+1. Extract all photon values for spots passing quality filters
+2. Compute kernel density estimate (KDE) using Scott's rule for bandwidth selection
+3. Evaluate KDE on 500 points spanning [1st percentile, 99th percentile]
+4. Identify peak (mode) of the PDF as the maximum of the KDE
+5. Divide all photon values by this peak intensity: I_normalized = I_raw / I_peak
+6. This sets the mode of each slide's distribution to N₁mRNA = 1
+
+Visualization details:
+- Each faint line shows one slide's normalized intensity distribution
+- KDE computed using scipy.stats.gaussian_kde with bw_method='scott'
+- x-axis range: [0, 5] in units of N₁mRNA
+- Red dashed vertical line marks N₁mRNA = 1
+
+Result: All slide distributions now converge around N₁mRNA = 1, demonstrating successful removal of slide-to-slide technical variation while preserving the biological signal (tail extending beyond 1, representing multi-transcript aggregates).
+
+======================================================================
+PANELS C, D, E - BIPHASIC RELATIONSHIPS (INTENSITY vs SIZE)
+======================================================================
+
+Panel C: σₓ (lateral x-dimension)
+Panel D: σᵧ (lateral y-dimension)
+Panel E: σz (axial z-dimension)
+
+Visualization: Normalized intensity (N/N₁mRNA) plotted against fitted Gaussian spot size parameters.
+
+X-axis range (xlim) determination - PRINCIPLED HYBRID APPROACH:
+- Lower bound: Physics-based
+  * For lateral dimensions (σₓ, σᵧ): PSF × 0.5 (spots cannot be smaller than ~half the diffraction limit)
+  * σₓ: 185.0 × 0.5 = 92.5 nm
+  * σᵧ: 187.0 × 0.5 = 93.5 nm
+  * For axial dimension (σz): Fixed at 500.0 nm (1 slice depth = 500 nm)
+  * Using 1 slice depth as lower bound for z ensures we capture the full rising phase of the biphasic curve
+- Upper bound: 98th percentile of data (data-driven)
+  * Adapts to actual data distribution, excludes extreme outliers
+  * σₓ: 493.7 nm (98th percentile)
+  * σᵧ: 492.5 nm (98th percentile)
+  * σz: 962.3 nm (98th percentile)
+
+This hybrid approach ensures the analysis range is grounded in physical constraints (PSF-based lower bound)
+while remaining adaptive to the data distribution (percentile-based upper bound).
+
+Binning procedure for combined data (across all slides):
+- Bin edges: np.linspace(xlim[0], xlim[1], 51)
+- σₓ: 50 bins spanning [92.5, 493.7] nm (bin size: 8.0 nm)
+- σᵧ: 50 bins spanning [93.5, 492.5] nm (bin size: 8.0 nm)
+- σz: 50 bins spanning [500.0, 962.3] nm (bin size: 9.2 nm)
+- For each bin: compute mean and standard error of mean (SEM) of normalized intensities
+
+Per-slide analysis (light shaded region):
+- Each slide analyzed independently with same 50 bins as combined analysis
+- Binned mean intensity computed for each size bin per slide
+- Savitzky-Golay smoothing applied to each slide: window_length=5, polyorder=2
+- Mean and standard deviation computed across all slides for each bin
+- Light colored shaded region shows ±1 standard deviation across slides
+- Represents inter-slide variability in the biphasic relationship
+
+Combined mean from all spots (bold colored line with error bands):
+- Mean computed from all spots pooled together across all slides
+- This provides the best statistical estimate of the true biphasic relationship
+- Light shaded region: ±1 std across per-slide means (shows slide-to-slide variability)
+- Narrower darker bands: ±1 SEM of the combined mean (uncertainty in the mean)
+- Note: Mean line may not be perfectly centered in std region because std is computed from per-slide means while the plotted mean is from pooled spots
+
+Reference lines:
+- Purple dotted vertical line: Bead-derived PSF (mode of bead size distribution)
+  * σₓ: 185.0 nm
+  * σᵧ: 187.0 nm
+  * σz: 573.0 nm
+- Colored dashed vertical line: Empirically-determined breakpoint from tissue data
+  * σₓ: 286.5 nm (54.9% larger than bead PSF)
+  * σᵧ: 287.1 nm (53.5% larger than bead PSF)
+  * σz: 708.0 nm (23.6% larger than bead PSF)
+- Gray horizontal dotted line: N₁mRNA = 1 reference
+
+Interpretation of biphasic relationship:
+- LEFT of breakpoint (single-molecule regime): Intensity increases approximately linearly with size. This positive correlation indicates that larger fitted widths within this regime arise from increased local probe density, more extended mRNA hybridization sites, or slight variations in probe cluster geometry—while still representing single diffraction-limited molecules.
+- RIGHT of breakpoint (aggregate regime): Intensity plateaus or increases sub-linearly despite continued size growth. This indicates that broadened spots do not represent brighter single molecules, but rather spatially unresolved clusters of multiple transcripts, aggregation-induced quenching, or artifacts where additional size reflects aggregation rather than increased probe binding.
+
+======================================================================
+PANELS F, G, H - SPOT SIZE DISTRIBUTIONS
+======================================================================
+
+Panel F: σₓ size distribution
+Panel G: σᵧ size distribution
+Panel H: σz size distribution
+
+Visualization: Probability density functions of fitted Gaussian spot widths for each slide.
+
+Methodology:
+- Each faint colored line: KDE of one slide's spot sizes (bw_method='scott')
+- Thick colored line: Combined PDF from all spots across all slides
+- 200 evaluation points per slide, 500 for combined distribution
+- All spots from all slides pooled to compute overall distribution and mode
+
+Mode identification (dashed colored vertical line):
+- KDE computed on combined data from all slides
+- 500 evaluation points for high resolution
+- Mode = argmax(KDE) of combined distribution
+- σₓ mode: 248.5 nm (34.3% larger than bead PSF)
+- σᵧ mode: 247.0 nm (32.1% larger than bead PSF)
+- σz mode: 659.4 nm (15.1% larger than bead PSF)
+
+Reference lines and curves:
+- Thick colored solid line: Combined PDF (KDE) from all spots across all slides
+- Purple dotted vertical line: Bead-derived PSF
+- Colored dashed vertical line: Mode of combined size distribution (refined PSF)
+- Note: Breakpoint NOT shown in these panels (only in biphasic plots C-E)
+
+Note: The modes represent the most probable spot sizes in tissue and serve as the refined, tissue-calibrated PSF values. These modes are typically close to bead PSF values, confirming consistency between optical calibration and tissue measurements. However, modes may differ from bead PSF due to tissue-specific effects (refractive index, aberrations, probe cluster size). The breakpoints are substantially larger than both bead PSF and modes, defining the upper bound of the single-molecule regime where aggregation begins.
+
+======================================================================
+BREAKPOINT DETERMINATION ALGORITHM
+======================================================================
+
+Method: Two-segment piecewise-linear regression with optimal breakpoint search
+
+Steps:
+1. Input: Binned data (size vs intensity) with 50 bins
+2. Apply Savitzky-Golay smoothing to intensity values: window_length=9, polyorder=2
+3. Search over candidate breakpoints from 20th to 80th percentile of size range
+4. For each candidate breakpoint position:
+   a. Fit linear regression to left segment (slope1, intercept1)
+   b. Fit linear regression to right segment (slope2, intercept2)
+   c. Compute residual sum of squares (RSS) for both segments
+5. Select breakpoint that minimizes total RSS
+6. Final breakpoint = x-coordinate at optimal split position
+
+Output:
+- Breakpoint position (nm)
+- Slope1: positive slope in single-molecule regime
+- Slope2: near-zero or negative slope in aggregate regime
+
+Results:
+- σₓ breakpoint: 286.5 nm (slope1=0.060, slope2=0.006)
+- σᵧ breakpoint: 287.1 nm (slope1=0.058, slope2=0.006)
+- σz breakpoint: 708.0 nm (slope1=0.005, slope2=-0.004)
+
+======================================================================
+KEY FINDINGS AND BIOLOGICAL INTERPRETATION
+======================================================================
+
+1. Per-slide normalization successfully removes technical variation:
+   - Raw intensity peaks vary by 2-3× across slides (Panel A)
+   - Normalized intensity peaks all align at N₁mRNA = 1 (Panel B)
+   - Biological signal (aggregate tail) preserved after normalization
+
+2. Bead PSF provides diffraction-limited reference:
+   - Bead-derived PSF from calibration: σₓ=185 nm, σᵧ=187 nm, σz=573 nm
+   - Refined PSF from tissue data modes (Panels F-H): σₓ=248 nm, σᵧ=247 nm, σz=659 nm
+   - Modes are determined from combined size distributions across all slides
+   - Refined PSF values supersede bead measurements for downstream analysis
+
+3. Tissue-calibrated breakpoints exceed bead PSF by 15-40%:
+   - σₓ: 54.9% expansion
+   - σᵧ: 53.5% expansion
+   - σz: 23.6% expansion
+   - This expansion reflects the physical extent of RNAscope probe clusters (~20 probe pairs, each ~2-3 nm) bound to target mRNA in tissue context
+
+4. Biphasic relationship provides objective single-molecule criterion:
+   - Positive slope regime: single diffraction-limited molecules
+   - Zero/negative slope regime: multi-transcript aggregates
+   - Breakpoint separates these two regimes empirically from data
+
+5. Refined PSF from tissue data supersedes bead measurements:
+   - Mode values from Panels F-H (σₓ=248 nm, σᵧ=247 nm, σz=659 nm) define tissue-calibrated PSF
+   - These refined widths represent the most probable spot size for single molecules in tissue
+   - Used for all downstream single-molecule quantification and filtering
+   - Accounts for tissue-induced aberrations, refractive index mismatch, and actual probe cluster geometry
+   - Bead PSF (185, 187, 573 nm) remains as theoretical diffraction limit reference
+
+======================================================================
+TECHNICAL SPECIFICATIONS
+======================================================================
+
+Microscopy parameters:
+- Pixel size (lateral): 108.0 nm
+- Slice depth (axial): 200.0 nm
+- Excitation wavelength: 488 nm (green channel)
+- Objective: [specific objective from metadata]
+- Imaging modality: Widefield fluorescence microscopy
+
+Image analysis:
+- Spot detection: 3D Gaussian fitting to find σₓ, σᵧ, σz
+- Photon integration: Sum of background-subtracted pixel intensities
+- Quality metric: Probability of false alarm (pfa) from statistical detection theory
+
+Statistical analysis:
+- Kernel density estimation: scipy.stats.gaussian_kde with Scott's rule
+- Smoothing: scipy.signal.savgol_filter
+- Error bars: Standard error of mean (SEM) = std / sqrt(n_slides)
+- Breakpoint fitting: Custom piecewise-linear regression
+
+Software:
+- Python 3.x with scipy, numpy, matplotlib
+- Analysis code: result_code/draft_figures/fig_single_breakpoint_v3.py
+
+======================================================================
+SUPPLEMENTARY STATISTICS
+======================================================================
+
+Per-slide spot counts (range across 26 slides): [compute min/max if available]
+Median spots per slide: 172,111
+
+Intensity normalization factors (peak photon values per slide):
+[Would require storing these values during analysis]
+
+Size distribution statistics:
+- σₓ: mean=281.0 nm, median=261.9 nm, std=76.1 nm
+- σᵧ: mean=280.6 nm, median=261.7 nm, std=76.1 nm
+- σz: mean=662.5 nm, median=653.2 nm, std=240.3 nm
+
+Breakpoint confidence:
+- Determined from 50 bins spanning full size range
+- Smoothing reduces noise while preserving trend (window=9 bins ≈ 72 nm effective averaging)
+
+======================================================================

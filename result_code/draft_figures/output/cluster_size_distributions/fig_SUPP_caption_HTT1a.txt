@@ -1,0 +1,36 @@
+================================================================================
+SUPPLEMENTARY FIGURE: Cluster Size by Atlas Coordinate - HTT1a
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This supplementary figure shows cluster size distributions for ALL brain atlas
+coordinates sampled in the study. Each panel represents one atlas coordinate
+(A-P position in 25μm units from Bregma).
+
+DATA SOURCE:
+--------------------------------------------------------------------------------
+HDF5 file: /home/grunwaldlab/UMass Medical School Dropbox/Pieter Fop Van Velde/rna_scope_data_v3_including_cv/global_merged_20251216_060124.h5
+
+FILTERING APPLIED:
+--------------------------------------------------------------------------------
+1. Excluded slides: m1a2, m1b5, m2b5, m2b2, m2a7, m2a1, m2b4, m2b5, m3b4, m1a1, m1b2, m1b3, m1b4, m3b5
+2. Cluster CV threshold: CV >= 0.5
+3. Intensity threshold: > 95th percentile of negative control
+
+Cortex:
+  Atlas coordinates (10 total): 40, 41, 45, 46, 47, 53, 55, 57, 60, 68
+  Total clusters: 333,608
+
+Striatum:
+  Atlas coordinates (10 total): 40, 41, 45, 46, 47, 53, 55, 57, 60, 68
+  Total clusters: 364,488
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Q111: Green (green)
+Wildtype: Blue (#3498db)
+
+================================================================================
+Generated: 2026-01-12 11:36:23
+================================================================================

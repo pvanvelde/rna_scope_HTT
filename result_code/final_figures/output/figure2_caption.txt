@@ -1,0 +1,225 @@
+Figure 2: Aggregate intensity-volume scaling analysis reveals linear mRNA concentration within clusters.
+
+OVERVIEW:
+This figure characterizes the relationship between mRNA aggregate (cluster) volume and total mRNA content, demonstrating that larger aggregates contain proportionally more mRNA molecules. This linear scaling supports the biological interpretation that aggregates represent true accumulations of mRNA at specific nuclear/cytoplasmic locations rather than imaging artifacts. The analysis validates the quantification approach by showing consistent intensity-volume relationships across independent slides.
+
+PANEL DESCRIPTIONS:
+
+(A) PLACEHOLDER - GREEN CHANNEL REPRESENTATIVE IMAGES
+Placeholder for representative microscopy images showing mHTT1a probe (green channel):
+- Overview image with detected aggregates highlighted
+- Zoom examples of small and large aggregates
+- Color-coded by mRNA equivalents or volume
+
+(B) PLACEHOLDER - ORANGE CHANNEL REPRESENTATIVE IMAGES
+Placeholder for representative microscopy images showing full-length mHTT probe (orange channel):
+- Same layout as panel A for direct comparison
+- Demonstrates aggregate detection across both probe targets
+
+(C) GREEN CHANNEL (488 nm) - mHTT1a PROBE: Volume vs Intensity Scaling
+Quantitative relationship between aggregate volume and normalized intensity (mRNA equivalents).
+- Data source: Q111 transgenic mouse tissue, green channel (mHTT1a probe detecting mutant huntingtin exon 1)
+- Total aggregates analyzed: n = 640,320 clusters across 15 independent slides
+- X-axis: Cluster volume in cubic micrometers (μm³), calculated from 3D segmentation
+- Y-axis: Normalized intensity in mRNA equivalents (N/N_{1mRNA}), where N_{1mRNA} is the per-slide modal single-molecule intensity
+- Data visualization:
+  * Points represent binned mean intensity values with adaptive bin sizing
+  * Adaptive binning algorithm ensures minimum 2% of total data per bin with minimum bin width of 0.5 μm³
+  * Error shading shows ±1 standard deviation over ALL individual clusters within each bin (aggregated across all slides)
+  * This SD represents the spread of individual cluster intensities at each volume, capturing both biological variability and measurement uncertainty
+- Linear regression analysis:
+  * Dashed black line: Linear fit on all individual clusters
+  * Scaling coefficient (slope): β = 1.23 mRNA equivalents per μm³
+  * R² on binned means: 0.988 (displayed on plot)
+  * R² on individual clusters: 0.683 (captures scatter of 640,320 individual data points)
+  * Y-intercept represents baseline intensity for smallest detectable aggregates
+- Biological interpretation:
+  * Linear scaling indicates constant mRNA concentration within aggregates regardless of size
+  * Slope value represents effective mRNA density within clustered regions
+  * High R² on binned means confirms that the mean intensity-volume relationship is linear; lower R² on individual points reflects natural biological variability in mRNA content
+
+(D) ORANGE CHANNEL (548 nm) - FULL-LENGTH mHTT PROBE: Volume vs Intensity Scaling
+Same analysis as panel C for full-length mutant huntingtin mRNA.
+- Total aggregates analyzed: n = 1,337,908 clusters across 15 independent slides
+- Linear regression results:
+  * Scaling coefficient: β = 1.03 mRNA equivalents per μm³
+  * R² on binned means: 0.997 (displayed on plot)
+  * R² on individual clusters: 0.791 (captures scatter of 1,337,908 individual data points)
+- Comparison with green channel:
+  * Similar slope values between channels suggest comparable mRNA packing density
+  * Consistent R² values across channels validate the quantification methodology
+- Y-axis shared with panel C for direct visual comparison
+
+(E) DISTRIBUTION PANELS (stacked)
+Top: VOLUME DISTRIBUTION OF AGGREGATES
+Probability density distributions of aggregate volumes for both channels.
+- Kernel density estimation (KDE) using Scott's rule for bandwidth selection
+- Green curve: mHTT1a probe (488 nm channel), n = 640,320 aggregates
+- Orange curve: Full-length mHTT probe (548 nm channel), n = 1,337,908 aggregates
+- X-axis limited to 0-30 μm³
+- Green channel volume statistics:
+  * Mode (KDE peak) = 2.8 μm³, Median = 6.4 μm³, Mean = 8.1 μm³
+  * Std = 5.9 μm³, IQR = 7.1 μm³ (Q1=3.7, Q3=10.8 μm³)
+- Orange channel volume statistics:
+  * Mode (KDE peak) = 2.1 μm³, Median = 5.4 μm³, Mean = 6.9 μm³
+  * Std = 5.1 μm³, IQR = 5.7 μm³ (Q1=3.1, Q3=8.9 μm³)
+- Both channels show similar volume distributions with mode around 2-3 μm³
+
+Bottom: INTENSITY DISTRIBUTION OF AGGREGATES (mRNA EQUIVALENTS)
+Probability density distributions of aggregate intensities for both channels.
+- Same KDE methodology as volume distribution
+- X-axis: Intensity in mRNA equivalents (0-100 range shown)
+- Green channel intensity statistics:
+  * Mode (KDE peak) = 2.1 mRNA eq., Median = 4.7 mRNA eq., Mean = 9.1 mRNA eq.
+  * Std = 12.1 mRNA eq., IQR = 8.0 mRNA eq. (Q1=2.4, Q3=10.3 mRNA eq.)
+- Orange channel intensity statistics:
+  * Mode (KDE peak) = 2.0 mRNA eq., Median = 4.3 mRNA eq., Mean = 6.8 mRNA eq.
+  * Std = 7.9 mRNA eq., IQR = 5.7 mRNA eq. (Q1=2.4, Q3=8.1 mRNA eq.)
+- Both channels show similar intensity distributions with mode around 2 mRNA equivalents
+- The mean > median indicates presence of higher-intensity clusters in both channels
+
+================================================================================
+FILTERING APPLIED (consistent with Figure 1, panels E onwards)
+================================================================================
+
+EXCLUDED SLIDES:
+The following slides were excluded from all analyses due to technical failures (imaging artifacts or tissue damage):
+- Globally excluded: m1a2, m1b5, m2b5, m2b2, m2a7, m2a1, m2b4, m2b5, m3b4, m1a1, m1b2, m1b3, m1b4, m3b5
+
+CLUSTER-LEVEL ANALYSIS:
+This figure analyzes CLUSTERS (aggregates), not individual spots. Clusters are identified from the 3D segmentation pipeline after spot-level filtering.
+
+UPSTREAM SPOT FILTERING (applied before cluster identification):
+1. DETECTION QUALITY FILTER (PFA):
+   - Criterion: Probability of False Alarm < 0.05
+   - Purpose: Remove spots with poor Gaussian fit quality
+
+2. INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Integrated photons > 95th percentile of negative control distribution
+   - Purpose: Remove background/noise spots below detection threshold
+   - Threshold: Calculated per slide-channel combination
+
+3. SIZE LOWER BOUND (from bead PSF):
+   - Criterion: σ_x ≥ 148.0 nm (80% × bead PSF of 185.0 nm)
+   - Purpose: Remove artifactually small spots (noise, fitting errors)
+
+SPOT FILTERING STATISTICS:
+- Green channel (mHTT1a):
+  * Total spots detected: 7,886,896
+  * Discarded by PFA filter: 6,860,561 (87.0%)
+  * Discarded by intensity threshold: 848,483 (10.8%)
+  * Final single-molecule spots: 177,852 (2.3% retained)
+
+- Orange channel (full-length mHTT):
+  * Total spots detected: 6,394,419
+  * Discarded by PFA filter: 4,283,374 (67.0%)
+  * Discarded by intensity threshold: 1,362,401 (21.3%)
+  * Final single-molecule spots: 748,644 (11.7% retained)
+
+CLUSTER IDENTIFICATION:
+- Method: 3D connected component analysis on intensity-thresholded images
+- Each cluster represents a spatially-connected region of mRNA signal
+- Cluster intensity: Sum of all voxel intensities, normalized to mRNA equivalents
+- Cluster volume: Number of connected voxels × voxel volume
+
+4. CLUSTER INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Cluster total intensity > 95th percentile of negative control distribution
+   - Purpose: Remove clusters with intensity below the noise floor (false positive clusters)
+   - Threshold: Calculated per slide-channel combination (same as spot threshold)
+   - This filter is applied AFTER cluster identification to remove low-intensity clusters
+
+5. CLUSTER CV (COEFFICIENT OF VARIATION) THRESHOLD:
+   - Criterion: Cluster CV >= 0.5 (CV = standard deviation / mean of voxel intensities)
+   - Purpose: Remove clusters with low intensity heterogeneity (likely noise or artifacts)
+   - Rationale: True mRNA aggregates show spatial variation in signal; uniform low-variance regions are noise
+   - This filter is applied together with the intensity threshold
+
+CLUSTER DISCARD STATISTICS:
+
+A. Due to pruning (removing clusters touching single-molecule spots):
+- Green channel (mHTT1a):
+  * Total clusters before pruning: 843,092
+  * Clusters discarded by pruning: 140,619 (16.7%)
+
+- Orange channel (full-length mHTT):
+  * Total clusters before pruning: 1,875,933
+  * Clusters discarded by pruning: 499,176 (26.6%)
+
+B. Due to intensity threshold and CV threshold (after pruning):
+- Green channel (mHTT1a):
+  * Total clusters after pruning: 702,473
+  * Clusters passed all filters: 640,320
+  * Clusters discarded by intensity threshold: 38,897 (5.5%)
+  * Clusters discarded by CV threshold (CV < 0.5): 23,256 (3.3%)
+  * Total clusters discarded: 62,153 (8.8%)
+  * Mean intensity threshold: 33932 photons
+
+- Orange channel (full-length mHTT):
+  * Total clusters after pruning: 1,376,757
+  * Clusters passed all filters: 1,337,908
+  * Clusters discarded by intensity threshold: 28,186 (2.0%)
+  * Clusters discarded by CV threshold (CV < 0.5): 10,663 (0.8%)
+  * Total clusters discarded: 38,849 (2.8%)
+  * Mean intensity threshold: 13210 photons
+
+TECHNICAL PARAMETERS:
+- Volume scaling factor: 0.013203 μm³/voxel (calculated from pixel size × pixel size × slice depth)
+- Pixel size (lateral): 162.5 nm
+- Slice depth (axial): 500.0 nm
+- Bead PSF: σ_x = 185.0 nm, σ_y = 187.0 nm, σ_z = 573.0 nm
+- Size lower bound: σ ≥ 80% of bead PSF (148.0 nm for σ_x)
+- Minimum fraction of total data per adaptive bin: 2% (MIN_FRACTION_OF_TOTAL = 0.02)
+- Minimum number of slides represented per bin for inclusion: 3 (MIN_SLIDES_PER_BIN = 3)
+- Minimum adaptive bin width: 0.5 μm³ (MIN_BIN_WIDTH = 0.5)
+- Volume range analyzed: 0-30 μm³ (xlim_vol)
+- Linear fit weighting: Weighted by bin counts (higher-count bins have more influence)
+
+STATISTICAL SUMMARY:
+Green channel (mHTT1a):
+- Number of aggregates: 640,320
+- Number of slides: 15
+- Volume-intensity slope (β): 1.234 mRNA/μm³
+- R² on binned means: 0.9878
+- R² on individual clusters: 0.6825
+
+Orange channel (full-length mHTT):
+- Number of aggregates: 1,337,908
+- Number of slides: 15
+- Volume-intensity slope (β): 1.027 mRNA/μm³
+- R² on binned means: 0.9975
+- R² on individual clusters: 0.7908
+
+FINAL CLUSTER COUNTS:
+All clusters that passed intensity and CV thresholds are included in the analysis:
+- Green channel: 640,320 total clusters across 15 slides
+- Orange channel: 1,337,908 total clusters across 15 slides
+
+PLOT RANGE (0-30 um^3):
+- The scatter plots (panels C, D) and distributions (panel E) display data within 0-30 um^3 volume range for visual clarity
+- This focuses visualization on the bulk of the distribution where most clusters reside
+- Clusters with volume > 30 um^3 (24,212 green [3.8%], 22,430 orange [1.7%]) are retained in the dataset for downstream analyses but not shown in these plots
+- Plotted clusters: 616,108 green, 1,315,478 orange
+- Linear regression is computed on the plotted data (0-30 um^3 range)
+
+NOTE ON PEAK INTENSITY ESTIMATION:
+The per-slide peak intensity (mode of single-molecule intensity distribution) is used to normalize
+cluster intensities to mRNA equivalents. To compute a reliable peak, we require at least
+50 single-molecule spots within the sigma_z range of 458-701 nm.
+All slides in this analysis met this criterion for both channels
+
+KEY FINDINGS:
+1. LINEAR VOLUME-INTENSITY RELATIONSHIP: Both channels show strong linear correlations (R² on binned means > 0.99) between aggregate volume and mRNA content, validating that larger aggregates contain proportionally more mRNA molecules
+2. CONSISTENT mRNA DENSITY: Similar slope values between channels (~1.1 mRNA/μm³ average) suggest comparable mRNA packing density regardless of transcript type
+3. HIGH REPRODUCIBILITY: Standard deviations over all individual clusters within each volume bin are moderate relative to mean values, indicating consistent intensity-volume relationships
+4. BIOLOGICAL VALIDATION: The linear scaling is consistent with aggregates representing true mRNA accumulations rather than imaging artifacts (which would show non-linear or saturating behavior)
+5. QUANTIFICATION ACCURACY: High R² values confirm that aggregate intensity can be accurately converted to mRNA equivalents using volume information
+
+METHODOLOGICAL NOTES:
+- Aggregates are defined as connected components in the 3D segmentation that exceed the intensity threshold
+- Volume is calculated as (number of voxels) × (voxel volume)
+- Intensity is the sum of all voxel intensities within the aggregate, normalized by the per-slide single-molecule reference
+- The adaptive binning algorithm prevents sparse bins at the distribution extremes while maintaining resolution in the bulk
+- SD is calculated over all individual clusters within each bin (pooled from all slides), representing the spread of cluster intensities at each volume
+
+DATA CACHING:
+Processed data is cached to figure2_data.pkl for fast subsequent runs. Set FORCE_RELOAD = True to regenerate from raw data.

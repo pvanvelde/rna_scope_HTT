@@ -1,0 +1,113 @@
+# Ignore PyCharm project-specific files
+predict_yamls/confg_prediction_green_yellowchannel.yaml
+predict_yamls/config_prediction_dapi.yaml
+
+# Ignore PDFs and LaTeX auxiliary files
+*.pdf
+*.aux
+
+training_cluster/training_dapi
+training_cluster/training_green_yellow
+
+.claude/
+*.claude/
+.idea/
+user_code/config.py
+*.iml
+.wheels/
+archive
+submit_rna_scope.sh
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+venv_cloned/*
+venv_cloned/
+*.sif
+*.tar.gz
+# Ignore virtual environment directories
+venv/
+env/
+pytorch-3dunet/
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+figures
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore log files
+*.log
+
+# Ignore data files (images, datasets)
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.tiff
+*.tif
+*.webp
+*.svg
+*.ico
+*.json
+*.pkl
+# Ignore model files and weights
+*.h5
+*.hdf5
+*.pb
+*.pt
+*.pth
+*.ckpt
+
+# Ignore additional data file types
+*.csv
+*.tsv
+*.dat
+*.data
+*.npy
+*.npz
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore build files and folders
+archive/build/
+archive/dist/
+*.egg-info/
+.eggs/
+
+# Ignore coverage files
+coverage/
+*.cover
+*.coverage
+*.coveragerc
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore PyTorch related files
+*.pt
+*.pth
+*.pytorch
+# Ignore other common data formats
+*.mat
+*.pkl
+*.pickle
+
+# Ignore backup files
+*.bak
+*.backup
+
+# Ignore editor swap files
+*~
+
+# Ignore wheel files
+*.whl
+
+# Ignore tensorboard logs
+logs/
+runs/
+CHECKPOINT_DIR/

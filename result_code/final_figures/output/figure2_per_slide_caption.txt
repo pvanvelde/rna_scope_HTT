@@ -1,0 +1,185 @@
+Supplementary Figure: Per-Slide Analysis of Volume-Intensity Scaling and Normalization Validation
+
+================================================================================
+OVERVIEW
+================================================================================
+
+This figure examines the consistency of the volume-intensity scaling relationship across individual slides
+and evaluates whether the per-slide normalization procedure introduces systematic biases. The analysis
+addresses two key questions: (1) How variable is the mRNA density (slope) across slides? (2) Is the
+observed variability related to the normalization reference (peak intensity)?
+
+================================================================================
+PANEL DESCRIPTIONS
+================================================================================
+
+(A) GREEN CHANNEL (488 nm) - HTT1a PROBE: Per-Slide Volume vs Intensity
+Each line represents a single slide's binned mean intensity as a function of cluster volume.
+- Data source: Q111 transgenic mouse tissue, green channel (HTT1a probe)
+- Number of slides: 15
+- Total clusters analyzed: 616,108 (within 0-30 μm³ volume range)
+- X-axis: Cluster volume (μm³)
+- Y-axis: Normalized intensity in mRNA equivalents (N/N_{1mRNA})
+- Each colored line: Binned mean intensity for one slide (bins with ≥5 clusters shown)
+- Dashed black line: Mean slope across all slides (β = 1.03 mRNA eq./μm³)
+- Visualization demonstrates inter-slide variability in the volume-intensity relationship
+
+(B) ORANGE CHANNEL (548 nm) - fl-HTT PROBE: Per-Slide Volume vs Intensity
+Same analysis as panel A for full-length mutant huntingtin mRNA.
+- Number of slides: 15
+- Total clusters analyzed: 1,315,478 (within 0-30 μm³ volume range)
+- Mean slope: β = 0.92 mRNA eq./μm³
+
+(C) GREEN CHANNEL: Peak Intensity vs Slope Correlation
+Scatter plot examining whether per-slide slopes correlate with the normalization reference.
+- X-axis: Peak intensity (photons) - the modal intensity of single-molecule spots used for normalization
+- Y-axis: Slope (mRNA eq./μm³) - the volume-intensity scaling coefficient for each slide
+- Each point represents one slide, labeled with slide ID
+- Dashed line: Linear regression fit
+- Statistical test: Pearson correlation coefficient
+  * r = -0.37 (negative correlation)
+  * p-value = 0.1708 (not statistically significant at α=0.05)
+  * n = 15 slides
+
+(D) ORANGE CHANNEL: Peak Intensity vs Slope Correlation
+Same analysis as panel C for the orange channel.
+- Statistical test: Pearson correlation coefficient
+  * r = 0.04 (positive correlation)
+  * p-value = 0.8896 (not statistically significant at α=0.05)
+  * n = 15 slides
+
+================================================================================
+NORMALIZATION METHODOLOGY
+================================================================================
+
+PEAK INTENSITY AS THE SINGLE-MOLECULE REFERENCE (N_{1mRNA}):
+The peak intensity represents the modal (most frequent) intensity of single-molecule spots and serves
+as our operational definition of "1 mRNA equivalent." This normalization is critical because:
+
+1. PHYSICAL BASIS: The peak of the single-molecule intensity distribution corresponds to individual
+   mRNA molecules detected by the RNAscope probe set (~20 fluorescent labels per target mRNA).
+
+2. PER-SLIDE CALIBRATION: Each slide has its own peak intensity value due to:
+   - Variation in imaging conditions (laser power, detector sensitivity)
+   - Tissue-specific autofluorescence
+   - Hybridization efficiency differences
+   - Optical path variations
+
+3. NORMALIZATION PROCEDURE:
+   - For each slide, identify single-molecule spots (σ_z within 458-701 nm range)
+   - Compute kernel density estimation (KDE) of spot intensities
+   - Peak intensity = mode of the KDE (intensity with highest probability density)
+   - All cluster intensities are divided by this peak to obtain mRNA equivalents
+
+4. INTERPRETATION:
+   - Cluster intensity of 1.0 = intensity equivalent to one mRNA molecule
+   - Cluster intensity of 10.0 = intensity equivalent to ~10 mRNA molecules
+   - The slope (β) represents mRNA density: mRNA equivalents per cubic micrometer
+
+================================================================================
+STATISTICAL METHODS
+================================================================================
+
+PER-SLIDE BINNING:
+- Volume range: 0-30 μm³ (consistent with main Figure 2)
+- Number of bins: 20 equally-spaced bins
+- Minimum clusters per bin for display: 5
+- Binned statistic: Mean intensity within each volume bin
+
+LINEAR REGRESSION (per slide):
+- Method: Ordinary least squares (numpy.polyfit, degree=1)
+- Dependent variable: Normalized intensity (mRNA equivalents)
+- Independent variable: Cluster volume (μm³)
+- Slope interpretation: mRNA density within clusters
+
+GOODNESS OF FIT:
+- R² = 1 - (SS_residual / SS_total)
+- Computed on individual cluster data points (not binned means)
+
+CORRELATION ANALYSIS (Panels C, D):
+- Method: Pearson product-moment correlation coefficient
+- Tests whether slopes are systematically related to normalization values
+- Null hypothesis: No linear relationship between peak intensity and slope (r = 0)
+- Two-tailed p-value from t-distribution with n-2 degrees of freedom
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+GREEN CHANNEL (HTT1a, 488 nm):
+- Number of slides: 15
+- Slope statistics:
+  * Mean: 1.028 mRNA eq./μm³
+  * Standard deviation: 0.373 mRNA eq./μm³
+  * Coefficient of variation: 36.3%
+  * Range: 0.583 to 1.908 mRNA eq./μm³
+- Per-slide R² statistics:
+  * Mean: 0.776
+  * Range: 0.365 to 0.868
+- Peak intensity statistics:
+  * Mean: 38405 photons
+  * Coefficient of variation: 38.4%
+- Peak-slope correlation: r = -0.373, p = 0.1708
+
+ORANGE CHANNEL (fl-HTT, 548 nm):
+- Number of slides: 15
+- Slope statistics:
+  * Mean: 0.920 mRNA eq./μm³
+  * Standard deviation: 0.242 mRNA eq./μm³
+  * Coefficient of variation: 26.3%
+  * Range: 0.438 to 1.306 mRNA eq./μm³
+- Per-slide R² statistics:
+  * Mean: 0.810
+  * Range: 0.425 to 0.889
+- Peak intensity statistics:
+  * Mean: 15882 photons
+  * Coefficient of variation: 32.7%
+- Peak-slope correlation: r = 0.039, p = 0.8896
+
+================================================================================
+INTERPRETATION AND CONCLUSIONS
+================================================================================
+
+1. SLOPE VARIABILITY IS WITHIN EXPECTED BIOLOGICAL RANGE:
+   - Green channel CV = 36.3%, Orange channel CV = 26.3%
+   - This ~25-35% variability is typical for biological measurements across independent tissue samples
+   - All slopes are positive and within a reasonable range, confirming the linear relationship holds
+
+2. NORMALIZATION DOES NOT DRIVE SLOPE VARIABILITY:
+   - Green channel: r = -0.37, p = 0.17 (not significant)
+   - Orange channel: r = 0.04, p = 0.89 (not significant)
+   - The weak/non-significant correlations indicate that per-slide peak intensity estimation
+     does not systematically bias the slope measurements
+   - This validates our normalization approach
+
+3. HIGH WITHIN-SLIDE CONSISTENCY:
+   - Mean R² values (0.78 green, 0.81 orange) indicate strong
+     linear relationships within each slide
+   - The linear volume-intensity model is appropriate for the data
+
+4. BIOLOGICAL SOURCES OF VARIABILITY:
+   The observed inter-slide variability likely reflects genuine biological differences:
+   - Different animals may have different mRNA packing densities in aggregates
+   - Tissue section quality varies (depth, fixation, processing)
+   - Regional heterogeneity within the tissue
+   - Disease progression state may vary between animals
+
+5. VALIDATION OF QUANTIFICATION METHODOLOGY:
+   The consistency of positive slopes across all slides, combined with the lack of
+   normalization-induced bias, supports the validity of our mRNA quantification approach.
+   The per-slide normalization successfully removes technical variation while preserving
+   biological signal.
+
+================================================================================
+TECHNICAL PARAMETERS
+================================================================================
+
+- Voxel size: 0.013203 μm³
+- Volume range for analysis: 0-30 μm³
+- Minimum clusters per slide: 100
+- Minimum clusters per bin for plotting: 5
+- Number of volume bins: 20
+- Peak intensity estimation:
+  * Single-molecule σ_z range: 458-701 nm
+  * Minimum spots for peak estimation: 50
+  * KDE bandwidth: Scott's rule

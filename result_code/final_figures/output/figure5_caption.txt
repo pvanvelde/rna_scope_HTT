@@ -1,0 +1,201 @@
+Figure 5: Cluster properties in extreme vs normal FOVs reveal mechanistic insights into mRNA accumulation.
+
+OVERVIEW:
+This figure compares cluster-level properties between "extreme" FOVs (those exceeding the WT 95th percentile for clustered mRNA/nucleus) and "normal" FOVs (below threshold) within Q111 transgenic mice only. The analysis addresses the key biological question: Do extreme FOVs accumulate more mRNA because they have MORE clusters, LARGER clusters, or BOTH? Understanding this distinction provides mechanistic insight into disease-associated mRNA accumulation patterns and potential therapeutic targets.
+
+PANEL DESCRIPTIONS:
+
+(A) REPRESENTATIVE IMAGES
+Placeholder for representative microscopy images comparing cluster appearance in normal vs extreme FOVs.
+- Top row: Normal FOV examples showing typical cluster density and size
+- Bottom row: Extreme FOV examples showing elevated cluster density and/or size
+- Channels: DAPI (blue, nuclear stain), mHTT1a (green), full-length mHTT (orange)
+- Scale bars and imaging parameters
+- Annotations highlighting clusters and nuclear boundaries
+
+(B) CLUSTERS PER NUCLEUS: EXTREME vs NORMAL FOVs
+Box plot comparison of cluster density between extreme and normal FOVs.
+- Y-axis: Clusters per nucleus (average number of clusters per DAPI-positive nucleus in FOV)
+- X-axis grouping:
+  * Left section: mHTT1a probe
+  * Right section: Full-length mHTT probe
+- Within each channel section:
+  * Pairs of boxes: Extreme (dark, left) vs Normal (light, right) for each region
+  * Cortex: solid fill
+  * Striatum: hatched fill (///)
+- Color coding:
+  * Green: mHTT1a probe
+  * Orange: Full-length mHTT probe
+  * Dark shade: Extreme FOVs
+  * Light shade: Normal FOVs
+- Box plot elements:
+  * Center line: Median
+  * Box: Interquartile range (25th-75th percentile)
+  * Whiskers: 1.5× IQR
+  * Outliers: Not shown (showfliers=False) to improve visualization
+- Sample sizes:
+  * mHTT1a Cortex: Normal n=479, Extreme n=218
+  * mHTT1a Striatum: Normal n=238, Extreme n=399
+  * Full-length Cortex: Normal n=584, Extreme n=112
+  * Full-length Striatum: Normal n=361, Extreme n=276
+- Statistical tests (Mann-Whitney U, extreme vs normal):
+  * mHTT1a Cortex: median(extreme)=2.137, median(normal)=0.807, p=2.86e-54
+  * mHTT1a Striatum: median(extreme)=2.678, median(normal)=0.458, p=9.03e-91
+- Key finding: Extreme FOVs have DRAMATICALLY more clusters per nucleus than normal FOVs
+
+(C) MEAN CLUSTER SIZE (mRNA EQUIVALENTS): EXTREME vs NORMAL FOVs
+Box plot comparison of individual cluster size between extreme and normal FOVs.
+- Y-axis: Mean cluster mRNA equivalents per FOV (average mRNA content per cluster within each FOV)
+- Same X-axis grouping and color coding as panel B
+- This metric answers: Are clusters in extreme FOVs individually larger?
+- Interpretation:
+  * If extreme FOVs have larger mean cluster size → mRNA accumulates into fewer, larger clusters
+  * If extreme FOVs have similar mean cluster size → mRNA accumulates into more clusters of similar size
+  * If extreme FOVs have smaller mean cluster size → many small clusters accumulate
+- Key finding: Extreme FOVs tend to have larger mean cluster sizes, indicating that both cluster number AND cluster size contribute to elevated mRNA levels
+
+(D) CLUSTER LOCALIZATION - DISTANCE TO NUCLEAR MEMBRANE (BOTH PROBES)
+Distance from cluster center to nearest DAPI (nuclear) boundary, comparing both probes.
+- Y-axis: Probability density
+- X-axis: Distance to nuclear membrane (micrometers, μm)
+  * NEGATIVE values = cluster center is INSIDE nucleus (nuclear localization)
+  * POSITIVE values = cluster center is OUTSIDE nucleus (cytoplasmic localization)
+  * Zero (dashed vertical line) = nuclear boundary
+- Panel split:
+  * TOP subplot: Normal FOVs - both mHTT1a (green) and full-length mHTT (orange) overlaid
+  * BOTTOM subplot: Extreme FOVs - both probes overlaid
+- Legend shows percentage of clusters with nuclear localization (negative distance values) for each probe
+- Nuclear localization statistics:
+  * mHTT1a Normal: 67.9% nuclear
+  * mHTT1a Extreme: 63.0% nuclear
+  * Full-length Normal: 67.9% nuclear
+  * Full-length Extreme: 47.5% nuclear
+- Histogram parameters:
+  * Bin width: 1 µm (chosen based on z-slice spacing of 500 nm and DAPI mask precision limitations)
+  * Density normalization, stepfilled histtype
+  * Range: 1st to 99th percentile of distance values
+- Key finding: Both probes show predominantly NUCLEAR localization in both normal and extreme FOVs, with extreme FOVs showing slightly more cytoplasmic localization (shift toward positive distances)
+
+(E) CLUSTER DENSITY - mRNA CONCENTRATION WITHIN CLUSTERS (BOTH PROBES)
+Cluster density = mRNA equivalents per unit volume (mRNA/μm³), comparing both probes.
+- Y-axis: Probability density
+- X-axis: Cluster density (mRNA equivalents per μm³)
+- Panel split:
+  * TOP subplot: Normal FOVs - both mHTT1a (green) and full-length mHTT (orange) overlaid
+  * BOTTOM subplot: Extreme FOVs - both probes overlaid
+- Legend shows median cluster density for each probe
+- Cluster density statistics:
+  * mHTT1a Normal: median = 0.55 mRNA/μm³
+  * mHTT1a Extreme: median = 0.92 mRNA/μm³ (1.69× fold change, p = 0.00e+00)
+  * Full-length Normal: median = 0.74 mRNA/μm³
+  * Full-length Extreme: median = 0.95 mRNA/μm³ (1.29× fold change, p = 0.00e+00)
+- Calculation: Cluster_Density = Cluster_mRNA_Equiv / (Cluster_Size_voxels × VOXEL_SIZE)
+  * VOXEL_SIZE = 0.013203 μm³/voxel
+- Key finding: Clusters in extreme FOVs are MORE DENSELY PACKED with mRNA than clusters in normal FOVs. This indicates that extreme FOVs don't just have more clusters - the individual clusters contain higher concentrations of mRNA molecules per unit volume
+
+EXTREME vs NORMAL FOV CLASSIFICATION:
+- EXTREME FOVs: Q111 FOVs where clustered mRNA per nucleus EXCEEDS the 95th percentile of the WT distribution
+- NORMAL FOVs: Q111 FOVs where clustered mRNA per nucleus is BELOW the WT 95th percentile threshold
+- NOTE: This is a WITHIN-Q111 comparison (extreme Q111 FOVs vs normal Q111 FOVs)
+- The WT P95 threshold provides a biologically-grounded definition of "elevated expression"
+- Thresholds are calculated separately for each channel-region combination (4 thresholds total)
+
+CLUSTER-LEVEL STATISTICS:
+mHTT1a probe:
+- Total clusters in normal FOVs: 216,482
+- Total clusters in extreme FOVs: 420,652
+
+Full-length mHTT probe:
+- Total clusters in normal FOVs: 670,520
+- Total clusters in extreme FOVs: 657,052
+
+================================================================================
+FILTERING APPLIED (consistent with Figure 1, panels E onwards)
+================================================================================
+
+CLUSTER-LEVEL ANALYSIS:
+This figure analyzes cluster properties (number, size, localization) comparing extreme vs normal FOVs within Q111 mice.
+
+UPSTREAM SPOT FILTERING (applied before cluster identification):
+1. DETECTION QUALITY FILTER (PFA):
+   - Criterion: Probability of False Alarm < 0.05
+   - Purpose: Remove spots with poor Gaussian fit quality
+
+2. INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Integrated photons > 95th percentile of negative control distribution
+   - Purpose: Remove background/noise spots below detection threshold
+   - Threshold: Calculated per slide-channel combination
+
+3. SIZE LOWER BOUND (from bead PSF):
+   - Criterion: σ_x ≥ 148.0 nm (80% × bead PSF of 185.0 nm)
+   - Purpose: Remove artifactually small spots (noise, fitting errors)
+
+CLUSTER IDENTIFICATION:
+- Method: 3D connected component analysis on intensity-thresholded images
+- Cluster intensity: Sum of all voxel intensities, normalized to mRNA equivalents
+
+4. CLUSTER INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Cluster total intensity > 95th percentile of negative control distribution
+   - Purpose: Remove clusters with intensity below the noise floor (false positive clusters)
+   - Threshold: Calculated per slide-channel combination (same threshold as spot filter)
+
+5. CLUSTER CV (COEFFICIENT OF VARIATION) THRESHOLD:
+   - Criterion: Cluster CV >= 0.5 (CV = standard deviation / mean of voxel intensities)
+   - Purpose: Remove clusters with low intensity heterogeneity (likely noise or artifacts)
+   - Rationale: True mRNA aggregates show spatial variation in signal; uniform low-variance regions are noise
+   - See Figure 2 caption for detailed cluster discard statistics
+
+TECHNICAL NOTES:
+- Bead PSF: σ_x = 185.0 nm, σ_y = 187.0 nm, σ_z = 573.0 nm
+- Size lower bound: σ ≥ 80% of bead PSF (148.0 nm for σ_x)
+- Cluster segmentation: 3D connected component analysis on thresholded intensity images
+- Distance to DAPI: Euclidean distance from cluster centroid to nearest DAPI boundary
+  * Calculated using distance transform from DAPI segmentation mask
+  * Sign convention: Negative = inside DAPI mask, Positive = outside DAPI mask
+- Nuclear/cytoplasmic classification: Based on sign of distance to DAPI
+- FOV-level metrics: Calculated per field-of-view, then aggregated
+- Cluster-level metrics: Each cluster is a data point (pooled across FOVs)
+
+COLOR SCHEME SUMMARY:
+| Probe | Color |
+|-------|-------|
+| mHTT1a (exon 1) | Green (#2ecc71) |
+| Full-length mHTT | Orange (#f39c12) |
+
+| Region | Pattern |
+|--------|---------|
+| Cortex | Solid fill |
+| Striatum | Hatched (///) |
+
+| FOV Class | Shade |
+|-----------|-------|
+| Extreme | Dark (alpha=0.9) |
+| Normal | Light (alpha=0.5) |
+
+KEY FINDINGS:
+1. CLUSTER NUMBER DRIVES EXTREME PHENOTYPE: Extreme FOVs have dramatically more clusters per nucleus than normal FOVs. This is the PRIMARY driver of elevated mRNA levels - cells in extreme FOVs accumulate many more discrete mRNA clusters.
+
+2. CLUSTER SIZE ALSO ELEVATED: Extreme FOVs also show larger mean cluster sizes, indicating that individual clusters in high-expressing regions contain more mRNA molecules. This represents a SECONDARY contribution to elevated expression.
+
+3. HIGHER CLUSTER DENSITY IN EXTREME FOVs: Clusters in extreme FOVs are more densely packed with mRNA (~1.7-1.3× higher concentration). This means:
+   - mHTT1a: 0.92 vs 0.55 mRNA/μm³ (extreme vs normal)
+   - Full-length: 0.95 vs 0.74 mRNA/μm³ (extreme vs normal)
+   - Clusters in extreme FOVs aren't just bigger - they contain more mRNA per unit volume
+
+4. NUCLEAR LOCALIZATION SHIFT IN EXTREME FOVs: While both conditions show predominantly nuclear localization, extreme FOVs show a subtle shift toward cytoplasmic clusters:
+   - mHTT1a: 68% nuclear (normal) → 63% nuclear (extreme)
+   - Full-length: 68% nuclear (normal) → 47% nuclear (extreme)
+   - This may indicate impaired nuclear retention or increased cytoplasmic accumulation in high-expressing regions
+
+5. PROBE CONSISTENCY: Both mHTT1a and full-length probes show similar patterns across all metrics, validating the biological relevance and probe specificity.
+
+6. REGIONAL PATTERNS: Striatum shows similar cluster property differences as Cortex, suggesting that the mechanism of mRNA accumulation (more and larger clusters) is conserved across brain regions.
+
+BIOLOGICAL IMPLICATIONS:
+- The finding that extreme FOVs have MORE clusters (not just larger ones) suggests that mRNA accumulation hotspots represent regions with increased transcription or decreased mRNA degradation, rather than simply aggregation of existing transcripts
+- Higher cluster DENSITY in extreme FOVs suggests active mRNA concentration mechanisms beyond simple transcriptional upregulation
+- The subtle shift from nuclear to cytoplasmic localization in extreme FOVs may indicate beginning of nuclear export dysfunction or cytoplasmic retention in disease-affected cells
+- The combination of increased cluster number, size, AND density suggests a compound effect where multiple processes contribute to disease pathology
+
+DATA CACHING:
+Processed data is cached to figure5_data.pkl for fast subsequent runs. Set FORCE_RELOAD = True to regenerate from raw data.

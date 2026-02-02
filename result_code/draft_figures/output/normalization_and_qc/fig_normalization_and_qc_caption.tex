@@ -1,0 +1,90 @@
+Supplementary Figure: Normalization Verification and Quality Control
+
+This supplementary figure provides comprehensive quality control metrics and normalization verification
+for the RNAscope quantification of mutant fl-HTT mRNA in Q111 Huntington's disease mouse model tissue.
+
+DATA FILTERING AND QUALITY CONTROL:
+- Dataset: Experimental samples from the ExperimentalQ111 - 488mHT - 548mHTa - 647Darp probe set
+- Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  (Slides excluded due to poor UBC positive control expression indicating technical failures)
+- CV threshold for cluster filtering: CV >= 0.5 (to exclude uniform background artifacts)
+- Minimum nuclei per FOV threshold: 40.0
+- Intensity threshold: Per-slide, determined from negative control at quantile=0.95, max PFA=0.05
+
+Q111 DATA SUMMARY:
+- Q111 slides analyzed (n=15): m1a4, m1a5, m1b1, m2a2, m2a3, m2a4, m2a8, m2b1, m2b7, m3a1, m3a2, m3a3, m3a5, m3b2, m3b3
+- Q111 FOVs: 2668
+- Q111 mice (n=15): Q111 12mo #1 aCSF Early STR, Q111 12mo #1 aCSF Late STR, Q111 12mo #1 aCSF Mid STR, Q111 12mo #2 aCSF Late STR, Q111 2mo #1 UNT Late STR, Q111 2mo #2 UNT Mid STR, Q111 2mo #2 UNT early STR, Q111 2mo #3 UNT Early STR, Q111 2mo #3 UNT Late STR, Q111 2mo #3 UNT Mid STR, Q111 6mo #1 NTC Late STR, Q111 6mo #2 NTC Late STR, Q111 6mo #2 NTC Mid STR, Q111 6mo #3 NTC Late STR, Q111 6mo #3 NTC Mid STR
+- Q111 ages (months): 2, 6, 12
+- Q111 atlas coordinate range: 40.00 to 68.00 mm
+
+WILDTYPE DATA SUMMARY:
+- Wildtype slides analyzed (n=3): m2a6, m2b6, m3a4
+- Wildtype FOVs: 566
+- Wildtype mice (n=3): WT 12mo #3 aCSF Late STR, WT 12mo #3 aCSF Mid STR, WT 2mo #2 UNT Early STR
+- Wildtype ages (months): 2, 12
+
+TOTAL FOVs ANALYZED: 3234
+
+VOXEL AND PIXEL PARAMETERS:
+- Pixel size (XY): 162.5 nm
+- Slice depth (Z): 500 nm
+- Voxel size: 0.013203125000000001 $\mu$m$^3$
+- Mean nuclear volume (for nuclei estimation): 716 $\mu$m$^3$
+
+HTT1A CHANNEL STATISTICS:
+- Single spots analyzed: 176,717
+- Clusters analyzed: 636,600
+- Peak intensities from 15 slides
+- Peak intensity mean: 38790.6 ± 15045.5 A.U.
+- Peak intensity range: 21332.2 - 73158.7 A.U.
+- Single spot intensity mean: 53296.5 A.U.
+- Single spot intensity median: 47778.8 A.U.
+- Cluster intensity mean: 346839.5 A.U.
+- Cluster intensity median: 174903.6 A.U.
+
+FL-HTT CHANNEL STATISTICS:
+- Single spots analyzed: 750,745
+- Clusters analyzed: 1,328,634
+- Peak intensities from 15 slides
+- Peak intensity mean: 15854.5 ± 5274.1 A.U.
+- Peak intensity range: 7705.6 - 24479.9 A.U.
+- Single spot intensity mean: 29426.4 A.U.
+- Single spot intensity median: 24122.5 A.U.
+- Cluster intensity mean: 119202.0 A.U.
+- Cluster intensity median: 72865.8 A.U.
+
+NUCLEI PER FOV STATISTICS:
+- Q111 mean nuclei per FOV: 361.3 ± 133.9
+- Q111 median nuclei per FOV: 331.6
+- Q111 nuclei range: 69.6 - 781.9
+- Wildtype mean nuclei per FOV: 311.6
+- Wildtype median nuclei per FOV: 311.6
+
+FIGURE PANELS:
+
+fig\_normalization\_verification:
+- Rows 0-1: Peak intensity vs Age for HTT1a and fl-HTT in Cortex and Striatum
+- Rows 2-3: Peak intensity vs Brain Atlas Coordinate for HTT1a and fl-HTT in Cortex and Striatum
+- Each point represents a slide, colored by mouse ID
+- Pearson correlation coefficients and p-values shown for each panel
+
+fig\_intensity\_distributions (per channel):
+- Row 0: Single spot intensity histograms with KDE for Cortex and Striatum
+- Row 1: Cluster intensity histograms with KDE for Cortex and Striatum
+- Row 2: Box plots comparing single vs clustered mRNA per cell, and total mRNA by region
+- Row 3: Total mRNA per cell vs Age and Brain Atlas Coordinate
+
+fig\_cells\_per\_fov\_qc:
+- Row 0: Distribution of nuclei per FOV by mouse model (Q111 vs WT) with box plots
+- Row 1: Distribution of nuclei per FOV by brain region (Cortex vs Striatum)
+- Row 2: Nuclei per FOV by individual mouse ID
+- Row 3: DAPI volume vs nuclei count correlation, and nuclei count vs age
+
+INTERPRETATION:
+- Peak intensity should be independent of age and atlas coordinate for valid normalization
+- Low correlation coefficients indicate consistent peak intensity across samples
+- Nuclei counts should be above the QC threshold for reliable per-cell quantification
+- Single spots represent individual mRNA molecules; clusters represent mRNA aggregates
+
+Analysis performed with scienceplots style. CV threshold=0.5, Min nuclei=40.0.

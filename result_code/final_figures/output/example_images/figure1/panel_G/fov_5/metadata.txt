@@ -1,0 +1,58 @@
+============================================================
+PANEL G - FOV 5 METADATA (STRICTER filter)
+============================================================
+
+FOV Key: q11115slidesno1june2025--m2a4--region008--248332--n0001
+Slide: m2a4
+Mouse ID: Q111 2mo #2 UNT Mid STR
+Genotype: Q111
+Age: 2.0 months
+Region: Cortex - Primary and secondary motor areas
+Probe Set: ExperimentalQ111 - 488mHT - 548mHTa - 647Darp
+NPZ path: /media/grunwaldlab/SG Skyhawk AI 24TB/Q111 raw data/Q111_15slidesno1_june2025/exported/Slide M2 - A4/Region 008/Slide M2 - A4_Region_8_FOV_332.npz
+
+OVERVIEW IMAGE DYNAMIC RANGES (min, max intensity)
+────────────────────────────────────────────────────────────
+  DAPI (blue):          1571.0 - 15692.0
+  mHTT1a (green):       318.0 - 1165.0
+  full-length (orange): 235.0 - 2177.0
+
+SPOT FILTERING (Panel G - STRICTER than Panel D)
+────────────────────────────────────────────────────────────
+  1. spots_sigma_var.filter_indices (variable sigma fitting passed)
+  2. spots_sigma_var.filter_on_break (breakpoint filter)
+  3. photons > slide/channel threshold (from negative control)
+
+PHOTON THRESHOLDS
+────────────────────────────────────────────────────────────
+  Green: 23237 photons
+  Orange: 13226 photons
+
+FILTERED SPOT COUNTS (STRICTER than Panel D)
+────────────────────────────────────────────────────────────
+  Green (mHTT1a):       20 spots
+  Orange (full-length): 314 spots
+
+ZOOM REGIONS (same locations as Panel D)
+────────────────────────────────────────────────────────────
+  Zoom size: 256 x 256 pixels (41.6 x 41.6 µm)
+
+SCALE BARS
+────────────────────────────────────────────────────────────
+  Overview images: 50 µm (307 pixels)
+  Zoom images:     10 µm (61 pixels)
+
+  GREEN (mHTT1a) zoom:
+    Center (x, y): (415, 1723)
+    Spots in zoom: 0
+    Intensity range: 345.0 - 1621.6
+
+  ORANGE (full-length) zoom:
+    Center (x, y): (481, 800)
+    Spots in zoom: 15
+    Intensity range: 310.0 - 3534.3
+    σₓ range (pixels): 1.13 - 1.69
+    σₓ range (nm): 183.4 - 274.3
+
+NOTE: Panel D uses filter_indices ONLY = MORE spots
+      Panel G adds filter_on_break = FEWER, cleaner single-molecule spots

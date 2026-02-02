@@ -1,0 +1,232 @@
+Figure 4: FOV-level variance and extreme outlier analysis reveals heterogeneous mRNA accumulation in Q111 mice.
+
+OVERVIEW:
+This figure presents a comprehensive analysis of field-of-view (FOV) level heterogeneity in mRNA expression, with a focus on identifying "extreme" FOVs that exceed normal variation. The analysis defines extreme FOVs as those exceeding the 95th percentile of the wildtype distribution, providing a biologically-grounded threshold that accounts for natural variation in healthy tissue. The results reveal that Q111 transgenic mice have a significantly higher proportion of extreme FOVs compared to wildtype controls, indicating disease-associated mRNA accumulation hotspots.
+
+PANEL DESCRIPTIONS:
+
+(A) Placeholder for representative microscopy images showing:
+- Example of a "normal" FOV with typical mRNA expression levels
+- Example of an "extreme" FOV with elevated mRNA accumulation
+- Scale bar and imaging parameters
+
+(B) mHTT1a PROBE: DISTRIBUTION OF CLUSTERED mRNA PER NUCLEUS
+Comparative histogram analysis of mRNA expression levels in Q111 vs WT mice.
+- Data source: FOV-level measurements of clustered mRNA per nucleus
+- X-axis: Clustered mRNA per nucleus (mRNA equivalents)
+  * Main histogram range: 0 to 40 mRNA/nucleus
+  * Number of bins: 10 (bin width = 4.0 mRNA/nucleus)
+  * Tail bin (">40"): Aggregates all values exceeding cutoff to compress extreme outliers
+- Y-axis: Probability density (normalized histogram)
+- Color coding:
+  * Green bars: Q111 transgenic mice
+  * Blue bars: Wildtype (WT) control mice
+- Pattern coding:
+  * Solid bars: Cortex region
+  * Hatched bars (///): Striatum region
+- Grouping: 4 bars per bin (Q111 Cortex, Q111 Striatum, WT Cortex, WT Striatum)
+- Black dashed vertical line: WT 95th percentile threshold (average of Cortex and Striatum)
+  * Cortex P95 threshold: 12.80 mRNA/nucleus
+  * Striatum P95 threshold: 7.76 mRNA/nucleus
+- FOV counts:
+  * Q111 Cortex: n = 697 FOVs
+  * Q111 Striatum: n = 637 FOVs
+  * WT Cortex: n = 134 FOVs
+  * WT Striatum: n = 149 FOVs
+- Key statistics:
+  * Q111 Cortex median: 7.47 mRNA/nucleus
+  * WT Cortex median: 7.47 mRNA/nucleus
+  * Q111 Striatum median: 11.84 mRNA/nucleus
+  * WT Striatum median: 3.67 mRNA/nucleus
+- Statistical comparison (Mann-Whitney U test):
+  * Cortex Q111 vs WT: p = 7.58e-04
+  * Striatum Q111 vs WT: p = 4.57e-31
+
+(C) FULL-LENGTH mHTT PROBE: DISTRIBUTION OF CLUSTERED mRNA PER NUCLEUS
+Same analysis as panel B for the full-length mHTT probe.
+- X-axis: Main histogram range: 0 to 50 mRNA/nucleus
+  * Number of bins: 10 (bin width = 5.0 mRNA/nucleus)
+  * Tail bin (">50"): Aggregates all values exceeding cutoff
+- WT P95 thresholds:
+  * Cortex: 38.43 mRNA/nucleus
+  * Striatum: 20.57 mRNA/nucleus
+- FOV counts:
+  * Q111 Cortex: n = 697 FOVs
+  * Q111 Striatum: n = 637 FOVs
+  * WT Cortex: n = 134 FOVs
+  * WT Striatum: n = 149 FOVs
+- Key statistics:
+  * Q111 Cortex median: 13.52 mRNA/nucleus
+  * WT Cortex median: 13.47 mRNA/nucleus
+  * Q111 Striatum median: 17.68 mRNA/nucleus
+  * WT Striatum median: 9.12 mRNA/nucleus
+- Statistical comparison:
+  * Cortex Q111 vs WT: p = 7.99e-01
+  * Striatum Q111 vs WT: p = 3.70e-19
+- Y-axis shared with panel B for direct comparison
+
+(D) EXTREME FOV PERCENTAGE BY AGE
+Age-stratified analysis of extreme FOV prevalence.
+- X-axis: Age groups (months) - Q111 ages on left, WT ages on right
+- Y-axis: Percentage of FOVs classified as "extreme" (exceeding WT P95 threshold)
+- Bar grouping: 4 bars per age group representing each channel-region combination
+- Color and pattern coding:
+  * Green solid: mHTT1a Cortex (Q111)
+  * Green hatched: mHTT1a Striatum (Q111)
+  * Orange solid: Full-length mHTT Cortex (Q111)
+  * Orange hatched: Full-length mHTT Striatum (Q111)
+  * Blue solid/hatched: WT mHTT1a (expected ~5%)
+  * Purple solid/hatched: WT full-length (expected ~5%)
+- Vertical dashed line separates Q111 (left) from WT (right) data
+- WT bars show ACTUAL percentage of WT FOVs exceeding their own P95 threshold
+  * Expected value: ~5% by definition (95th percentile)
+  * Observed variation around 5% reflects sampling variability
+- Interpretation:
+  * Age-related increases in extreme FOV percentage may indicate disease progression
+  * Comparison across channels reveals which probe is more sensitive to disease effects
+  * Region-specific patterns (Cortex vs Striatum) indicate differential vulnerability
+
+(E) EXTREME FOV PERCENTAGE BY ATLAS COORDINATE
+Anatomical location analysis of extreme FOV prevalence.
+- X-axis: Brain atlas coordinate in 25 μm units from Bregma
+  * Left side: Q111 coordinates
+  * Right side: WT coordinates
+- Y-axis: Percentage of FOVs classified as "extreme" (0-100%)
+- Same color/pattern coding as panel D
+- Vertical dashed line separates Q111 (left) from WT (right) data
+- Interpretation:
+  * Anterior-posterior gradients in extreme FOV prevalence
+  * Hotspot identification: coordinates with elevated extreme FOV percentage
+  * Comparison with WT reveals disease-specific regional vulnerability
+
+(F) EXTREME FOV PERCENTAGE BY MOUSE ID (GROUPED BY AGE)
+Per-animal analysis of extreme FOV prevalence, organized by age brackets.
+- X-axis: Individual mouse identifiers (anonymized as Q#1, Q#2, etc. for Q111; W#1, W#2, etc. for WT)
+  * Data grouped by age brackets (2mo, 6mo, 12mo)
+  * Within each age bracket: Q111 mice on left, WT mice on right
+  * Solid vertical lines separate age brackets
+  * Dashed vertical lines separate Q111 from WT within each age
+- Y-axis: Percentage of FOVs classified as "extreme" (0-100%)
+- Same color/pattern coding as panels D and E
+- Age bracket labels displayed at top of each group
+- Interpretation:
+  * Inter-individual variability in disease severity within each age
+  * Age-dependent trends in extreme FOV prevalence
+  * Identification of "high-accumulator" animals at each age
+  * Quality control: WT mice should show ~5% extreme FOVs across all conditions
+
+================================================================================
+MOUSE ID MAPPING TABLE
+================================================================================
+The following table maps anonymized mouse IDs used in panel F to actual mouse identifiers.
+This mapping is consistent with Figure 3, panel F.
+
+Q111 MICE:
+  Q#1.1 → Q111 2mo #1 UNT Late STR
+  Q#2.1 → Q111 2mo #2 UNT Mid STR
+  Q#2.2 → Q111 2mo #2 UNT early STR
+  Q#3.1 → Q111 2mo #3 UNT Early STR
+  Q#3.2 → Q111 2mo #3 UNT Late STR
+  Q#3.3 → Q111 2mo #3 UNT Mid STR
+  Q#4.1 → Q111 6mo #1 NTC Late STR
+  Q#5.1 → Q111 6mo #2 NTC Late STR
+  Q#5.2 → Q111 6mo #2 NTC Mid STR
+  Q#6.1 → Q111 6mo #3 NTC Late STR
+  Q#6.2 → Q111 6mo #3 NTC Mid STR
+  Q#7.1 → Q111 12mo #1 aCSF Early STR
+  Q#7.2 → Q111 12mo #1 aCSF Late STR
+  Q#7.3 → Q111 12mo #1 aCSF Mid STR
+  Q#8.1 → Q111 12mo #2 aCSF Late STR
+
+WILDTYPE (WT) MICE:
+  W#1.1 → WT 2mo #2 UNT Early STR
+  W#2.1 → WT 12mo #3 aCSF Late STR
+  W#2.2 → WT 12mo #3 aCSF Mid STR
+
+EXTREME FOV DEFINITION:
+"Extreme" FOVs are defined as those with clustered mRNA per nucleus EXCEEDING the 95th percentile of the wildtype distribution. This threshold is calculated SEPARATELY for each of 4 channel-region combinations:
+1. mHTT1a + Cortex → threshold = 12.80 mRNA/nucleus
+2. mHTT1a + Striatum → threshold = 7.76 mRNA/nucleus
+3. Full-length mHTT + Cortex → threshold = 38.43 mRNA/nucleus
+4. Full-length mHTT + Striatum → threshold = 20.57 mRNA/nucleus
+
+This approach ensures that:
+- The threshold is biologically meaningful (based on healthy tissue variation)
+- Region-specific differences in baseline expression are accounted for
+- Channel-specific detection efficiencies are normalized
+- By definition, ~5% of WT FOVs will be "extreme" (sampling variability causes deviation from exactly 5%)
+
+EXTREME FOV STATISTICS (Q111 vs expected 5%):
+- mHTT1a Cortex: 215 extreme / 697 total = 30.8%
+- mHTT1a Striatum: 395 extreme / 637 total = 62.0%
+- Full-length Cortex: 112 extreme / 697 total = 16.1%
+- Full-length Striatum: 277 extreme / 637 total = 43.5%
+
+================================================================================
+FILTERING APPLIED (consistent with Figure 1, panels E onwards)
+================================================================================
+
+FOV-LEVEL ANALYSIS:
+This figure analyzes mRNA expression at the FOV (field-of-view) level, comparing Q111 vs WT distributions and identifying "extreme" FOVs.
+
+UPSTREAM SPOT FILTERING (applied before cluster identification):
+1. DETECTION QUALITY FILTER (PFA):
+   - Criterion: Probability of False Alarm < 0.05
+   - Purpose: Remove spots with poor Gaussian fit quality
+
+2. INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Integrated photons > 95th percentile of negative control distribution
+   - Purpose: Remove background/noise spots below detection threshold
+   - Threshold: Calculated per slide-channel combination
+
+3. SIZE LOWER BOUND (from bead PSF):
+   - Criterion: σ_x ≥ 148.0 nm (80% × bead PSF of 185.0 nm)
+   - Purpose: Remove artifactually small spots (noise, fitting errors)
+
+CLUSTER IDENTIFICATION:
+- Method: 3D connected component analysis on intensity-thresholded images
+- Cluster intensity: Sum of all voxel intensities, normalized to mRNA equivalents
+
+4. CLUSTER INTENSITY THRESHOLD (from negative controls):
+   - Criterion: Cluster total intensity > 95th percentile of negative control distribution
+   - Purpose: Remove clusters with intensity below the noise floor (false positive clusters)
+   - Threshold: Calculated per slide-channel combination (same threshold as spot filter)
+
+5. CLUSTER CV (COEFFICIENT OF VARIATION) THRESHOLD:
+   - Criterion: Cluster CV >= 0.5 (CV = standard deviation / mean of voxel intensities)
+   - Purpose: Remove clusters with low intensity heterogeneity (likely noise or artifacts)
+   - Rationale: True mRNA aggregates show spatial variation in signal; uniform low-variance regions are noise
+   - See Figure 2 caption for detailed cluster discard statistics
+
+FOV-LEVEL AGGREGATION:
+- Clustered mRNA per nucleus: (Sum of cluster intensities) / (Number of DAPI-positive nuclei)
+- Minimum nuclei threshold: FOVs with < 40 nuclei are excluded
+
+TECHNICAL NOTES:
+- Bead PSF: σ_x = 185.0 nm, σ_y = 187.0 nm, σ_z = 573.0 nm
+- Size lower bound: σ ≥ 80% of bead PSF (148.0 nm for σ_x)
+- Excluded slides: ['m1a2', 'm1b5', 'm2b5', 'm2b2', 'm2a7', 'm2a1', 'm2b4', 'm2b5', 'm3b4', 'm1a1', 'm1b2', 'm1b3', 'm1b4', 'm3b5'] (technical failures - imaging artifacts or tissue damage)
+- Statistical test: Mann-Whitney U test (non-parametric, two-sided)
+- Histogram tail compression: Values > cutoff aggregated into single ">X" bin to improve visualization
+
+COLOR SCHEME SUMMARY:
+| Condition | mHTT1a | Full-length mHTT |
+|-----------|--------|------------------|
+| Q111 | Green (#2ecc71) | Orange (#f39c12) |
+| WT | Blue (#3498db) | Purple (#9b59b6) |
+
+| Region | Pattern |
+|--------|---------|
+| Cortex | Solid fill |
+| Striatum | Hatched (///) |
+
+KEY FINDINGS:
+1. Q111 MICE HAVE ELEVATED EXTREME FOV PERCENTAGE: Across all channel-region combinations, Q111 mice show significantly higher proportion of extreme FOVs compared to the expected 5% from WT controls
+2. REGIONAL DIFFERENCES: Striatum shows higher extreme FOV percentages than Cortex, consistent with striatal vulnerability in Huntington's disease
+3. AGE-DEPENDENT PROGRESSION: Extreme FOV percentage tends to increase with age, suggesting progressive mRNA accumulation
+4. INTER-INDIVIDUAL VARIABILITY: Some Q111 mice show substantially higher extreme FOV percentages, indicating biological heterogeneity in disease severity
+5. ANATOMICAL HOTSPOTS: Certain atlas coordinates show elevated extreme FOV prevalence, potentially indicating regionally-selective vulnerability
+6. PROBE CONSISTENCY: Both mHTT1a and full-length probes show similar patterns, validating the biological relevance of the findings
+
+DATA CACHING:
+Processed data is cached to figure4_data.pkl for fast subsequent runs. Set FORCE_RELOAD = True to regenerate from raw data.

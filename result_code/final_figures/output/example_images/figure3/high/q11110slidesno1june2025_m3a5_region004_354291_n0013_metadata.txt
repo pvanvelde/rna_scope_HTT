@@ -1,0 +1,9 @@
+FOV Key: q11110slidesno1june2025--m3a5--region004--354291--n0013
+Slide: m3a5
+Mouse Model: Q111
+Age: 6 months
+Region: Striatum
+Number of Nuclei: 224.9
+
+mHTT1a (green): 62.37 mRNA/nucleus
+Full-length mHTT (orange): 74.07 mRNA/nucleus

@@ -1,0 +1,168 @@
+================================================================================
+FIGURE: Cluster Properties - Extreme vs Normal FOVs - full length mHTT
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure compares cluster-level properties between extreme and normal FOVs
+within Q111 transgenic mice only. FOVs are classified as 'extreme' if their
+Clustered mRNA/Cell exceeds the 95th percentile of the Wildtype distribution.
+
+The analysis addresses the key question: What makes extreme Q111 FOVs different
+from normal Q111 FOVs? Note: Wildtype data is only used to define the threshold;
+all comparisons shown are between Q111 extreme vs Q111 normal FOVs.
+
+Biological context:
+  - full length mHTT represents completely spliced transcripts encoding full huntingtin protein
+  - Clusters indicate sites of active transcription or mRNA aggregation
+  - Higher cluster abundance may indicate pathological mRNA accumulation
+
+DATASET STATISTICS (Q111 only):
+--------------------------------------------------------------------------------
+Cortex:
+  WT P95 threshold: 38.26 mRNA/cell
+  Extreme FOVs: 112
+  Normal FOVs: 584
+
+Striatum:
+  WT P95 threshold: 20.55 mRNA/cell
+  Extreme FOVs: 273
+  Normal FOVs: 364
+
+PANEL DESCRIPTIONS WITH STATISTICAL RESULTS:
+--------------------------------------------------------------------------------
+
+(A-B) CLUSTERS PER CELL:
+Box plots comparing the number of clusters per cell between normal and extreme
+FOVs. Outliers hidden for clarity (y-axis capped at 99th percentile).
+(A) Cortex, (B) Striatum.
+
+  Cortex:
+    Extreme: median=7.74, IQR=3.92
+    Normal: median=1.64, IQR=1.78
+    Fold change: 4.7×
+    Mann-Whitney U p-value: 1.41e-54
+
+  Striatum:
+    Extreme: median=5.69, IQR=2.69
+    Normal: median=1.76, IQR=1.45
+    Fold change: 3.2×
+    Mann-Whitney U p-value: 1.52e-96
+
+(C-D) CLUSTER mRNA EQUIVALENTS DISTRIBUTION:
+Histograms of individual cluster sizes (mRNA equivalents). Each cluster's
+intensity is divided by the slide-specific single-spot peak intensity.
+(C) Cortex, (D) Striatum.
+
+  Cortex:
+    Extreme clusters: n=231062, median=5.4 mRNA equiv.
+    Normal clusters: n=447074, median=3.8 mRNA equiv.
+    Mann-Whitney U p-value: 0.00e+00
+
+  Striatum:
+    Extreme clusters: n=421306, median=4.6 mRNA equiv.
+    Normal clusters: n=228842, median=3.9 mRNA equiv.
+    Mann-Whitney U p-value: 0.00e+00
+
+(E-F) CLUSTER LOCALIZATION (Distance to DAPI):
+Distribution of signed distance from cluster center to nearest DAPI edge.
+Negative = nuclear (inside DAPI), Positive = cytoplasmic (outside DAPI).
+Dashed line marks the nuclear boundary (distance = 0).
+(E) Cortex, (F) Striatum.
+
+  Cortex:
+    Extreme: median=0.35 µm, 45.3% nuclear
+    Normal: median=-1.11 µm, 67.7% nuclear
+    Mann-Whitney U p-value: 0.00e+00
+
+  Striatum:
+    Extreme: median=0.13 µm, 48.6% nuclear
+    Normal: median=-1.07 µm, 67.7% nuclear
+    Mann-Whitney U p-value: 0.00e+00
+
+(G-H) FRACTION NUCLEAR PER FOV:
+Box plots of the percentage of clusters located within the nucleus per FOV.
+Nuclear clusters defined as those with distance to DAPI < 0.
+(G) Cortex, (H) Striatum.
+
+  Cortex:
+    Extreme: median=46.4%
+    Normal: median=71.8%
+    Mann-Whitney U p-value: 2.56e-32
+
+  Striatum:
+    Extreme: median=48.4%
+    Normal: median=65.7%
+    Mann-Whitney U p-value: 9.23e-35
+
+(I-J) MEAN CLUSTER mRNA PER FOV:
+Box plots of mean cluster mRNA equivalents per FOV. Shows whether extreme FOVs
+have larger individual clusters on average. Outliers hidden for clarity.
+(I) Cortex, (J) Striatum.
+
+  Cortex:
+    Extreme: median=9.4 mRNA equiv.
+    Normal: median=5.5 mRNA equiv.
+    Mann-Whitney U p-value: 3.31e-17
+
+  Striatum:
+    Extreme: median=6.7 mRNA equiv.
+    Normal: median=5.2 mRNA equiv.
+    Mann-Whitney U p-value: 7.35e-14
+
+(K-L) SCATTER: CLUSTERS vs mRNA/CELL:
+Scatter plot showing relationship between number of clusters per cell and
+total clustered mRNA per cell. Dashed line = WT P95 threshold.
+(K) Cortex, (L) Striatum.
+
+KEY CONCLUSIONS:
+--------------------------------------------------------------------------------
+1. CLUSTER ABUNDANCE:
+   Extreme FOVs have dramatically more clusters per cell than normal FOVs:
+  - Cortex: Extreme FOVs have 4.7× more clusters/cell (p=1.41e-54)
+  - Striatum: Extreme FOVs have 3.2× more clusters/cell (p=1.52e-96)
+
+2. NUCLEAR LOCALIZATION:
+   Clusters are predominantly nuclear (~90%), with slight differences:
+  - Cortex: Normal FOVs 25.4% more nuclear (p=2.56e-32)
+  - Striatum: Normal FOVs 17.4% more nuclear (p=9.23e-35)
+
+3. CLUSTER SIZE:
+   Individual clusters in extreme FOVs tend to be larger than in normal FOVs,
+   contributing to the elevated total clustered mRNA per cell.
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Sea Green (#2E8B57): Normal FOVs (Clustered mRNA/Cell ≤ WT P95)
+Dark Red (#8B0000): Extreme FOVs (Clustered mRNA/Cell > WT P95)
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Extreme FOV definition:
+  - Threshold = 95th percentile of Wildtype clustered mRNA/cell distribution
+  - FOVs with values exceeding this threshold classified as 'extreme'
+
+Cluster detection:
+  - DBSCAN algorithm (eps=0.75 µm, min_samples=3)
+  - Only clusters with intensity > 2.5 × slide-specific peak intensity
+  - Peak intensity = mode of single spot intensity distribution (KDE)
+
+Cluster mRNA equivalents:
+  - Cluster intensity / slide-specific peak intensity
+  - Represents the number of mRNA molecules within the cluster
+
+Distance to DAPI:
+  - Signed distance from cluster center to nearest DAPI edge
+  - Negative values = inside nucleus, Positive values = cytoplasm
+
+Statistical test:
+  - Mann-Whitney U test (two-sided): Non-parametric comparison of distributions
+  - Chosen because data may not be normally distributed
+
+Quality control:
+  - Slides m1a2 and m1b5 excluded (technical failures based on UBC analysis)
+  - FOVs with < minimum nuclei threshold excluded
+
+================================================================================
+Generated: 2026-01-12 10:44:06
+================================================================================

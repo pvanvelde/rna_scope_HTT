@@ -1,0 +1,95 @@
+View Clusters by Density - Options
+===================================
+
+Usage:
+    python view_clusters_by_density.py [OPTIONS]
+
+Options:
+    --data_dir DIR          Directory containing cluster_data.csv and cluster_images/
+                            Default: ./output
+
+    --min_density FLOAT     Minimum density threshold (mRNA/µm³)
+    --max_density FLOAT     Maximum density threshold (mRNA/µm³)
+
+    --min_volume FLOAT      Minimum volume threshold (µm³)
+    --max_volume FLOAT      Maximum volume threshold (µm³)
+
+    --min_intensity FLOAT   Minimum raw intensity
+    --max_intensity FLOAT   Maximum raw intensity
+
+    --channel STR           Filter by channel: green or orange
+
+    --slide STR             Filter by slide (e.g., m1a1, m2b4)
+
+    --no_threshold_filter   Include clusters that do NOT pass the negative control threshold
+                            (by default, only clusters passing threshold are shown)
+
+    --below_reference       Show only clusters BELOW the reference line (low density, potential background)
+    --above_reference       Show only clusters ABOVE the reference line (high density)
+    --reference_factor FLOAT Factor for reference line filtering and display
+                            Default: 0.5 (shows 0.5x and 2x median density lines on log-log plot)
+                            With --below_reference: shows clusters with density < factor * median
+                            With --above_reference: shows clusters with density > (1/factor) * median
+
+    --n_clusters INT        Max number of clusters to display
+                            Default: 100 for montage, unlimited for napari
+
+    --sort_by FIELD         Sort clusters by: density, volume_um3, mrna_equiv, raw_intensity
+                            Default: density
+
+    --ascending             Sort in ascending order (default: descending)
+
+    --save_montage FILE     Save montage to file instead of displaying
+
+    --n_cols INT            Number of columns in montage
+                            Default: 10
+
+    --napari                View in napari (scrollable stack)
+
+    --no_distributions      Skip showing distribution plots (shown by default)
+
+
+Examples:
+---------
+
+# View all clusters in napari (sorted by density, descending)
+python view_clusters_by_density.py --napari
+
+# View all clusters (including those below threshold)
+python view_clusters_by_density.py --napari --no_threshold_filter
+
+# Filter by density range
+python view_clusters_by_density.py --napari --min_density 0.5 --max_density 1.0
+
+# Filter by volume
+python view_clusters_by_density.py --napari --min_volume 10 --max_volume 50
+
+# Filter by channel
+python view_clusters_by_density.py --napari --channel green
+
+# Filter by slide
+python view_clusters_by_density.py --napari --slide m2a4
+
+# Combine multiple filters
+python view_clusters_by_density.py --napari --channel orange --min_volume 5
+
+# Sort by volume (ascending - smallest first)
+python view_clusters_by_density.py --napari --sort_by volume_um3 --ascending
+
+# Save a montage of low-density clusters
+python view_clusters_by_density.py --max_density 0.5 --save_montage low_density.png
+
+# Display montage with more columns
+python view_clusters_by_density.py --n_cols 15 --n_clusters 150
+
+# View clusters below the reference line (potential background, low density)
+python view_clusters_by_density.py --napari --below_reference
+
+# View clusters above the reference line (high density)
+python view_clusters_by_density.py --napari --above_reference
+
+# Adjust the reference factor (default 0.5 = below 0.5x or above 2x median)
+python view_clusters_by_density.py --napari --below_reference --reference_factor 0.3
+
+# Change the reference lines shown on log-log plot (without filtering)
+python view_clusters_by_density.py --reference_factor 0.25

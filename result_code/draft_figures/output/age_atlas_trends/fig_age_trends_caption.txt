@@ -1,0 +1,138 @@
+================================================================================
+FIGURE: mRNA Expression Age Trends (Q111 vs Wildtype)
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure displays longitudinal age-dependent expression patterns of HTT1a and
+fl-HTT transcripts in Q111 transgenic mice compared to wildtype controls
+across cortical and striatal regions. Each row presents a different quantification
+metric: total mRNA, single mRNA, and clustered mRNA per cell.
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total FOVs: 3234
+  Q111: 2668 FOVs (82.5%)
+  Wildtype: 566 FOVs (17.5%)
+
+Age timepoints: 2.0 months, 6.0 months, 12.0 months
+  2.0mo: Q111=1030 FOVs, WT=192 FOVs
+  6.0mo: Q111=954 FOVs, WT=0 FOVs
+  12.0mo: Q111=684 FOVs, WT=374 FOVs
+
+PANEL ORGANIZATION:
+--------------------------------------------------------------------------------
+Row 1 (Panels A-B): Total mRNA per cell
+Row 2 (Panels C-D): Single mRNA per cell
+Row 3 (Panels E-F): Clustered mRNA per cell
+
+Left column: Individual FOV scatter plots with horizontal offset
+  - Q111: circles, offset -0.1 months
+  - Wildtype: squares, offset +0.3 months
+Right column: Binned age trends (mean±SEM)
+
+ROW 1 - TOTAL MRNA (A, B):
+--------------------------------------------------------------------------------
+
+Cortex:
+  2.0mo Q111 HTT1a: n=335, mean=7.80±6.95 (SEM=0.38), median=6.06
+  2.0mo Wildtype HTT1a: n=51, mean=3.98±2.55 (SEM=0.36), median=3.43
+  2.0mo Q111 fl-HTT: n=335, mean=11.64±6.46 (SEM=0.35), median=11.50
+  2.0mo Wildtype fl-HTT: n=51, mean=9.94±4.85 (SEM=0.68), median=10.67
+  6.0mo Q111 HTT1a: n=193, mean=13.95±11.87 (SEM=0.85), median=10.51
+  6.0mo Q111 fl-HTT: n=193, mean=26.05±23.30 (SEM=1.68), median=21.73
+  12.0mo Q111 HTT1a: n=169, mean=24.05±22.35 (SEM=1.72), median=17.67
+  12.0mo Wildtype HTT1a: n=83, mean=9.73±4.47 (SEM=0.49), median=9.47
+  12.0mo Q111 fl-HTT: n=169, mean=40.96±31.53 (SEM=2.43), median=31.37
+  12.0mo Wildtype fl-HTT: n=83, mean=24.59±10.69 (SEM=1.17), median=22.47
+
+Striatum:
+  2.0mo Q111 HTT1a: n=180, mean=5.54±4.32 (SEM=0.32), median=4.84
+  2.0mo Wildtype HTT1a: n=45, mean=1.88±3.16 (SEM=0.47), median=1.22
+  2.0mo Q111 fl-HTT: n=180, mean=11.61±6.99 (SEM=0.52), median=11.69
+  2.0mo Wildtype fl-HTT: n=45, mean=5.00±3.15 (SEM=0.47), median=4.40
+  6.0mo Q111 HTT1a: n=284, mean=22.90±17.62 (SEM=1.05), median=17.55
+  6.0mo Q111 fl-HTT: n=284, mean=25.72±18.79 (SEM=1.11), median=23.71
+  12.0mo Q111 HTT1a: n=173, mean=30.69±23.10 (SEM=1.76), median=26.81
+  12.0mo Wildtype HTT1a: n=104, mean=4.94±1.96 (SEM=0.19), median=4.99
+  12.0mo Q111 fl-HTT: n=173, mean=39.52±21.18 (SEM=1.61), median=38.08
+  12.0mo Wildtype fl-HTT: n=104, mean=13.15±5.17 (SEM=0.51), median=12.44
+
+ROW 2 - SINGLE MRNA (C, D):
+--------------------------------------------------------------------------------
+
+Cortex:
+  2.0mo Q111 HTT1a: n=335, mean=0.33±0.40 (SEM=0.02), median=0.15
+  2.0mo Wildtype HTT1a: n=51, mean=0.34±0.20 (SEM=0.03), median=0.32
+  2.0mo Q111 fl-HTT: n=335, mean=1.16±0.75 (SEM=0.04), median=1.02
+  2.0mo Wildtype fl-HTT: n=51, mean=1.59±0.56 (SEM=0.08), median=1.55
+  6.0mo Q111 HTT1a: n=193, mean=0.57±0.29 (SEM=0.02), median=0.51
+  6.0mo Q111 fl-HTT: n=193, mean=2.34±1.71 (SEM=0.12), median=2.02
+  12.0mo Q111 HTT1a: n=169, mean=0.31±0.21 (SEM=0.02), median=0.24
+  12.0mo Wildtype HTT1a: n=83, mean=0.54±0.80 (SEM=0.09), median=0.38
+  12.0mo Q111 fl-HTT: n=169, mean=2.27±1.54 (SEM=0.12), median=2.01
+  12.0mo Wildtype fl-HTT: n=83, mean=2.52±0.89 (SEM=0.10), median=2.54
+
+Striatum:
+  2.0mo Q111 HTT1a: n=180, mean=0.21±0.23 (SEM=0.02), median=0.14
+  2.0mo Wildtype HTT1a: n=45, mean=0.13±0.05 (SEM=0.01), median=0.13
+  2.0mo Q111 fl-HTT: n=180, mean=1.06±0.69 (SEM=0.05), median=0.97
+  2.0mo Wildtype fl-HTT: n=45, mean=1.10±0.35 (SEM=0.05), median=1.10
+  6.0mo Q111 HTT1a: n=284, mean=0.64±0.28 (SEM=0.02), median=0.60
+  6.0mo Q111 fl-HTT: n=284, mean=2.08±1.40 (SEM=0.08), median=1.57
+  12.0mo Q111 HTT1a: n=173, mean=0.54±0.34 (SEM=0.03), median=0.56
+  12.0mo Wildtype HTT1a: n=104, mean=0.18±0.09 (SEM=0.01), median=0.18
+  12.0mo Q111 fl-HTT: n=173, mean=2.22±1.29 (SEM=0.10), median=2.05
+  12.0mo Wildtype fl-HTT: n=104, mean=1.31±0.50 (SEM=0.05), median=1.25
+
+ROW 3 - CLUSTERED MRNA (E, F):
+--------------------------------------------------------------------------------
+
+Cortex:
+  2.0mo Q111 HTT1a: n=335, mean=7.47±6.67 (SEM=0.36), median=5.87
+  2.0mo Wildtype HTT1a: n=51, mean=3.64±2.41 (SEM=0.34), median=3.05
+  2.0mo Q111 fl-HTT: n=335, mean=10.48±6.02 (SEM=0.33), median=10.25
+  2.0mo Wildtype fl-HTT: n=51, mean=8.35±4.68 (SEM=0.66), median=9.13
+  6.0mo Q111 HTT1a: n=193, mean=13.39±11.84 (SEM=0.85), median=9.49
+  6.0mo Q111 fl-HTT: n=193, mean=23.71±22.82 (SEM=1.64), median=18.15
+  12.0mo Q111 HTT1a: n=169, mean=23.75±22.16 (SEM=1.70), median=17.41
+  12.0mo Wildtype HTT1a: n=83, mean=9.19±3.90 (SEM=0.43), median=9.09
+  12.0mo Q111 fl-HTT: n=169, mean=38.69±30.07 (SEM=2.31), median=29.45
+  12.0mo Wildtype fl-HTT: n=83, mean=22.07±10.07 (SEM=1.11), median=19.50
+
+Striatum:
+  2.0mo Q111 HTT1a: n=180, mean=5.34±4.16 (SEM=0.31), median=4.69
+  2.0mo Wildtype HTT1a: n=45, mean=1.75±3.18 (SEM=0.47), median=1.08
+  2.0mo Q111 fl-HTT: n=180, mean=10.56±6.49 (SEM=0.48), median=10.23
+  2.0mo Wildtype fl-HTT: n=45, mean=3.91±3.26 (SEM=0.49), median=3.26
+  6.0mo Q111 HTT1a: n=284, mean=22.25±17.62 (SEM=1.05), median=16.96
+  6.0mo Q111 fl-HTT: n=284, mean=23.63±18.73 (SEM=1.11), median=20.87
+  12.0mo Q111 HTT1a: n=173, mean=30.16±22.80 (SEM=1.73), median=26.26
+  12.0mo Wildtype HTT1a: n=104, mean=4.75±1.88 (SEM=0.18), median=4.79
+  12.0mo Q111 fl-HTT: n=173, mean=37.29±19.95 (SEM=1.52), median=35.34
+  12.0mo Wildtype fl-HTT: n=104, mean=11.84±4.71 (SEM=0.46), median=11.18
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Q111 (saturated colors):
+  Cortex - HTT1a: Green, full-length: Orange
+  Striatum - HTT1a: Green (alpha=0.5), full-length: Orange (alpha=0.5)
+Wildtype (distinct colors):
+  Cortex - HTT1a: Blue, full-length: Purple
+  Striatum - HTT1a: Blue (alpha=0.6), full-length: Purple (alpha=0.6)
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Excluded slides: m1a2, m1b5 (technical failures)
+Minimum nuclei per FOV: 40
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Total mRNA = N_spots + (I_cluster / I_peak_single) / N_nuclei
+Single mRNA = N_spots / N_nuclei
+Clustered mRNA = Total mRNA - Single mRNA
+Slide-specific peak intensity normalization via KDE
+
+================================================================================
+Generated: 2026-01-12 11:48:11
+================================================================================

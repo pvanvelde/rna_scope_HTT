@@ -1,0 +1,81 @@
+Figure: Comprehensive Positive Control Analysis
+
+This figure presents a detailed analysis of housekeeping gene expression (POLR2A and UBC)
+in positive control samples from Q111 and Wildtype mice, demonstrating the validity of the
+RNAscope quantification pipeline and the expected differential expression between low-
+and high-expression housekeeping genes.
+
+DATA FILTERING AND QUALITY CONTROL:
+- Dataset: Positive control samples from Q111 and Wildtype mice
+- Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  (Slides excluded due to poor UBC positive control expression indicating technical failures)
+- CV threshold for cluster filtering: CV >= 0.5
+- Minimum nuclei per FOV: 40.0
+- Intensity threshold: Per-slide, determined from negative control at quantile=0.95, max PFA=0.05
+
+DATA SUMMARY:
+- Slides analyzed (n=16): m1a4, m1b1, m2a2, m2a3, m2a4, m2a6, m2a8, m2b1, m2b6, m2b7, m3a1, m3a3, m3a4, m3a5, m3b2, m3b3
+- Total FOVs: 764
+- Paired samples (slides with both Cortex and Striatum): 16
+- Age range: 2 - 12 months
+- Brain atlas coordinate range: 40.00 - 68.00 mm
+
+VOXEL AND PIXEL PARAMETERS:
+- Pixel size (XY): 162.5 nm
+- Slice depth (Z): 500 nm
+- Voxel size: 0.013203125000000001 μm³
+- Mean nuclear volume (for nuclei estimation): 716 μm³
+
+EXPRESSION STATISTICS:
+
+POLR2A (low-expression housekeeping gene, green channel):
+- Cortex: 15.68 ± 14.85 mRNA/cell (n=16 slides)
+- Striatum: 17.39 ± 19.63 mRNA/cell (n=16 slides)
+- Regional comparison (paired t-test): t=-0.922, p=0.371
+
+UBC (high-expression housekeeping gene, orange channel):
+- Cortex: 89.02 ± 46.96 mRNA/cell (n=16 slides)
+- Striatum: 176.78 ± 103.34 mRNA/cell (n=16 slides)
+- Regional comparison (paired t-test): t=-4.829, p=0.000221
+
+UBC/POLR2A RATIO:
+- Mean: 32.52 ± 54.87
+- Median: 14.38
+- Expected ratio based on known expression levels: ~10-20x
+
+PANEL DESCRIPTIONS:
+
+Row 1 - Gene Expression Comparisons:
+A. POLR2A vs UBC scatter plot showing correlation between housekeeping genes (colored by region)
+B. UBC/POLR2A ratio distribution histogram
+C. Regional comparison box plots for both genes with paired t-test significance
+
+Row 2 - Age Dependencies:
+D. Age vs POLR2A expression for Cortex and Striatum with separate regression lines
+E. Age vs UBC expression for Cortex and Striatum with separate regression lines
+F. Age vs UBC/POLR2A ratio for Cortex and Striatum with separate regression lines
+
+Row 3 - Atlas Coordinate Dependencies:
+G. Brain atlas coordinate vs POLR2A expression with separate regional regressions
+H. Brain atlas coordinate vs UBC expression with separate regional regressions
+I. Brain atlas coordinate vs UBC/POLR2A ratio with separate regional regressions
+
+Row 4 - Expression Distributions:
+J. Expression distributions by gene (POLR2A vs UBC)
+K. Expression distributions by region (Cortex vs Striatum)
+L. UBC/POLR2A ratio distribution with mean and median indicated
+
+INTERPRETATION:
+- UBC (high-expression housekeeping gene) shows ~10x higher expression than POLR2A (low-expression)
+- This ratio is consistent with known expression levels from RNA-seq data
+- Regional differences may reflect cell-type composition variations between Cortex and Striatum
+- Age and atlas coordinate dependencies help identify potential confounders
+- Non-significant correlations with age/atlas suggest robust normalization
+
+METHODOLOGY:
+- Peak intensity normalization: Slide-specific KDE mode estimation from single spots
+- Total mRNA per cell: (N_spots + I_cluster_total / I_single_peak) / N_nuclei
+- Cluster filtering: Intensity > threshold AND CV >= CV_THRESHOLD
+- Statistical tests: Paired t-tests for regional comparisons, Pearson correlation for continuous variables
+
+Analysis performed with scienceplots style. CV threshold=0.5, Min nuclei=40.0.

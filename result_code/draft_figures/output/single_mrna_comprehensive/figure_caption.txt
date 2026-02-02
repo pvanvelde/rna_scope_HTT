@@ -1,0 +1,184 @@
+================================================================================
+FIGURE: Comprehensive Single mRNA Expression Analysis
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents a comprehensive analysis of single mRNA expression in Q111
+transgenic mice compared to wildtype controls, examining both HTT1a (intron-1
+terminated, exon 1 only) and fl-HTT transcripts across cortical and
+striatal brain regions. Single mRNA represents individual diffraction-limited
+spots, quantified as: N_spots / N_nuclei per nucleus.
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total field-of-views (FOVs): 3234
+  Q111 mice: 2668 FOVs (82.5%)
+  Wildtype mice: 566 FOVs (17.5%)
+
+Cortex: 1662 FOVs total
+  Q111: 1394 FOVs, Wildtype: 268 FOVs
+Striatum: 1572 FOVs total
+  Q111: 1274 FOVs, Wildtype: 298 FOVs
+
+Q111 mice (n=15): Q111 12mo #1 aCSF Early STR, Q111 12mo #1 aCSF Late STR, Q111 12mo #1 aCSF Mid STR, Q111 12mo #2 aCSF Late STR, Q111 2mo #1 UNT Late STR, Q111 2mo #2 UNT Mid STR, Q111 2mo #2 UNT early STR, Q111 2mo #3 UNT Early STR, Q111 2mo #3 UNT Late STR, Q111 2mo #3 UNT Mid STR, Q111 6mo #1 NTC Late STR, Q111 6mo #2 NTC Late STR, Q111 6mo #2 NTC Mid STR, Q111 6mo #3 NTC Late STR, Q111 6mo #3 NTC Mid STR
+Wildtype mice (n=3): WT 12mo #3 aCSF Late STR, WT 12mo #3 aCSF Mid STR, WT 2mo #2 UNT Early STR
+
+Age timepoints: 2.0 months, 6.0 months, 12.0 months
+  2.0 mo: Q111=1030 FOVs, WT=192 FOVs
+  6.0 mo: Q111=954 FOVs, WT=0 FOVs
+  12.0 mo: Q111=684 FOVs, WT=374 FOVs
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Total slides analyzed: 18
+Slides with technical failures were excluded based on UBC positive control analysis.
+(Slides with UBC expression <1 mRNA/nucleus were excluded)
+
+PANEL DESCRIPTIONS:
+--------------------------------------------------------------------------------
+
+ROW 1 - AGE TRENDS (Panels A-B):
+Violin plots showing the distribution of single mRNA expression across ages.
+Each violin represents the full distribution of FOV-level measurements at that age.
+
+Cortex (Panel A):
+  2.0mo Q111 HTT1a: n=335, mean=0.33±0.40, median=0.15
+  2.0mo Wildtype HTT1a: n=51, mean=0.34±0.20, median=0.32
+  2.0mo Q111 fl-HTT: n=335, mean=1.16±0.75, median=1.02
+  2.0mo Wildtype fl-HTT: n=51, mean=1.59±0.56, median=1.55
+  6.0mo Q111 HTT1a: n=193, mean=0.57±0.29, median=0.51
+  6.0mo Q111 fl-HTT: n=193, mean=2.34±1.71, median=2.02
+  12.0mo Q111 HTT1a: n=169, mean=0.31±0.21, median=0.24
+  12.0mo Wildtype HTT1a: n=83, mean=0.54±0.80, median=0.38
+  12.0mo Q111 fl-HTT: n=169, mean=2.27±1.54, median=2.01
+  12.0mo Wildtype fl-HTT: n=83, mean=2.52±0.89, median=2.54
+
+Striatum (Panel B):
+  2.0mo Q111 HTT1a: n=180, mean=0.21±0.23, median=0.14
+  2.0mo Wildtype HTT1a: n=45, mean=0.13±0.05, median=0.13
+  2.0mo Q111 fl-HTT: n=180, mean=1.06±0.69, median=0.97
+  2.0mo Wildtype fl-HTT: n=45, mean=1.10±0.35, median=1.10
+  6.0mo Q111 HTT1a: n=284, mean=0.64±0.28, median=0.60
+  6.0mo Q111 fl-HTT: n=284, mean=2.08±1.40, median=1.57
+  12.0mo Q111 HTT1a: n=173, mean=0.54±0.34, median=0.56
+  12.0mo Wildtype HTT1a: n=104, mean=0.18±0.09, median=0.18
+  12.0mo Q111 fl-HTT: n=173, mean=2.22±1.29, median=2.05
+  12.0mo Wildtype fl-HTT: n=104, mean=1.31±0.50, median=1.25
+
+STATISTICAL TESTS (Q111 vs Wildtype, Age Trends):
+--------------------------------------------------------------------------------
+Independent t-tests comparing Q111 and Wildtype at each age/channel/region.
+Significance: *** p<0.001, ** p<0.01, * p<0.05, ns p≥0.05
+
+Striatum - 2.0mo - HTT1a: t=2.162, p=0.0317 * (Q111 n=180, WT n=45)
+Striatum - 2.0mo - fl-HTT: t=-0.362, p=0.7179 ns (Q111 n=180, WT n=45)
+Striatum - 12.0mo - HTT1a: t=10.429, p=0.0000 *** (Q111 n=173, WT n=104)
+Striatum - 12.0mo - fl-HTT: t=6.902, p=0.0000 *** (Q111 n=173, WT n=104)
+
+ROW 2 - ATLAS COORDINATE TRENDS (Panels C-D):
+Box plots showing single mRNA expression across anterior-posterior brain atlas
+coordinates (25μm units from Bregma). Each box represents the interquartile range
+(IQR), whiskers extend to 1.5×IQR, and colored diamonds indicate mean values.
+Individual coordinates are shown without binning for maximum spatial resolution.
+
+Cortex (Panel C):
+  Atlas coordinates (n=12): 40 to 68 (25μm units)
+  Q111 HTT1a: n=697 FOVs across 12 coordinates, mean=0.39±0.35
+  Q111 fl-HTT: n=697 FOVs across 12 coordinates, mean=1.75±1.41
+  Wildtype HTT1a: n=134 FOVs across 12 coordinates, mean=0.46±0.65
+  Wildtype fl-HTT: n=134 FOVs across 12 coordinates, mean=2.17±0.90
+
+Striatum (Panel D):
+  Atlas coordinates (n=12): 40 to 68 (25μm units)
+  Q111 HTT1a: n=637 FOVs across 12 coordinates, mean=0.49±0.34
+  Q111 fl-HTT: n=637 FOVs across 12 coordinates, mean=1.83±1.30
+  Wildtype HTT1a: n=149 FOVs across 12 coordinates, mean=0.17±0.08
+  Wildtype fl-HTT: n=149 FOVs across 12 coordinates, mean=1.25±0.47
+
+ROW 3 - PER-SLIDE BREAKDOWN (Panels E-F):
+Bar plots showing mean±SEM single mRNA expression for each individual slide,
+with ALL FOVs from that slide CONCATENATED into a single value.
+X-axis labels use mouse identifiers:
+  - Q#X.Y = Q111 mouse #X, slide Y (e.g., Q#3.2 = Q111 mouse 3, slide 2)
+  - W#X.Y = Wildtype mouse #X, slide Y
+This reveals inter-individual variability within each genotype.
+
+IMPORTANT: DATA AGGREGATION NOTE:
+- Rows 1-2 (Age/Atlas): Each violin/box represents all FOVs pooled for that condition
+- Row 3 (Per-Slide): Each bar represents all FOVs concatenated for one slide
+
+Cortex (Panel E):
+  Q#1.1 (2mo): 55 FOVs concatenated
+  Q#2.1 (2mo): 61 FOVs concatenated
+  Q#2.2 (2mo): 49 FOVs concatenated
+  Q#3.1 (2mo): 57 FOVs concatenated
+  Q#3.2 (2mo): 50 FOVs concatenated
+  Q#3.3 (2mo): 63 FOVs concatenated
+  Q#4.1 (6mo): 47 FOVs concatenated
+  Q#5.1 (6mo): 47 FOVs concatenated
+  Q#5.2 (6mo): 50 FOVs concatenated
+  Q#6.2 (6mo): 49 FOVs concatenated
+  Q#7.1 (12mo): 50 FOVs concatenated
+  Q#7.2 (12mo): 29 FOVs concatenated
+  Q#7.3 (12mo): 40 FOVs concatenated
+  Q#8.1 (12mo): 50 FOVs concatenated
+  W#1.1 (2mo): 51 FOVs concatenated
+  W#2.1 (12mo): 52 FOVs concatenated
+  W#2.2 (12mo): 31 FOVs concatenated
+
+Striatum (Panel F):
+  Q#1.1 (2mo): 37 FOVs concatenated
+  Q#2.1 (2mo): 41 FOVs concatenated
+  Q#2.2 (2mo): 21 FOVs concatenated
+  Q#3.1 (2mo): 40 FOVs concatenated
+  Q#3.2 (2mo): 14 FOVs concatenated
+  Q#3.3 (2mo): 27 FOVs concatenated
+  Q#4.1 (6mo): 35 FOVs concatenated
+  Q#5.1 (6mo): 63 FOVs concatenated
+  Q#5.2 (6mo): 67 FOVs concatenated
+  Q#6.1 (6mo): 43 FOVs concatenated
+  Q#6.2 (6mo): 76 FOVs concatenated
+  Q#7.1 (12mo): 50 FOVs concatenated
+  Q#7.2 (12mo): 55 FOVs concatenated
+  Q#7.3 (12mo): 33 FOVs concatenated
+  Q#8.1 (12mo): 35 FOVs concatenated
+  W#1.1 (2mo): 45 FOVs concatenated
+  W#2.1 (12mo): 47 FOVs concatenated
+  W#2.2 (12mo): 57 FOVs concatenated
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Q111 mice:
+  - Green: HTT1a (intron-1 terminated, exon 1 only)
+  - Orange: fl-HTT
+Wildtype mice:
+  - Blue: HTT1a
+  - Purple: fl-HTT
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+mRNA quantification:
+  - Single mRNA: Individual diffraction-limited spots (N_spots)
+  - Clustered mRNA: Aggregated signal normalized by single-spot peak intensity
+  - Total mRNA/nucleus = N_spots + (I_cluster_total / I_single_peak) / N_nuclei
+  - Single mRNA/nucleus = N_spots / N_nuclei
+
+Normalization:
+  - Slide-specific peak intensity determined via Kernel Density Estimation (KDE)
+  - Accounts for slide-to-slide variation in signal intensity
+
+Field-of-view (FOV) filtering:
+  - Minimum 40 nuclei per FOV (ensures adequate DAPI segmentation)
+  - Excludes FOVs with poor tissue quality or imaging artifacts
+
+STATISTICAL NOTES:
+--------------------------------------------------------------------------------
+All data points represent individual FOVs (biological replicates).
+Error bars in panel rows E-F represent SEM (standard error of the mean).
+Box plots show median (removed for clarity), mean (diamond), IQR (box),
+and 1.5×IQR whiskers with outliers as individual points.
+
+================================================================================
+Generated: 2026-01-12 11:46:03
+================================================================================

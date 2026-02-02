@@ -1,0 +1,86 @@
+================================================================================
+FIGURE: Positive Control vs Experimental Probe Correlations
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure tests whether variability in experimental probe measurements (fl-HTT,
+HTT1a) is driven by technical factors (tissue quality, RNA preservation) or
+reflects true biological variation.
+
+RATIONALE:
+--------------------------------------------------------------------------------
+Positive control genes (UBC, POLR2A) are housekeeping genes with stable expression.
+If experimental probes correlate strongly with positive controls, this could indicate:
+  - Technical confounding: tissue quality affects all transcripts similarly
+  - Biological coupling: genes are co-regulated
+
+ABSENCE of correlation suggests experimental variability is biologically meaningful,
+not driven by tissue preservation or RNA quality differences between slides.
+
+PANEL ORGANIZATION:
+--------------------------------------------------------------------------------
+- Rows: Different positive control × experimental probe combinations
+- Columns: Brain regions (Cortex, Striatum)
+- Each point = one slide (mean expression across all FOVs)
+
+ROW 1 (A-B): UBC vs HTT1a
+  Tests if UBC (housekeeping) correlates with HTT1a (exon 1 only, intron-1 terminated)
+
+ROW 2 (C-D): UBC vs full-length fl-HTT
+  Tests if UBC correlates with full-length fl-HTT transcripts
+
+ROW 3 (E-F): POLR2A vs HTT1a
+  Tests if POLR2A (RNA polymerase II) correlates with HTT1a
+
+ROW 4 (G-H): POLR2A vs full-length fl-HTT
+  Tests if POLR2A correlates with full-length fl-HTT
+
+STATISTICAL RESULTS:
+--------------------------------------------------------------------------------
+  UBC vs HTT1a - Cortex (Q111): r=-0.33 (moderate), p=2.93e-01 ns, n=12
+  UBC vs HTT1a - Cortex (Wildtype): r=0.09 (weak), p=9.45e-01 ns, n=3
+  UBC vs HTT1a - Striatum (Q111): r=-0.05 (weak), p=8.68e-01 ns, n=13
+  UBC vs HTT1a - Striatum (Wildtype): r=0.16 (weak), p=8.99e-01 ns, n=3
+  UBC vs fl-HTT - Cortex (Q111): r=-0.28 (weak), p=3.85e-01 ns, n=12
+  UBC vs fl-HTT - Cortex (Wildtype): r=0.90 (strong), p=2.83e-01 ns, n=3
+  UBC vs fl-HTT - Striatum (Q111): r=-0.01 (weak), p=9.84e-01 ns, n=13
+  UBC vs fl-HTT - Striatum (Wildtype): r=0.70 (moderate), p=5.09e-01 ns, n=3
+  POLR2A vs HTT1a - Cortex (Q111): r=0.81 (strong), p=1.34e-03 **, n=12
+  POLR2A vs HTT1a - Cortex (Wildtype): r=0.38 (moderate), p=7.49e-01 ns, n=3
+  POLR2A vs HTT1a - Striatum (Q111): r=0.98 (strong), p=1.17e-08 ***, n=13
+  POLR2A vs HTT1a - Striatum (Wildtype): r=0.75 (strong), p=4.61e-01 ns, n=3
+  POLR2A vs fl-HTT - Cortex (Q111): r=0.87 (strong), p=2.12e-04 ***, n=12
+  POLR2A vs fl-HTT - Cortex (Wildtype): r=0.99 (strong), p=8.69e-02 ns, n=3
+  POLR2A vs fl-HTT - Striatum (Q111): r=0.94 (strong), p=2.62e-06 ***, n=13
+  POLR2A vs fl-HTT - Striatum (Wildtype): r=0.99 (strong), p=7.03e-02 ns, n=3
+
+INTERPRETATION GUIDE:
+--------------------------------------------------------------------------------
+Correlation strength: |r| < 0.3 = weak, 0.3-0.7 = moderate, > 0.7 = strong
+Significance: *** p<0.001, ** p<0.01, * p<0.05, ns = not significant
+
+KEY OBSERVATIONS:
+--------------------------------------------------------------------------------
+1. UBC shows weak correlations with fl-HTT probes (5/8 comparisons)
+   → Experimental variability is NOT driven by UBC-related tissue quality
+
+2. POLR2A shows strong correlations with fl-HTT probes (7/8 comparisons)
+   → This could indicate:
+      a) RNA quality confounding (addressed in RNA Quality Confounder Analysis)
+      b) True biological coupling (co-transcriptional regulation)
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+- Slide-level aggregation: FOV measurements averaged per slide per region
+- Correlation: Pearson correlation coefficient
+- Excluded slides (QC failures): m1a2, m1b5, m2b5, m2b2, m2a7, m2a1, m2b4, m2b5, m3b4, m1a1, m1b2, m1b3, m1b4, m3b5
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+- Red circles: Q111 (HD model) mice
+- Gray squares: Wildtype control mice
+
+================================================================================
+Generated: 2026-01-12 11:44:24
+================================================================================

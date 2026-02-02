@@ -1,0 +1,164 @@
+================================================================================
+FIGURE: Total mRNA Expression Summary (Q111 mice)
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This summary figure provides a streamlined view of total fl-HTT mRNA expression in
+Q111 transgenic mice. Panel A shows regional comparisons (cortex vs striatum) for
+both transcript types, while Panel B displays expression levels broken down by
+individual mouse. This figure focuses exclusively on total mRNA (single +
+clustered), the most comprehensive quantification metric.
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total Q111 FOVs: 2668
+  Cortex: 1394 FOVs
+  Striatum: 1274 FOVs
+
+Q111 mice (n=15): STR, STR, STR, STR, STR, STR, STR, STR, STR, STR, STR, STR, STR, STR, STR
+
+PANEL A - REGIONAL COMPARISON:
+--------------------------------------------------------------------------------
+Box plots with overlaid scatter points comparing expression between cortex and
+striatum for both HTT1a and fl-HTT transcripts.
+
+Cortex:
+  HTT1a: n=697, mean=13.44±15.01, median=7.96, IQR=[4.25, 15.25]
+  fl-HTT: n=697, mean=22.74±23.51, median=14.88, IQR=[8.62, 27.78]
+Striatum:
+  HTT1a: n=637, mean=20.11±19.54, median=12.56, IQR=[4.88, 30.31]
+  fl-HTT: n=637, mean=25.48±20.00, median=19.56, IQR=[10.95, 36.88]
+
+Regional differences:
+  HTT1a: Cortex mean=13.44, Striatum mean=20.11
+    Fold change: 0.67x (Cortex/Striatum)
+  full-length: Cortex mean=22.74, Striatum mean=25.48
+    Fold change: 0.89x (Cortex/Striatum)
+
+PANEL B - PER-MOUSE BREAKDOWN:
+--------------------------------------------------------------------------------
+Bar plots showing mean±SEM total mRNA expression for each individual mouse,
+separately for cortex and striatum. This reveals inter-individual variability
+and identifies potential outlier mice.
+
+Q111 12mo #1 aCSF Early STR (12.0mo, 100 FOVs):
+  Cortex - HTT1a: 25.88±1.56 (n=50 FOVs)
+  Cortex - fl-HTT: 50.74±2.45 (n=50 FOVs)
+  Striatum - HTT1a: 30.62±1.74 (n=50 FOVs)
+  Striatum - fl-HTT: 47.90±2.10 (n=50 FOVs)
+Q111 12mo #1 aCSF Late STR (12.0mo, 84 FOVs):
+  Cortex - HTT1a: 54.43±5.40 (n=29 FOVs)
+  Cortex - fl-HTT: 80.59±7.25 (n=29 FOVs)
+  Striatum - HTT1a: 54.12±2.72 (n=55 FOVs)
+  Striatum - fl-HTT: 57.88±1.75 (n=55 FOVs)
+Q111 12mo #1 aCSF Mid STR (12.0mo, 73 FOVs):
+  Cortex - HTT1a: 24.45±2.22 (n=40 FOVs)
+  Cortex - fl-HTT: 34.17±3.49 (n=40 FOVs)
+  Striatum - HTT1a: 20.45±1.71 (n=33 FOVs)
+  Striatum - fl-HTT: 24.74±1.52 (n=33 FOVs)
+Q111 12mo #2 aCSF Late STR (12.0mo, 85 FOVs):
+  Cortex - HTT1a: 4.28±0.19 (n=50 FOVs)
+  Cortex - fl-HTT: 13.61±0.63 (n=50 FOVs)
+  Striatum - HTT1a: 3.64±0.12 (n=35 FOVs)
+  Striatum - fl-HTT: 12.62±0.40 (n=35 FOVs)
+Q111 2mo #1 UNT Late STR (2.0mo, 92 FOVs):
+  Cortex - HTT1a: 2.97±0.13 (n=55 FOVs)
+  Cortex - fl-HTT: 12.53±0.59 (n=55 FOVs)
+  Striatum - HTT1a: 1.90±0.10 (n=37 FOVs)
+  Striatum - fl-HTT: 7.91±0.45 (n=37 FOVs)
+Q111 2mo #2 UNT Mid STR (2.0mo, 102 FOVs):
+  Cortex - HTT1a: 4.71±0.29 (n=61 FOVs)
+  Cortex - fl-HTT: 14.18±0.79 (n=61 FOVs)
+  Striatum - HTT1a: 4.72±0.31 (n=41 FOVs)
+  Striatum - fl-HTT: 17.45±0.88 (n=41 FOVs)
+Q111 2mo #2 UNT early STR (2.0mo, 70 FOVs):
+  Cortex - HTT1a: 5.59±0.32 (n=49 FOVs)
+  Cortex - fl-HTT: 9.86±0.67 (n=49 FOVs)
+  Striatum - HTT1a: 6.06±0.37 (n=21 FOVs)
+  Striatum - fl-HTT: 11.00±0.35 (n=21 FOVs)
+Q111 2mo #3 UNT Early STR (2.0mo, 97 FOVs):
+  Cortex - HTT1a: 10.34±0.39 (n=57 FOVs)
+  Cortex - fl-HTT: 12.98±0.62 (n=57 FOVs)
+  Striatum - HTT1a: 9.64±0.43 (n=40 FOVs)
+  Striatum - fl-HTT: 14.73±0.65 (n=40 FOVs)
+Q111 2mo #3 UNT Late STR (2.0mo, 64 FOVs):
+  Cortex - HTT1a: 7.04±0.44 (n=50 FOVs)
+  Cortex - fl-HTT: 14.30±1.29 (n=50 FOVs)
+  Striatum - HTT1a: 13.72±0.75 (n=14 FOVs)
+  Striatum - fl-HTT: 17.97±1.10 (n=14 FOVs)
+Q111 2mo #3 UNT Mid STR (2.0mo, 90 FOVs):
+  Cortex - HTT1a: 15.02±1.50 (n=63 FOVs)
+  Cortex - fl-HTT: 6.44±0.62 (n=63 FOVs)
+  Striatum - HTT1a: 1.07±0.22 (n=27 FOVs)
+  Striatum - fl-HTT: 0.39±0.03 (n=27 FOVs)
+Q111 6mo #1 NTC Late STR (6.0mo, 82 FOVs):
+  Cortex - HTT1a: 6.20±0.25 (n=47 FOVs)
+  Cortex - fl-HTT: 13.86±0.89 (n=47 FOVs)
+  Striatum - HTT1a: 8.33±0.72 (n=35 FOVs)
+  Striatum - fl-HTT: 16.56±1.00 (n=35 FOVs)
+Q111 6mo #2 NTC Late STR (6.0mo, 110 FOVs):
+  Cortex - HTT1a: 12.71±0.29 (n=47 FOVs)
+  Cortex - fl-HTT: 31.50±0.82 (n=47 FOVs)
+  Striatum - HTT1a: 16.72±0.72 (n=63 FOVs)
+  Striatum - fl-HTT: 24.65±0.85 (n=63 FOVs)
+Q111 6mo #2 NTC Mid STR (6.0mo, 117 FOVs):
+  Cortex - HTT1a: 5.63±0.75 (n=50 FOVs)
+  Cortex - fl-HTT: 1.46±0.21 (n=50 FOVs)
+  Striatum - HTT1a: 6.77±0.48 (n=67 FOVs)
+  Striatum - fl-HTT: 3.84±0.33 (n=67 FOVs)
+Q111 6mo #3 NTC Late STR (6.0mo, 43 FOVs):
+  Striatum - HTT1a: 26.03±0.91 (n=43 FOVs)
+  Striatum - fl-HTT: 23.81±0.81 (n=43 FOVs)
+Q111 6mo #3 NTC Mid STR (6.0mo, 125 FOVs):
+  Cortex - HTT1a: 31.06±1.41 (n=49 FOVs)
+  Cortex - fl-HTT: 57.60±2.41 (n=49 FOVs)
+  Striatum - HTT1a: 47.17±1.35 (n=76 FOVs)
+  Striatum - fl-HTT: 51.19±1.30 (n=76 FOVs)
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+HTT1a: Green
+fl-HTT: Orange
+Panel A: Cortex (alpha=0.7), Striatum (alpha=0.5)
+Panel B: Bars grouped by mouse, with cortex/striatum distinguished by alpha
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  (Slides excluded due to poor UBC positive control expression indicating technical failures)
+CV threshold for cluster filtering: CV >= 0.5
+Minimum nuclei per FOV: 40.0
+Intensity threshold: Per-slide, determined from negative control at quantile=0.95, max PFA=0.05
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Total mRNA per cell:
+  Total = N_spots + (I_cluster_total / I_single_peak) / N_nuclei
+
+Peak intensity normalization:
+  - Slide-specific I_single_peak determined via KDE
+  - Scott's bandwidth method for KDE
+  - Minimum 50 spots required for peak estimation
+
+This metric combines:
+  1. Single mRNA: Individual diffraction-limited spots
+  2. Clustered mRNA: Aggregated signal normalized by peak intensity
+
+INTERPRETATION:
+--------------------------------------------------------------------------------
+Total mRNA per cell represents the most comprehensive quantification of transcript
+abundance, capturing both dispersed single molecules and high-density aggregates.
+Regional differences may reflect:
+  - Intrinsic transcriptional differences
+  - Cell-type composition variations
+  - Disease-specific vulnerability patterns
+
+Inter-mouse variability may be driven by:
+  - Age differences
+  - Treatment conditions (aCSF, NTC, UNT)
+  - Biological heterogeneity within genotype
+
+================================================================================
+Generated: 2026-01-12 11:37:06
+================================================================================

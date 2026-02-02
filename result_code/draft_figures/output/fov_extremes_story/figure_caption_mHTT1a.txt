@@ -1,0 +1,125 @@
+================================================================================
+FIGURE: FOV-Level Variance and Extreme Outliers - mHTT1a
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents a comprehensive analysis of field-of-view (FOV) level variance
+in clustered mRNA per cell for mHTT1a transcripts. The analysis reveals
+substantial inter-FOV variability in Q111 transgenic mice and identifies 'extreme'
+FOVs - those exceeding the 95th percentile of wildtype distributions.
+
+The figure tells a story in four parts:
+  1. Overall distributions showing Q111 vs WT variance
+  2. Temporal patterns - age-dependent accumulation of extreme FOVs
+  3. Individual variation - which mice drive the extreme phenotype
+  4. Spatial patterns - regional distribution along the A-P axis
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Cortex: 697 Q111 FOVs, 134 WT FOVs
+Striatum: 637 Q111 FOVs, 149 WT FOVs
+
+Excluded slides (technical failures): m1a2, m1b5
+
+PANEL DESCRIPTIONS:
+--------------------------------------------------------------------------------
+
+(A-B) OVERALL DISTRIBUTIONS:
+Probability density histograms showing the full distribution of clustered mRNA per
+cell. Q111 data is split into 'normal' (≤WT P95) and 'extreme' (>WT P95) populations.
+The hatched red region represents the Q111 'tail' - FOVs with abnormally high
+clustered mRNA that exceed 95% of wildtype values. (A) Cortex, (B) Striatum.
+
+Cortex: WT P95 threshold = 12.9 mRNA/cell
+  Q111: 217/697 FOVs extreme (31.1%)
+  Q111 median=7.6, IQR=10.6
+  WT median=7.6, IQR=5.8
+  Mann-Whitney U p=9.72e-04
+Striatum: WT P95 threshold = 7.8 mRNA/cell
+  Q111: 402/637 FOVs extreme (63.1%)
+  Q111 median=12.0, IQR=24.8
+  WT median=3.7, IQR=3.9
+  Mann-Whitney U p=5.54e-31
+
+(C-D) BREAKDOWN BY AGE:
+Stacked bar charts showing the number of normal vs extreme FOVs at each age (2, 6,
+12 months). Percentages indicate the fraction of FOVs that are extreme at each age.
+This reveals temporal patterns in the extreme phenotype. (C) Cortex, (D) Striatum.
+
+(E-F) BREAKDOWN BY MOUSE:
+Horizontal bar charts showing the top 8 mice ranked by percentage of extreme FOVs.
+Each bar shows the mouse ID, slide identifier, and age in months. This reveals
+inter-individual variability and identifies specific mice that drive the extreme
+phenotype. (E) Cortex, (F) Striatum.
+
+(G-H) BREAKDOWN BY ATLAS COORDINATE:
+Bar charts showing the number of extreme FOVs at each brain atlas coordinate (A-P
+position from Bregma in 25μm units). Color intensity reflects the fraction of FOVs
+that are extreme at each coordinate (red=high, green=low). This reveals spatial
+patterns along the anterior-posterior axis. (G) Cortex, (H) Striatum.
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Sea Green (#2E8B57): Q111 normal FOVs (≤WT P95)
+Dark Red (#8B0000): Q111 extreme FOVs (>WT P95)
+Coral (#FF7F50): Wildtype
+RdYlGn colormap: Fraction extreme (red=high, green=low)
+
+KEY OBSERVATIONS:
+--------------------------------------------------------------------------------
+1. Distribution variance:
+   - Q111 shows substantially greater variance than wildtype
+   - Clear rightward shift with extended tail beyond WT P95
+   - mHTT1a represents aberrant intron-1 terminated transcripts
+
+2. Extreme FOV prevalence:
+   - Significant fraction of Q111 FOVs exceed wildtype P95
+   - Indicates mosaic/heterogeneous phenotype at tissue level
+   - Not all cells/regions equally affected
+
+3. Biological significance:
+   - mHTT1a encodes toxic N-terminal fragment with polyQ expansion
+   - Extreme FOVs may represent hotspots of pathology
+   - Clustering suggests sites of active transcription or aggregation
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Clustered mRNA per Cell calculation:
+  - Cluster detection: DBSCAN algorithm (eps=0.75 µm, min_samples=3)
+  - Intensity threshold: 2.5 × slide-specific peak intensity
+  - Peak intensity: mode of KDE-fitted single spot intensity distribution
+  - Clustered mRNA = Total cluster intensity / Peak intensity
+  - Per-cell normalization: Clustered mRNA / N_nuclei in FOV
+
+Extreme FOV definition:
+  - Threshold = 95th percentile of Wildtype distribution (region-specific)
+  - FOVs with Clustered mRNA/Cell > WT P95 classified as 'extreme'
+  - This identifies Q111 FOVs in the tail of the distribution
+
+Statistical tests:
+  - Mann-Whitney U test: non-parametric comparison of medians
+  - Tests whether Q111 and WT come from same distribution
+
+Quality control:
+  - Slides m1a2 and m1b5 excluded (technical failures)
+  - Based on UBC positive control analysis
+
+INTERPRETATION GUIDE:
+--------------------------------------------------------------------------------
+The 'extreme FOV' analysis provides insight into the mosaic nature of the Q111
+phenotype. Rather than a uniform elevation across all FOVs, we see a subset of
+FOVs with dramatically elevated clustered mRNA. The breakdown by age, mouse, and
+atlas coordinate helps identify:
+
+  - Temporal dynamics: Does the extreme phenotype progress with age?
+  - Individual variation: Are certain mice predisposed to extreme FOVs?
+  - Spatial patterns: Are specific anatomical regions more affected?
+
+This information is crucial for understanding whether the clustered mRNA phenotype
+is driven by systemic factors (affecting all mice equally) or by stochastic/local
+factors (creating mosaic patterns).
+
+================================================================================
+Generated: 2025-12-25 01:54:29
+================================================================================

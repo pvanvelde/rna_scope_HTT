@@ -1,0 +1,15 @@
+Steps:
+1. Merge slide scanner images to image stacks: merge_slide_scanner_images.py
+2. Potentially upload these to cluster
+3. run main.py on this folder to get the results. Save as h5 file (potentially on cluster)
+
+
+
+
+
+For training NN:
+1. Run AnnotationTool.py to create subregions and save in folder
+2. use labkit imagej to create label data. save data with _label suffix.
+3. Run AnnotationTool.py to create subregions on controls, and create zero labels.
+4. Run createh5filesfor training.py to create h5 files that can be used in training
+5. Run training_model.py to train model

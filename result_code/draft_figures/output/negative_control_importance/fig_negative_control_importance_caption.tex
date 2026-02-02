@@ -1,0 +1,94 @@
+Supplementary Figure: Importance of Per-Slide Negative Control Calibration
+
+This figure demonstrates why per-slide (not just per-session) negative control calibration is essential
+for accurate single mRNA peak intensity determination. Even within the same imaging session, slide-to-slide
+variability in background levels affects the estimated peak intensity used for mRNA normalization.
+
+DATA SUMMARY:
+- Imaging sessions: 3 (Session 1, Session 2, Session 3)
+- Slides with negative control: 30
+- Slides analyzed for peak comparison: 51
+- Note: ALL slides included (no exclusions) to demonstrate full variability
+
+THRESHOLD VARIABILITY:
+
+HTT1a (488 nm):
+  Global threshold: 33294.6 ± 13300.6 photons (CV = 39.9\%)
+  Session 1: 32323.2 ± 5534.4 photons (n=9 slides)
+  Session 2: 25031.2 ± 10080.0 photons (n=12 slides)
+  Session 3: 45283.8 ± 14343.9 photons (n=9 slides)
+
+fl-HTT (548 nm):
+  Global threshold: 12376.5 ± 5336.7 photons (CV = 43.1\%)
+  Session 1: 6929.6 ± 1492.0 photons (n=9 slides)
+  Session 2: 14895.0 ± 5326.3 photons (n=12 slides)
+  Session 3: 14465.4 ± 3769.3 photons (n=9 slides)
+
+IMPACT ON SINGLE mRNA PEAK INTENSITY:
+
+Comparing slide-specific threshold vs session-mean threshold for peak intensity calculation:
+
+HTT1a (488 nm):
+  Mean peak intensity (slide-specific thr): 37984.8 photons
+  Mean peak intensity (session-mean thr): 38471.9 photons
+  Mean bias (session\_mean - slide\_specific): +13.2\% ± 45.9\%
+    Session 1: +3.7\% bias (n=8 slides)
+    Session 2: +22.3\% bias (n=10 slides)
+    Session 3: +11.2\% bias (n=8 slides)
+
+fl-HTT (548 nm):
+  Mean peak intensity (slide-specific thr): 17029.6 photons
+  Mean peak intensity (session-mean thr): 17572.6 photons
+  Mean bias (session\_mean - slide\_specific): +12.6\% ± 41.3\%
+    Session 1: +6.4\% bias (n=7 slides)
+    Session 2: +22.1\% bias (n=10 slides)
+    Session 3: +6.0\% bias (n=8 slides)
+
+PANEL DESCRIPTIONS:
+
+Row 1 - Threshold Variability:
+A. Per-slide thresholds by session for HTT1a (green channel)
+B. Per-slide thresholds by session for fl-HTT (orange channel)
+   - Each point represents one slide's threshold (95th percentile of negative control)
+   - Dashed line shows global mean threshold
+   - CV (coefficient of variation) quantifies threshold variability across all slides
+
+Row 2 - Negative Control Intensity Distributions:
+C. KDE of negative control spot intensities by session (green channel)
+D. KDE of negative control spot intensities by session (orange channel)
+   - Solid line: KDE of spot intensities from negative control probe
+   - Dashed vertical lines: session-mean thresholds
+   - Black line: global threshold (mean across all sessions)
+
+Row 3 - Impact on Single mRNA Peak Intensity:
+E. Scatter plot comparing single mRNA peak intensity: slide-specific vs session-mean threshold (green)
+F. Scatter plot comparing single mRNA peak intensity: slide-specific vs session-mean threshold (orange)
+   - Each point represents one slide
+   - Diagonal line indicates perfect agreement
+   - Deviation from diagonal shows how session-mean threshold affects peak intensity estimation
+   - Peak intensity is used to normalize all mRNA counts (spots + clusters)
+
+Row 4 - Threshold vs Peak Intensity Relationship:
+G. Scatter plot of threshold vs peak intensity (green channel)
+H. Scatter plot of threshold vs peak intensity (orange channel)
+   - Each point represents one slide
+   - Linear regression line shows the correlation trend
+   - Pearson correlation coefficient (r) and p-value quantify the relationship
+   - Positive correlation indicates that higher thresholds (more background) are associated with higher peak intensities
+   - This relationship may reflect imaging conditions that affect both background and signal levels
+
+INTERPRETATION:
+- Slide-to-slide variability in thresholds exists even within the same imaging session
+- Using session-mean threshold instead of slide-specific threshold introduces bias in peak intensity
+- Peak intensity bias directly propagates to all mRNA quantification:
+  * If peak intensity is overestimated: mRNA counts are underestimated
+  * If peak intensity is underestimated: mRNA counts are overestimated
+- Per-slide calibration provides the most accurate single mRNA reference intensity
+
+METHODOLOGY:
+- Threshold determination: 95th percentile of negative control intensities
+- Negative control: dT probe hybridizing to non-specific background
+- Peak intensity: Mode of KDE (kernel density estimation) of spot intensities above threshold
+- Session mean threshold: Average of all slide-specific thresholds within a session
+
+Analysis performed with scienceplots style.

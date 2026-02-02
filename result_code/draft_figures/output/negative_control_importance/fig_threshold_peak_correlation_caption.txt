@@ -1,0 +1,90 @@
+====================================================================================================
+SUPPLEMENTARY FIGURE: Correlation between Negative Control Threshold and Single mRNA Peak Intensity
+====================================================================================================
+
+OVERVIEW
+----------------------------------------------------------------------------------------------------
+This figure demonstrates the strong positive correlation between the negative control threshold
+(95th percentile of background intensity) and the single mRNA peak intensity (mode of spot
+intensity distribution from experimental data). This correlation justifies the use of per-slide
+calibration: imaging conditions that affect background also affect signal intensity.
+
+====================================================================================================
+DATA SUMMARY
+====================================================================================================
+
+Total slide-channel combinations: 30
+  - HTT1a (green, 488 nm): 15 slides
+  - Full-length mHTT (orange, 548 nm): 15 slides
+
+Imaging sessions: 3
+  - Session 1: 6 slide-channel combinations
+  - Session 2: 12 slide-channel combinations
+  - Session 3: 12 slide-channel combinations
+
+QUALITY CONTROL:
+  - Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  - Reason: Poor UBC positive control expression indicating technical failures
+
+====================================================================================================
+CORRELATION ANALYSIS
+====================================================================================================
+
+Overall correlation: r = 0.9982, p = 9.21e-36
+
+Per-channel correlations:
+  - HTT1a (green): r = 0.9977, p = 1.35e-16
+  - Full-length mHTT (orange): r = 0.9961, p = 4.52e-15
+
+====================================================================================================
+INTERPRETATION
+====================================================================================================
+
+The strong positive correlation (r > 0.75) between threshold and peak intensity indicates that:
+
+1. IMAGING CONDITIONS AFFECT BOTH METRICS:
+   - Higher laser power, detector gain, or tissue autofluorescence increases both
+     background (threshold) and signal (peak intensity)
+   - This covariation is expected from the physics of fluorescence microscopy
+
+2. PER-SLIDE CALIBRATION CAPTURES THIS RELATIONSHIP:
+   - Using slide-specific thresholds naturally accounts for imaging variability
+   - The ratio (peak_intensity / threshold) is more stable than either value alone
+
+3. IMPLICATIONS FOR mRNA QUANTIFICATION:
+   - Total mRNA = N_spots + (I_clusters / I_peak)
+   - Both the threshold (which spots pass) and peak (normalization factor) scale together
+   - Per-slide calibration ensures consistent mRNA estimates across imaging conditions
+
+====================================================================================================
+PANEL DESCRIPTIONS
+====================================================================================================
+
+Panel A: Threshold vs Peak Intensity by Channel
+  - Green circles: HTT1a probe (488 nm excitation)
+  - Orange squares: Full-length mHTT probe (548 nm excitation)
+  - Dashed line: x = y reference (perfect correlation would follow this line)
+  - Both channels show strong positive correlation
+
+Panel B: Threshold vs Peak Intensity by Session
+  - Colors indicate imaging session (blue = Session 1, red = Session 2, purple = Session 3)
+  - Marker shapes indicate channel (circles = HTT1a, squares = fl-HTT)
+  - Sessions cluster together, reflecting session-specific imaging conditions
+  - Within-session variation is smaller than between-session variation
+
+====================================================================================================
+METHODOLOGY
+====================================================================================================
+
+Threshold calculation:
+  - Quantile: 95th percentile of negative control spot intensities
+  - Negative control: Bacterial DapB probe (not expressed in mammalian tissue)
+
+Peak intensity calculation:
+  - Method: Mode of kernel density estimate (KDE) of spot intensities
+  - Only spots above threshold are included
+  - Represents the most probable intensity for a single mRNA molecule
+
+====================================================================================================
+Generated: 2026-01-12 11:15:57
+====================================================================================================

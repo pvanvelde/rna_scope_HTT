@@ -1,0 +1,47 @@
+Spot vs Cluster Comparison Summary
+==================================================
+
+FOV: q11110slidesno2june2025newillumination--m1a5--region008--158257--n0017
+Channel: green
+Peak intensity (single mRNA): 30801.22 photons
+
+Total valid spots: 79
+Total valid clusters: 258
+  - Small (<10 mRNA): 211
+  - Medium (10-50 mRNA): 47
+  - Large (>50 mRNA): 0
+
+Comparisons generated: 10
+
+Individual comparisons:
+--------------------------------------------------
+  1. Spot: 0.84 mRNA (25807 photons)
+     Cluster: 2.4 mRNA, 5.74 µm³, density: 0.42 mRNA/µm³
+
+  2. Spot: 1.84 mRNA (56523 photons)
+     Cluster: 7.2 mRNA, 10.56 µm³, density: 0.68 mRNA/µm³
+
+  3. Spot: 1.10 mRNA (33760 photons)
+     Cluster: 5.6 mRNA, 11.22 µm³, density: 0.50 mRNA/µm³
+
+  4. Spot: 0.95 mRNA (29189 photons)
+     Cluster: 3.3 mRNA, 7.71 µm³, density: 0.43 mRNA/µm³
+
+  5. Spot: 1.12 mRNA (34372 photons)
+     Cluster: 3.0 mRNA, 5.76 µm³, density: 0.53 mRNA/µm³
+
+  6. Spot: 1.03 mRNA (31672 photons)
+     Cluster: 9.8 mRNA, 11.71 µm³, density: 0.83 mRNA/µm³
+
+  7. Spot: 1.59 mRNA (48924 photons)
+     Cluster: 11.3 mRNA, 11.34 µm³, density: 0.99 mRNA/µm³
+
+  8. Spot: 0.58 mRNA (17819 photons)
+     Cluster: 20.5 mRNA, 25.23 µm³, density: 0.81 mRNA/µm³
+
+  9. Spot: 1.73 mRNA (53271 photons)
+     Cluster: 19.8 mRNA, 18.15 µm³, density: 1.09 mRNA/µm³
+
+  10. Spot: 1.44 mRNA (44303 photons)
+     Cluster: 12.3 mRNA, 16.40 µm³, density: 0.75 mRNA/µm³
+

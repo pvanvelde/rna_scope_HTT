@@ -1,0 +1,60 @@
+============================================================
+PANEL G - FOV 3 METADATA (STRICTER filter)
+============================================================
+
+FOV Key: q11115slidesno1june2025--m2b4--region012--2412290--n0008
+Slide: m2b4
+Mouse ID: Q111 6mo #2 NTC Mid STR
+Genotype: Q111
+Age: 6.0 months
+Region: Cortex - Supplemental/primary somatosensory (nose)
+Probe Set: ExperimentalQ111 - 488mHT - 548mHTa - 647Darp
+NPZ path: /media/grunwaldlab/SG Skyhawk AI 24TB/Q111 raw data/Q111_15slidesno1_june2025/exported/Slide M2 - B4/Region 012/Slide M2 - B4_Region_12_FOV_290.npz
+
+OVERVIEW IMAGE DYNAMIC RANGES (min, max intensity)
+────────────────────────────────────────────────────────────
+  DAPI (blue):          1712.0 - 20792.0
+  mHTT1a (green):       781.0 - 29162.0
+  full-length (orange): 1245.0 - 47242.4
+
+SPOT FILTERING (Panel G - STRICTER than Panel D)
+────────────────────────────────────────────────────────────
+  1. spots_sigma_var.filter_indices (variable sigma fitting passed)
+  2. spots_sigma_var.filter_on_break (breakpoint filter)
+  3. photons > slide/channel threshold (from negative control)
+
+PHOTON THRESHOLDS
+────────────────────────────────────────────────────────────
+  Green: 34888 photons
+  Orange: 24904 photons
+
+FILTERED SPOT COUNTS (STRICTER than Panel D)
+────────────────────────────────────────────────────────────
+  Green (mHTT1a):       205 spots
+  Orange (full-length): 1,182 spots
+
+ZOOM REGIONS (same locations as Panel D)
+────────────────────────────────────────────────────────────
+  Zoom size: 256 x 256 pixels (41.6 x 41.6 µm)
+
+SCALE BARS
+────────────────────────────────────────────────────────────
+  Overview images: 50 µm (307 pixels)
+  Zoom images:     10 µm (61 pixels)
+
+  GREEN (mHTT1a) zoom:
+    Center (x, y): (1420, 683)
+    Spots in zoom: 1
+    Intensity range: 1142.0 - 38651.6
+    σₓ range (pixels): 1.44 - 1.44
+    σₓ range (nm): 234.3 - 234.3
+
+  ORANGE (full-length) zoom:
+    Center (x, y): (1705, 636)
+    Spots in zoom: 28
+    Intensity range: 3202.0 - 21137.3
+    σₓ range (pixels): 1.21 - 1.75
+    σₓ range (nm): 196.8 - 284.8
+
+NOTE: Panel D uses filter_indices ONLY = MORE spots
+      Panel G adds filter_on_break = FEWER, cleaner single-molecule spots

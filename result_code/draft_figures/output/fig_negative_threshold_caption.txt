@@ -1,0 +1,47 @@
+Figure: Negative controls establish per-slide detection thresholds
+======================================================================
+
+Analysis of 727,329 negative control spots (bacterial DapB probe,
+absent in mammalian tissue) across 30 slides (mean ± standard deviation:
+24244 ± 7748 spots/slide;
+13546 ± 7748 green, 10698 ± 6113 orange).
+
+(A) Distributions of integrated photon counts from all negative-control detections
+    (combined across slides). Mean ± s.d. of 95th percentile thresholds:
+    - Green: 33277 ± 13186 photons
+    - Orange: 12409 ± 5194 photons
+
+(B) Cumulative distribution functions (CDFs) per slide (thin lines) and mean CDF
+    across all slides (bold) demonstrate consistent tail behavior despite variation
+    in median background. Horizontal line at 0.95 marks the quantile used for
+    thresholding.
+
+(C) Threshold values versus slide number (circles: green channel, squares: orange
+    channel) reveal substantial slide-to-slide variation:
+    - Coefficient of variation CV_green = 39.6%
+      (33277 ± 13186 photons)
+    - Coefficient of variation CV_orange = 41.9%
+      (12409 ± 5194 photons)
+    This motivates per-slide normalization to account for batch-to-batch variation
+    in autofluorescence and staining efficiency.
+
+All values reported as mean ± standard deviation across slides.
+
+======================================================================
+STATISTICS SUMMARY
+======================================================================
+Total negative control spots: 727,329
+Number of slides: 30
+Spots per slide (overall): 24244
+
+Green channel:
+  Total spots: 406,377
+  Spots/slide: 13546 ± 7748
+  Mean threshold: 33277 ± 13186 photons
+  Coefficient of variation: 39.6%
+
+Orange channel:
+  Total spots: 320,952
+  Spots/slide: 10698 ± 6113
+  Mean threshold: 12409 ± 5194 photons
+  Coefficient of variation: 41.9%

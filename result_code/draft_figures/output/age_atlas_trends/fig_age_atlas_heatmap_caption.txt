@@ -1,0 +1,93 @@
+================================================================================
+FIGURE: Age × Atlas Coordinate Heatmap (Q111 mice only)
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents 2D heatmaps showing the combined effects of age and
+anterior-posterior brain position on total mRNA expression in Q111 transgenic mice.
+Each panel displays one combination of brain region (Cortex/Striatum) and
+transcript type (HTT1a/fl-HTT). Heat intensity represents mean total
+mRNA per cell, with numbers overlaid showing sample counts (FOVs) per bin.
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total Q111 FOVs (with atlas coordinates): 2668
+
+BINNING STRATEGY:
+--------------------------------------------------------------------------------
+Age bins: 3 discrete timepoints (2.0mo, 6.0mo, 12.0mo)
+Atlas bins: 5 equal-width bins spanning 40 to 68 (25μm units)
+
+PANEL DESCRIPTIONS:
+--------------------------------------------------------------------------------
+
+Panel A: HTT1a - Cortex
+  Total FOVs: 697
+  Mean expression: 13.44 ± 15.01 mRNA/cell
+  Range: 0.64 - 107.28 mRNA/cell
+  Per-age breakdown:
+    2.0mo: n=335, mean=7.80±6.95
+    6.0mo: n=193, mean=13.95±11.87
+    12.0mo: n=169, mean=24.05±22.35
+
+Panel B: fl-HTT - Cortex
+  Total FOVs: 697
+  Mean expression: 22.74 ± 23.51 mRNA/cell
+  Range: 0.05 - 137.83 mRNA/cell
+  Per-age breakdown:
+    2.0mo: n=335, mean=11.64±6.46
+    6.0mo: n=193, mean=26.05±23.30
+    12.0mo: n=169, mean=40.96±31.53
+
+Panel C: HTT1a - Striatum
+  Total FOVs: 637
+  Mean expression: 20.11 ± 19.54 mRNA/cell
+  Range: 0.19 - 96.10 mRNA/cell
+  Per-age breakdown:
+    2.0mo: n=180, mean=5.54±4.32
+    6.0mo: n=284, mean=22.90±17.62
+    12.0mo: n=173, mean=30.69±23.10
+
+Panel D: fl-HTT - Striatum
+  Total FOVs: 637
+  Mean expression: 25.48 ± 20.00 mRNA/cell
+  Range: 0.09 - 87.29 mRNA/cell
+  Per-age breakdown:
+    2.0mo: n=180, mean=11.61±6.99
+    6.0mo: n=284, mean=25.72±18.79
+    12.0mo: n=173, mean=39.52±21.18
+
+INTERPRETATION:
+--------------------------------------------------------------------------------
+This visualization enables identification of spatiotemporal expression patterns,
+revealing whether fl-HTT expression varies systematically with:
+  1. Age (vertical axis): Progressive changes over disease course
+  2. Brain position (horizontal axis): Regional vulnerability along A-P axis
+  3. Interaction effects: Age-dependent regional changes
+
+Numbers in each cell indicate FOV count (sample size) for that bin.
+Empty/low-count bins appear due to uneven spatial sampling across ages.
+
+COLOR SCALE:
+--------------------------------------------------------------------------------
+Colormap: 'viridis' (perceptually uniform)
+Range: Automatically scaled to data range per panel
+Interpretation: Warmer colors = higher mRNA expression
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Excluded slides: m1a2, m1b5 (technical failures)
+Minimum nuclei per FOV: 40
+Wildtype data not included (sparse sampling across age/space)
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Total mRNA = N_spots + (I_cluster / I_peak_single) / N_nuclei
+Slide-specific peak intensity normalization via KDE
+Atlas coordinates: Anterior-posterior position in 25μm units from Bregma
+Heatmap values: Mean total mRNA per cell within each age×atlas bin
+
+================================================================================
+Generated: 2026-01-12 11:48:14
+================================================================================

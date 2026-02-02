@@ -1,0 +1,7 @@
+Zoom region 1
+Center: (183, 1147)
+Bounds: x=[55, 311], y=[1019, 1275]
+Size: 256 x 256 pixels
+Size: 41.6 x 41.6 µm
+Scale bar: 10 µm
+Clusters in region: 23

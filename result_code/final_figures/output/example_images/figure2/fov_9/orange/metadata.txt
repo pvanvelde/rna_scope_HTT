@@ -1,0 +1,17 @@
+FOV Key: q11110slidesno2june2025newillumination--m1a5--region008--158257--n0017
+NPZ path: /media/grunwaldlab/SG Skyhawk AI 24TB/Q111 raw data/Q111_10slidesno2_june2025_new_illumination/exported/Slide M1 - A5/Region 008/Slide M1 - A5_Region_8_FOV_257.npz
+Channel: orange
+Image shape: (4, 21, 1954, 1854)
+
+Clusters: 645
+Spots: 778
+
+Peak intensity (KDE, sigma-filtered): 7766.57
+Cluster intensity range (photons): 4441.5 - 330755.2
+Cluster mRNA equiv. range: 0.6 - 42.6
+Cluster mRNA equiv. median: 3.2
+Cluster size range: 0.00 - 1000075.06 µm³
+
+Colorbar ranges:
+  Intensity: 1.1 - 11.6 mRNA equiv.
+  Volume: 1.7 - 15.5 µm³

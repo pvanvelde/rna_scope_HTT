@@ -1,0 +1,27 @@
+================================================================================
+SUPPLEMENTARY FIGURE: Cluster Size Distributions by Brain Atlas Coordinate - full-length mHTT
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This supplementary figure shows cluster size distributions for ALL brain atlas
+coordinates sampled in the study. Each panel represents one atlas coordinate
+(A-P position in 25μm units from Bregma), showing Q111 vs Wildtype distributions
+when wildtype data is available.
+
+This provides complete spatial coverage and allows identification of
+region-specific differences in cluster composition along the anterior-posterior axis.
+
+Cortex atlas coordinates (10 total):
+  40, 41, 45, 46, 47, 53, 55, 57, 60, 68
+
+Striatum atlas coordinates (10 total):
+  40, 41, 45, 46, 47, 53, 55, 57, 60, 68
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Same as main figure - see main figure caption for details.
+
+================================================================================
+Generated: 2025-12-25 01:43:03
+================================================================================

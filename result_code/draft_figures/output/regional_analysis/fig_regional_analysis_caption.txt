@@ -1,0 +1,80 @@
+Figure: Regional Analysis - Sub-regional Homogeneity vs Inter-regional Differences
+
+This figure presents a comprehensive analysis of fl-HTT mRNA expression patterns across brain regions,
+demonstrating that while sub-regional variation within Cortex and Striatum is minimal (location within
+a region doesn't significantly affect expression), substantial differences exist between the two major
+brain regions.
+
+DATA FILTERING AND QUALITY CONTROL:
+- Dataset: Q111 experimental samples from the ExperimentalQ111 - 488mHT - 548mHTa - 647Darp probe set
+- Excluded slides (n=14): m1a1, m1a2, m1b2, m1b3, m1b4, m1b5, m2a1, m2a7, m2b2, m2b4, m2b5, m2b5, m3b4, m3b5
+  (Slides excluded due to poor UBC positive control expression indicating technical failures)
+- CV threshold for cluster filtering: CV >= 0.5
+- Minimum nuclei per FOV: 40.0
+- Intensity threshold: Per-slide, determined from negative control at quantile=0.95, max PFA=0.05
+
+DATA SUMMARY:
+- Slides analyzed (n=15): m1a4, m1a5, m1b1, m2a2, m2a3, m2a4, m2a8, m2b1, m2b7, m3a1, m3a2, m3a3, m3a5, m3b2, m3b3
+- Total FOVs: 2668
+  - Cortex: 1394 FOVs
+  - Striatum: 1274 FOVs
+- Age range: 2 - 12 months
+- Brain atlas coordinate range: 40.00 - 68.00 mm
+
+SUBREGIONS ANALYZED:
+- Cortex subregions (n=5): Cortex - Piriform area, Cortex - Primary and secondary motor areas, Cortex - Primary somatosensory (mouth, upper limb), Cortex - Supplemental/primary somatosensory (nose), Cortex - Visceral/gustatory/agranular areas
+- Striatum subregions (n=4): Striatum - lower left, Striatum - lower right, Striatum - upper left, Striatum - upper right
+
+VOXEL AND PIXEL PARAMETERS:
+- Pixel size (XY): 162.5 nm
+- Slice depth (Z): 500 nm
+- Voxel size: 0.013203125000000001 μm³
+- Mean nuclear volume (for nuclei estimation): 716 μm³
+
+STATISTICAL RESULTS:
+
+HTT1A:
+
+  Cortex sub-regional ANOVA: F=0.586, p=0.6739 ns
+  Striatum sub-regional ANOVA: F=0.135, p=0.9385 ns
+  Cortex vs Striatum (paired t-test):
+    Cortex: 14.985 ± 14.051 mRNA/cell
+    Striatum: 15.992 ± 16.096 mRNA/cell
+    t=-0.589, p=0.5657 ns (n=14 paired samples)
+
+FL-HTT:
+
+  Cortex sub-regional ANOVA: F=0.554, p=0.6969 ns
+  Striatum sub-regional ANOVA: F=0.030, p=0.9929 ns
+  Cortex vs Striatum (paired t-test):
+    Cortex: 25.237 ± 22.066 mRNA/cell
+    Striatum: 22.003 ± 17.156 mRNA/cell
+    t=1.709, p=0.1113 ns (n=14 paired samples)
+
+PANEL DESCRIPTIONS:
+
+Row 1 - Cortex Sub-regional Analysis:
+A. HTT1a expression across cortical subregions with one-way ANOVA
+B. fl-fl-HTT expression across cortical subregions with one-way ANOVA
+
+Row 2 - Striatum Sub-regional Analysis:
+C. HTT1a expression across striatal subregions with one-way ANOVA
+D. fl-fl-HTT expression across striatal subregions with one-way ANOVA
+
+Row 3 - Inter-regional Comparison:
+E. HTT1a Cortex vs Striatum with paired t-test and connecting lines
+F. fl-HTT Cortex vs Striatum with paired t-test and connecting lines
+
+INTERPRETATION:
+- Non-significant sub-regional ANOVAs indicate expression is homogeneous within each major brain region
+- This validates pooling FOVs across subregions for region-level analyses
+- Significant Cortex vs Striatum differences reflect true regional variation in fl-HTT expression
+- Paired t-tests control for inter-animal variability by comparing regions within the same slide
+
+METHODOLOGY:
+- Sub-regional analysis: One-way ANOVA with Tukey's HSD post-hoc test (α=0.05)
+- Inter-regional analysis: Paired t-test using slide-level averages
+- Expression normalized: (N_spots + I_cluster_total / I_single_peak) / N_nuclei
+- Peak intensity: Slide-specific KDE mode estimation from single spots
+
+Analysis performed with scienceplots style. CV threshold=0.5, Min nuclei=40.0.

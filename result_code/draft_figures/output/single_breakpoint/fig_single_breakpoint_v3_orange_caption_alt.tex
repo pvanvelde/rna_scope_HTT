@@ -1,0 +1,25 @@
+\caption{\textbf{Empirical definition of the single-molecule regime in tissue via per-slide normalization and breakpoint analysis (Orange channel (548 nm), fl-HTT (complete mutant huntingtin transcript)).}
+\textbf{(A)} Raw integrated photon counts for each of 26 slides analyzed (faint colored lines show kernel density estimates for individual slides, 4,474,897 total spots from Q111 transgenic mouse tissue).
+Substantial slide-to-slide variation is evident, with peak intensities varying by $2$--$3\times$ due to technical factors: tissue autofluorescence, fixation quality, probe hybridization efficiency, and imaging conditions (laser power, detector sensitivity).
+This heterogeneity necessitates per-slide normalization rather than global intensity calibration.
+\textbf{(B)} After per-slide normalization, all distributions converge around $N_{1\mathrm{mRNA}} = 1$ (red dashed line), where the modal intensity of each slide is independently set to unity via kernel density estimation (KDE with Scott's bandwidth).
+This normalization successfully removes technical variation while preserving biological signal, as evidenced by the conserved tail extending beyond 1 (representing multi-transcript aggregates and clusters).
+%
+\textbf{(C--E)} Biphasic relationships reveal the empirical boundary between single molecules and aggregates.
+For \textbf{(C)} lateral $\sigma_x$, \textbf{(D)} lateral $\sigma_y$, and \textbf{(E)} axial $\sigma_z$, the bold colored line shows mean normalized intensity from all pooled spots using 8.0~nm bins.
+The analysis range uses a principled hybrid approach: for lateral dimensions, the lower bound is 50\% of bead PSF (since spots cannot be smaller than approximately half the diffraction limit); for the axial dimension, the lower bound is fixed at 500~nm (1 slice depth) to capture the full rising phase of the biphasic curve. The upper bound is data-driven (98th percentile of data, adapting to actual distribution).
+This yields ranges of [92, 494]~nm for $\sigma_x$/$\sigma_y$ and [500, 962]~nm for $\sigma_z$.
+Light shading indicates $\pm 1$ standard deviation across per-slide means (inter-slide variability) and darker narrow bands show $\pm 1$ SEM of the combined mean (uncertainty).
+Purple dotted vertical lines mark bead-derived PSF from fluorescent microsphere calibration ($\sigma_x = 185$~nm, $\sigma_y = 187$~nm, $\sigma_z = 573$~nm), representing the diffraction-limited optical reference.
+Colored dashed vertical lines indicate empirically-determined breakpoints ($\sigma_x = 287$~nm, $\sigma_y = 287$~nm, $\sigma_z = 708$~nm), which exceed bead PSF by $55\%$, $54\%$, and $24\%$ respectively---consistent with the finite physical extent of RNAscope probe clusters ($\sim$20 probe pairs, each $\sim$2--3~nm) bound to target mRNA in tissue.
+The diagnostic biphasic pattern separates two regimes: left of the breakpoint (single-molecule regime), intensity increases linearly with size, indicating that larger fitted widths arise from increased local probe density or extended hybridization sites while remaining single diffraction-limited emitters; right of the breakpoint (aggregate regime), intensity plateaus despite size growth, revealing spatially unresolved multi-transcript clusters where size reflects aggregation rather than probe binding.
+Breakpoints were computed via weighted piecewise-linear regression with Savitzky--Golay smoothing (window = 9 bins, polynomial order = 2), searching only after intensity reaches 80\% of maximum and applying strict penalties to enforce positive slope before breakpoint and near-zero slope after (details in Methods).
+%
+\textbf{(F--H)} Spot size distributions define tissue-calibrated PSF values.
+For \textbf{(F)} $\sigma_x$, \textbf{(G)} $\sigma_y$, and \textbf{(H)} $\sigma_z$, faint colored lines show per-slide probability density functions while thick colored lines show combined PDFs from all pooled spots.
+Purple dotted lines replicate bead PSF references, while colored dashed lines mark the modes of the combined distributions: $\sigma_x = 248$~nm, $\sigma_y = 247$~nm, $\sigma_z = 659$~nm.
+These mode values represent the most probable spot sizes in tissue and define the refined, tissue-calibrated PSF that supersedes bead-derived measurements for all downstream single-molecule quantification, accounting for \emph{in situ} effects including refractive index mismatch between tissue and immersion medium, optical aberrations from tissue heterogeneity, and the finite geometry of probe--mRNA complexes.
+The close correspondence between modes and bead PSF ($<$5\% difference for $\sigma_z$, $\sim$40\% for lateral dimensions) validates the optical calibration while revealing tissue-specific broadening from probe cluster size.
+Spot sizes were determined by 3D Gaussian fitting to background-subtracted fluorescence images acquired at 548~nm excitation (Orange channel (548 nm), detecting fl-HTT (complete mutant huntingtin transcript)) with 108.0~nm lateral pixel size and 200.0~nm axial slice depth.
+Quality filtering retained spots with probability of false alarm $< 10^{-4}$.
+}

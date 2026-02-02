@@ -1,0 +1,108 @@
+================================================================================
+REGIONAL ANALYSIS STATISTICS SUMMARY
+================================================================================
+
+
+HTT1a_Cortex_Tukey:
+------------------------------------------------------------
+                                             Multiple Comparison of Means - Tukey HSD, FWER=0.05                                             
+=============================================================================================================================================
+                      group1                                             group2                       meandiff p-adj   lower    upper  reject
+---------------------------------------------------------------------------------------------------------------------------------------------
+                            Cortex - Piriform area         Cortex - Primary and secondary motor areas   2.1515 0.9954 -13.6815 17.9845  False
+                            Cortex - Piriform area Cortex - Primary somatosensory (mouth, upper limb)   5.2105 0.8795 -10.3372 20.7582  False
+                            Cortex - Piriform area Cortex - Supplemental/primary somatosensory (nose)   5.9791 0.8158  -9.5686 21.5268  False
+                            Cortex - Piriform area        Cortex - Visceral/gustatory/agranular areas  -0.6607    1.0 -16.4938 15.1723  False
+        Cortex - Primary and secondary motor areas Cortex - Primary somatosensory (mouth, upper limb)    3.059 0.9812 -12.4887 18.6067  False
+        Cortex - Primary and secondary motor areas Cortex - Supplemental/primary somatosensory (nose)   3.8276 0.9576 -11.7201 19.3753  False
+        Cortex - Primary and secondary motor areas        Cortex - Visceral/gustatory/agranular areas  -2.8122 0.9872 -18.6453 13.0208  False
+Cortex - Primary somatosensory (mouth, upper limb) Cortex - Supplemental/primary somatosensory (nose)   0.7686 0.9999 -14.4885 16.0257  False
+Cortex - Primary somatosensory (mouth, upper limb)        Cortex - Visceral/gustatory/agranular areas  -5.8713 0.8256  -21.419  9.6765  False
+Cortex - Supplemental/primary somatosensory (nose)        Cortex - Visceral/gustatory/agranular areas  -6.6399 0.7514 -22.1876  8.9079  False
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+HTT1a_Cortex_ANOVA:
+------------------------------------------------------------
+  F: 0.58613003868049
+  p: 0.673861946010139
+
+HTT1a_Striatum_Tukey:
+------------------------------------------------------------
+                 Multiple Comparison of Means - Tukey HSD, FWER=0.05                 
+=====================================================================================
+        group1                 group2         meandiff p-adj   lower    upper  reject
+-------------------------------------------------------------------------------------
+ Striatum - lower left Striatum - lower right   3.3031 0.9557 -13.7739 20.3802  False
+ Striatum - lower left  Striatum - upper left   1.2651 0.9974 -16.1039 18.6341  False
+ Striatum - lower left Striatum - upper right   -0.362 0.9999 -17.4391 16.7151  False
+Striatum - lower right  Striatum - upper left   -2.038 0.9889 -19.1151 15.0391  False
+Striatum - lower right Striatum - upper right  -3.6652  0.938 -20.4452 13.1149  False
+ Striatum - upper left Striatum - upper right  -1.6272 0.9943 -18.7042 15.4499  False
+-------------------------------------------------------------------------------------
+
+HTT1a_Striatum_ANOVA:
+------------------------------------------------------------
+  F: 0.13546068448168147
+  p: 0.9384647822339981
+
+HTT1a_CortexVsStriatum:
+------------------------------------------------------------
+  t: -0.5894247125434342
+  p: 0.5656797120783266
+  n: 14
+  cortex_mean: 14.985041693044817
+  cortex_std: 14.051016723563103
+  striatum_mean: 15.992157395553843
+  striatum_std: 16.0963732811645
+
+fl-HTT_Cortex_Tukey:
+------------------------------------------------------------
+                                             Multiple Comparison of Means - Tukey HSD, FWER=0.05                                             
+=============================================================================================================================================
+                      group1                                             group2                       meandiff p-adj   lower    upper  reject
+---------------------------------------------------------------------------------------------------------------------------------------------
+                            Cortex - Piriform area         Cortex - Primary and secondary motor areas   7.3289 0.9214 -17.5805 32.2382  False
+                            Cortex - Piriform area Cortex - Primary somatosensory (mouth, upper limb)  10.3638 0.7568 -14.0967 34.8243  False
+                            Cortex - Piriform area Cortex - Supplemental/primary somatosensory (nose)  10.6785  0.736  -13.782  35.139  False
+                            Cortex - Piriform area        Cortex - Visceral/gustatory/agranular areas   3.4582  0.995 -21.4512 28.3675  False
+        Cortex - Primary and secondary motor areas Cortex - Primary somatosensory (mouth, upper limb)    3.035 0.9967 -21.4255 27.4955  False
+        Cortex - Primary and secondary motor areas Cortex - Supplemental/primary somatosensory (nose)   3.3496 0.9952 -21.1109 27.8101  False
+        Cortex - Primary and secondary motor areas        Cortex - Visceral/gustatory/agranular areas  -3.8707 0.9923 -28.7801 21.0386  False
+Cortex - Primary somatosensory (mouth, upper limb) Cortex - Supplemental/primary somatosensory (nose)   0.3147    1.0 -23.6886 24.3179  False
+Cortex - Primary somatosensory (mouth, upper limb)        Cortex - Visceral/gustatory/agranular areas  -6.9057 0.9316 -31.3662 17.5548  False
+Cortex - Supplemental/primary somatosensory (nose)        Cortex - Visceral/gustatory/agranular areas  -7.2203 0.9205 -31.6808 17.2402  False
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+fl-HTT_Cortex_ANOVA:
+------------------------------------------------------------
+  F: 0.5538916461349408
+  p: 0.6969009339347154
+
+fl-HTT_Striatum_Tukey:
+------------------------------------------------------------
+                 Multiple Comparison of Means - Tukey HSD, FWER=0.05                 
+=====================================================================================
+        group1                 group2         meandiff p-adj   lower    upper  reject
+-------------------------------------------------------------------------------------
+ Striatum - lower left Striatum - lower right   1.2021 0.9979   -16.55 18.9542  False
+ Striatum - lower left  Striatum - upper left  -0.5056 0.9999 -18.5612   17.55  False
+ Striatum - lower left Striatum - upper right  -0.5251 0.9998 -18.2771  17.227  False
+Striatum - lower right  Striatum - upper left  -1.7077 0.9941 -19.4598 16.0444  False
+Striatum - lower right Striatum - upper right  -1.7271 0.9936 -19.1705 15.7162  False
+ Striatum - upper left Striatum - upper right  -0.0195    1.0 -17.7716 17.7326  False
+-------------------------------------------------------------------------------------
+
+fl-HTT_Striatum_ANOVA:
+------------------------------------------------------------
+  F: 0.029999146791318605
+  p: 0.9929240237919377
+
+fl-HTT_CortexVsStriatum:
+------------------------------------------------------------
+  t: 1.7087254629245563
+  p: 0.1112512928830295
+  n: 14
+  cortex_mean: 25.237354290346648
+  cortex_std: 22.06594867329468
+  striatum_mean: 22.003150978408563
+  striatum_std: 17.155703312562487

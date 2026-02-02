@@ -1,0 +1,156 @@
+================================================================================
+FIGURE: Cluster Size Distributions - full-length mHTT
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents probability density functions (PDFs) showing the distribution
+of cluster sizes (mRNA equivalents per cluster) for full-length mHTT transcripts in
+Q111 transgenic mice compared to wildtype controls. Full-length mHTT represents
+completely spliced transcripts that encode the full huntingtin protein (~350 kDa)
+with the polyglutamine expansion in exon 1.
+
+Distributions are shown across:
+  - Brain regions (Cortex, Striatum)
+  - Ages (2, 6, 12 months)
+  - Individual mouse IDs
+
+Each panel shows:
+  - PDF (probability density function) - histogram with density normalization
+  - n: total number of clusters
+  - Mean: mean cluster size (mRNA equivalents)
+  - Med: median cluster size
+  - IQR: interquartile range (Q75 - Q25)
+  - P95: 95th percentile
+  - cl/cell: clusters per cell (average)
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total FOVs: 1617 (Q111: 1333, WT: 284)
+Total clusters: 1544134 (Q111: 1337207, WT: 206927)
+
+Cortex: 829 FOVs, 806305 clusters
+  Q111: 695 FOVs, 683992 clusters
+  WT: 134 FOVs, 122313 clusters
+Striatum: 788 FOVs, 737829 clusters
+  Q111: 638 FOVs, 653215 clusters
+  WT: 150 FOVs, 84614 clusters
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Excluded slides (technical failures based on UBC positive control analysis):
+  - m1a2
+  - m1b5
+  - m2b5
+  - m2b2
+  - m2a7
+  - m2a1
+  - m2b4
+  - m2b5
+  - m3b4
+  - m1a1
+  - m1b2
+  - m1b3
+  - m1b4
+  - m3b5
+
+PANEL DESCRIPTIONS:
+--------------------------------------------------------------------------------
+
+(A-B) OVERALL DISTRIBUTIONS BY REGION:
+Probability density functions showing the full distribution of cluster sizes
+for all Q111 and Wildtype data. (A) Cortex, (B) Striatum.
+
+Cortex Q111: n=683992 clusters, mean=6.43, median=3.77, IQR=5.14, P95=19.62, 36.86 cl/cell
+Cortex WT: n=122313 clusters, mean=5.29, median=3.10, IQR=4.40, P95=16.46, 13.55 cl/cell
+Striatum Q111: n=653215 clusters, mean=5.77, median=3.75, IQR=4.91, P95=17.01, 23.75 cl/cell
+Striatum WT: n=84614 clusters, mean=4.88, median=3.03, IQR=4.17, P95=14.68, 12.80 cl/cell
+
+(C-H) DISTRIBUTIONS BY AGE:
+Cluster size distributions separated by age (2, 6, 12 months).
+(C-E) Cortex at 2, 6, 12 months. (F-H) Striatum at 2, 6, 12 months.
+Shows how cluster size distributions evolve with disease progression.
+
+Cortex:
+  2mo Q111: n=218086, mean=6.13, median=3.41, P95=17.70, 36.26 cl/cell
+  2mo WT: n=34098, mean=2.53, median=1.75, P95=5.32, 5.32 cl/cell
+  6mo Q111: n=235876, mean=4.38, median=2.95, P95=12.33, 11.03 cl/cell
+  12mo Q111: n=230030, mean=8.82, median=5.45, P95=27.46, 66.58 cl/cell
+  12mo WT: n=88215, mean=6.36, median=4.09, P95=19.19, 18.61 cl/cell
+Striatum:
+  2mo Q111: n=120921, mean=5.83, median=3.75, P95=17.36, 29.48 cl/cell
+  2mo WT: n=12649, mean=2.79, median=1.97, P95=5.96, 15.00 cl/cell
+  6mo Q111: n=306052, mean=4.56, median=3.14, P95=12.56, 9.63 cl/cell
+  12mo Q111: n=226242, mean=7.39, median=4.85, P95=22.01, 40.69 cl/cell
+  12mo WT: n=71965, mean=5.24, median=3.35, P95=15.77, 11.84 cl/cell
+
+(I-P) DISTRIBUTIONS BY MOUSE ID:
+Cluster size distributions for individual mice (top 2 Q111 and top 2 Wildtype per region).
+(I-L) Cortex mice. (M-P) Striatum mice.
+Reveals inter-individual variability in cluster phenotype.
+
+Cortex:
+Striatum:
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Q111 mice: Green
+Wildtype mice: Coral/Orange
+
+KEY OBSERVATIONS:
+--------------------------------------------------------------------------------
+1. Cluster size distributions:
+   - Q111 mice show substantially elevated full-length mHTT clustering
+   - Most clusters contain 2-10 mRNA equivalents (median ~4-5)
+   - Long tail extends to >20 mRNA equivalents per cluster
+   - More abundant than mHTT1a clusters (~2x)
+
+2. Age progression:
+   - Cortex: highest cluster abundance at 2mo, stable at 6-12mo
+   - Striatum: peak cluster formation at 6 months, decreasing at 12mo
+   - Strong elevation vs wildtype at all ages
+
+3. Biological significance:
+   - Full-length mHTT encodes complete huntingtin protein
+   - Higher abundance vs mHTT1a may reflect greater stability
+   - Clusters indicate co-transcriptional sites or transport granules
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+Cluster size calculation:
+  - Cluster intensity = sum of all spot intensities in a cluster
+  - Single spot peak intensity = mode of KDE-fitted intensity distribution
+  - Cluster size (mRNA equivalents) = Cluster intensity / Single spot peak
+  - This gives the number of mRNA molecules per cluster
+  - Normalization is slide-specific to account for batch effects
+
+Cluster detection:
+  - DBSCAN clustering algorithm (eps=0.75 µm, min_samples=3)
+  - Identifies spatially proximate spots as clusters
+  - Only clusters with total intensity > threshold are analyzed
+  - Threshold = 2.5 × peak_intensity (slide-specific)
+  - Ensures clusters represent genuine aggregation, not noise
+
+Peak intensity determination:
+  - Kernel Density Estimation (KDE) on single spot intensities
+  - Computed per slide/region/channel combination
+  - Accounts for slide-to-slide variation in signal intensity
+  - Uses Scott's bandwidth method for optimal smoothing
+
+Quality control:
+  - Minimum 5 clusters per FOV required for inclusion
+  - Minimum 50 single spots required for peak intensity calculation
+  - Slides m1a2 and m1b5 excluded (technical failures)
+  - Final filter applied to all spot detections (PFA < 0.05)
+
+Statistics reported (per panel):
+  - n: total number of clusters analyzed
+  - Mean: arithmetic mean of cluster sizes (mRNA equivalents)
+  - Med: median cluster size (50th percentile)
+  - IQR: interquartile range (75th - 25th percentile)
+  - P95: 95th percentile of cluster sizes
+  - cl/cell: average number of clusters per cell (FOV-level mean)
+
+================================================================================
+Generated: 2025-12-25 01:43:03
+================================================================================

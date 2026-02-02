@@ -1,0 +1,9 @@
+FOV Key: q11110slidesno2june2025newillumination--m1a4--region005--145396--n0010
+Slide: m1a4
+Mouse Model: Q111
+Age: 6 months
+Region: Cortex
+Number of Nuclei: 420.9
+
+mHTT1a (green): 2.17 mRNA/nucleus
+Full-length mHTT (orange): 0.26 mRNA/nucleus

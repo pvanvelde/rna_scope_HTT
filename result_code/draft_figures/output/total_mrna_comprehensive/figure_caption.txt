@@ -1,0 +1,265 @@
+================================================================================
+FIGURE: Comprehensive Total mRNA Expression Analysis
+================================================================================
+
+OVERVIEW:
+--------------------------------------------------------------------------------
+This figure presents a comprehensive analysis of total mRNA expression in Q111
+transgenic mice compared to wildtype controls, examining both HTT1a (intron-1
+terminated, exon 1 only) and fl-HTT transcripts across cortical and
+striatal brain regions. Total mRNA represents the complete transcript abundance,
+quantified as: (N_spots + I_cluster_total / I_single_peak) / N_nuclei.
+
+DATASET STATISTICS:
+--------------------------------------------------------------------------------
+Total field-of-views (FOVs): 3234
+  Q111 mice: 2668 FOVs (82.5%)
+  Wildtype mice: 566 FOVs (17.5%)
+
+Cortex: 1662 FOVs total
+  Q111: 1394 FOVs, Wildtype: 268 FOVs
+Striatum: 1572 FOVs total
+  Q111: 1274 FOVs, Wildtype: 298 FOVs
+
+Q111 mice (n=15): Q111 12mo #1 aCSF Early STR, Q111 12mo #1 aCSF Late STR, Q111 12mo #1 aCSF Mid STR, Q111 12mo #2 aCSF Late STR, Q111 2mo #1 UNT Late STR, Q111 2mo #2 UNT Mid STR, Q111 2mo #2 UNT early STR, Q111 2mo #3 UNT Early STR, Q111 2mo #3 UNT Late STR, Q111 2mo #3 UNT Mid STR, Q111 6mo #1 NTC Late STR, Q111 6mo #2 NTC Late STR, Q111 6mo #2 NTC Mid STR, Q111 6mo #3 NTC Late STR, Q111 6mo #3 NTC Mid STR
+Wildtype mice (n=3): WT 12mo #3 aCSF Late STR, WT 12mo #3 aCSF Mid STR, WT 2mo #2 UNT Early STR
+
+Age timepoints: 2.0 months, 6.0 months, 12.0 months
+  2.0 mo: Q111=1030 FOVs, WT=192 FOVs
+  6.0 mo: Q111=954 FOVs, WT=0 FOVs
+  12.0 mo: Q111=684 FOVs, WT=374 FOVs
+
+QUALITY CONTROL:
+--------------------------------------------------------------------------------
+Total slides analyzed: 18
+Slides with technical failures were excluded based on UBC positive control analysis.
+(Slides with UBC expression <1 mRNA/nucleus were excluded)
+
+PANEL DESCRIPTIONS:
+--------------------------------------------------------------------------------
+
+ROW 1 - AGE TRENDS (Panels A-B):
+Violin plots showing the distribution of total mRNA expression across ages.
+Each violin represents the full distribution of FOV-level measurements at that age.
+
+Cortex (Panel A):
+  2.0mo Q111 HTT1a: n=335, mean=7.72±6.92, median=5.99
+  2.0mo Wildtype HTT1a: n=51, mean=4.01±2.57, median=3.45
+  2.0mo Q111 fl-HTT: n=335, mean=11.84±6.52, median=11.61
+  2.0mo Wildtype fl-HTT: n=51, mean=9.98±4.87, median=10.72
+  6.0mo Q111 HTT1a: n=193, mean=13.86±11.66, median=10.37
+  6.0mo Q111 fl-HTT: n=193, mean=26.33±23.63, median=21.85
+  12.0mo Q111 HTT1a: n=169, mean=24.23±22.30, median=17.93
+  12.0mo Wildtype HTT1a: n=83, mean=9.75±4.53, median=9.38
+  12.0mo Q111 fl-HTT: n=169, mean=41.03±31.20, median=31.36
+  12.0mo Wildtype fl-HTT: n=83, mean=24.75±10.65, median=22.52
+
+Striatum (Panel B):
+  2.0mo Q111 HTT1a: n=180, mean=5.48±4.31, median=4.74
+  2.0mo Wildtype HTT1a: n=45, mean=1.90±3.19, median=1.23
+  2.0mo Q111 fl-HTT: n=180, mean=11.87±7.10, median=12.08
+  2.0mo Wildtype fl-HTT: n=45, mean=5.02±3.17, median=4.42
+  6.0mo Q111 HTT1a: n=284, mean=22.56±17.27, median=17.72
+  6.0mo Q111 fl-HTT: n=284, mean=25.79±19.08, median=23.74
+  12.0mo Q111 HTT1a: n=173, mean=30.80±22.96, median=27.30
+  12.0mo Wildtype HTT1a: n=104, mean=4.96±1.96, median=5.07
+  12.0mo Q111 fl-HTT: n=173, mean=39.46±20.86, median=38.06
+  12.0mo Wildtype fl-HTT: n=104, mean=13.28±5.13, median=12.56
+
+STATISTICAL TESTS (Q111 vs Wildtype, Age Trends):
+--------------------------------------------------------------------------------
+Independent t-tests comparing Q111 and Wildtype at each age/channel/region.
+Significance: *** p<0.001, ** p<0.01, * p<0.05, ns p≥0.05
+
+Striatum - 2.0mo - HTT1a: t=5.229, p=0.0000 *** (Q111 n=180, WT n=45)
+Striatum - 2.0mo - fl-HTT: t=6.303, p=0.0000 *** (Q111 n=180, WT n=45)
+Striatum - 12.0mo - HTT1a: t=11.443, p=0.0000 *** (Q111 n=173, WT n=104)
+Striatum - 12.0mo - fl-HTT: t=12.564, p=0.0000 *** (Q111 n=173, WT n=104)
+
+AGE-DEPENDENT ANALYSIS (Q111 mice only):
+--------------------------------------------------------------------------------
+
+Sample Sizes by Age Group:
+  2.0mo: 6 mice, 335 cortex FOVs, 180 striatum FOVs
+  6.0mo: 5 mice, 193 cortex FOVs, 284 striatum FOVs
+  12.0mo: 4 mice, 169 cortex FOVs, 173 striatum FOVs
+
+One-way ANOVA for Age Effects (Q111 only):
+Tests whether mRNA expression differs significantly across age groups.
+
+Cortex - HTT1a:
+  ANOVA: F(2,694) = 84.709, p = 0.0000 ***
+  Kruskal-Wallis: H = 107.298, p = 0.0000
+  Peak expression: 12.0 months (mean = 24.23 mRNA/nucleus)
+  Group sizes: 2mo: n=335, 6mo: n=193, 12mo: n=169
+  Post-hoc pairwise comparisons (Bonferroni corrected):
+    2mo vs 6mo: t = -7.599, p_adj = 0.0000 *
+    2mo vs 12mo: t = -12.426, p_adj = 0.0000 *
+    6mo vs 12mo: t = -5.640, p_adj = 0.0000 *
+
+Cortex - fl-HTT:
+  ANOVA: F(2,694) = 120.310, p = 0.0000 ***
+  Kruskal-Wallis: H = 162.067, p = 0.0000
+  Peak expression: 12.0 months (mean = 41.03 mRNA/nucleus)
+  Group sizes: 2mo: n=335, 6mo: n=193, 12mo: n=169
+  Post-hoc pairwise comparisons (Bonferroni corrected):
+    2mo vs 6mo: t = -10.556, p_adj = 0.0000 *
+    2mo vs 12mo: t = -16.441, p_adj = 0.0000 *
+    6mo vs 12mo: t = -5.087, p_adj = 0.0000 *
+
+Striatum - HTT1a:
+  ANOVA: F(2,634) = 106.531, p = 0.0000 ***
+  Kruskal-Wallis: H = 205.633, p = 0.0000
+  Peak expression: 12.0 months (mean = 30.80 mRNA/nucleus)
+  Group sizes: 2mo: n=180, 6mo: n=284, 12mo: n=173
+  Post-hoc pairwise comparisons (Bonferroni corrected):
+    2mo vs 6mo: t = -13.009, p_adj = 0.0000 *
+    2mo vs 12mo: t = -14.528, p_adj = 0.0000 *
+    6mo vs 12mo: t = -4.351, p_adj = 0.0001 *
+
+Striatum - fl-HTT:
+  ANOVA: F(2,634) = 113.969, p = 0.0000 ***
+  Kruskal-Wallis: H = 167.914, p = 0.0000
+  Peak expression: 12.0 months (mean = 39.46 mRNA/nucleus)
+  Group sizes: 2mo: n=180, 6mo: n=284, 12mo: n=173
+  Post-hoc pairwise comparisons (Bonferroni corrected):
+    2mo vs 6mo: t = -9.385, p_adj = 0.0000 *
+    2mo vs 12mo: t = -16.767, p_adj = 0.0000 *
+    6mo vs 12mo: t = -7.168, p_adj = 0.0000 *
+
+Age × Region Interaction Analysis:
+Two-way ANOVA testing whether age effects differ between cortex and striatum.
+
+HTT1a:
+  Age trend correlation (Cortex vs Striatum): r = 0.941, p = 0.2203
+  → Similar age patterns in both regions (parallel trends)
+  Cortex: 2mo: 7.72, 6mo: 13.86, 12mo: 24.23
+  Striatum: 2mo: 5.48, 6mo: 22.56, 12mo: 30.80
+
+fl-HTT:
+  Age trend correlation (Cortex vs Striatum): r = 1.000, p = 0.0060
+  → Similar age patterns in both regions (parallel trends)
+  Cortex: 2mo: 11.84, 6mo: 26.33, 12mo: 41.03
+  Striatum: 2mo: 11.87, 6mo: 25.79, 12mo: 39.46
+
+Statistical Power Considerations:
+--------------------------------------------------------------------------------
+Total Q111 mice: 15
+Minimum mice per age group: 4
+
+⚠ UNDERPOWERED WARNING:
+With only 4 mice in the smallest age group, this study may be
+underpowered to detect moderate age effects. Results should be interpreted
+with caution. Power analysis suggests n ≥ 6-8 mice per group for detecting
+medium effect sizes (Cohen's d = 0.5-0.8) with 80% power.
+
+Note: FOV-level analysis provides increased statistical power compared to
+mouse-level analysis, but violates independence assumptions. Results should
+be validated with mouse-level means or mixed-effects models.
+
+ROW 2 - ATLAS COORDINATE TRENDS (Panels C-D):
+Box plots showing total mRNA expression across anterior-posterior brain atlas
+coordinates (25μm units from Bregma). Each box represents the interquartile range
+(IQR), whiskers extend to 1.5×IQR, and colored diamonds indicate mean values.
+Individual coordinates are shown without binning for maximum spatial resolution.
+
+Cortex (Panel C):
+  Atlas coordinates (n=12): 40 to 68 (25μm units)
+  Q111 HTT1a: n=697 FOVs across 12 coordinates, mean=13.42±14.99
+  Q111 fl-HTT: n=697 FOVs across 12 coordinates, mean=22.93±23.48
+  Wildtype HTT1a: n=134 FOVs across 12 coordinates, mean=7.56±4.79
+  Wildtype fl-HTT: n=134 FOVs across 12 coordinates, mean=19.13±11.43
+
+Striatum (Panel D):
+  Atlas coordinates (n=12): 40 to 68 (25μm units)
+  Q111 HTT1a: n=637 FOVs across 12 coordinates, mean=19.97±19.36
+  Q111 fl-HTT: n=637 FOVs across 12 coordinates, mean=25.57±19.99
+  Wildtype HTT1a: n=149 FOVs across 12 coordinates, mean=4.03±2.77
+  Wildtype fl-HTT: n=149 FOVs across 12 coordinates, mean=10.79±5.98
+
+ROW 3 - PER-SLIDE BREAKDOWN (Panels E-F):
+Bar plots showing mean±SEM total mRNA expression for each individual slide,
+with ALL FOVs from that slide CONCATENATED into a single value.
+X-axis labels use mouse identifiers:
+  - Q#X.Y = Q111 mouse #X, slide Y (e.g., Q#3.2 = Q111 mouse 3, slide 2)
+  - W#X.Y = Wildtype mouse #X, slide Y
+This reveals inter-individual variability within each genotype.
+
+IMPORTANT: DATA AGGREGATION NOTE:
+- Rows 1-2 (Age/Atlas): Each violin/box represents all FOVs pooled for that condition
+- Row 3 (Per-Slide): Each bar represents all FOVs concatenated for one slide
+
+Cortex (Panel E):
+  Q#1.1 (2mo): 55 FOVs concatenated
+  Q#2.1 (2mo): 61 FOVs concatenated
+  Q#2.2 (2mo): 49 FOVs concatenated
+  Q#3.1 (2mo): 57 FOVs concatenated
+  Q#3.2 (2mo): 50 FOVs concatenated
+  Q#3.3 (2mo): 63 FOVs concatenated
+  Q#4.1 (6mo): 47 FOVs concatenated
+  Q#5.1 (6mo): 47 FOVs concatenated
+  Q#5.2 (6mo): 50 FOVs concatenated
+  Q#6.2 (6mo): 49 FOVs concatenated
+  Q#7.1 (12mo): 50 FOVs concatenated
+  Q#7.2 (12mo): 29 FOVs concatenated
+  Q#7.3 (12mo): 40 FOVs concatenated
+  Q#8.1 (12mo): 50 FOVs concatenated
+  W#1.1 (2mo): 51 FOVs concatenated
+  W#2.1 (12mo): 52 FOVs concatenated
+  W#2.2 (12mo): 31 FOVs concatenated
+
+Striatum (Panel F):
+  Q#1.1 (2mo): 37 FOVs concatenated
+  Q#2.1 (2mo): 41 FOVs concatenated
+  Q#2.2 (2mo): 21 FOVs concatenated
+  Q#3.1 (2mo): 40 FOVs concatenated
+  Q#3.2 (2mo): 14 FOVs concatenated
+  Q#3.3 (2mo): 27 FOVs concatenated
+  Q#4.1 (6mo): 35 FOVs concatenated
+  Q#5.1 (6mo): 63 FOVs concatenated
+  Q#5.2 (6mo): 67 FOVs concatenated
+  Q#6.1 (6mo): 43 FOVs concatenated
+  Q#6.2 (6mo): 76 FOVs concatenated
+  Q#7.1 (12mo): 50 FOVs concatenated
+  Q#7.2 (12mo): 55 FOVs concatenated
+  Q#7.3 (12mo): 33 FOVs concatenated
+  Q#8.1 (12mo): 35 FOVs concatenated
+  W#1.1 (2mo): 45 FOVs concatenated
+  W#2.1 (12mo): 47 FOVs concatenated
+  W#2.2 (12mo): 57 FOVs concatenated
+
+COLOR SCHEME:
+--------------------------------------------------------------------------------
+Q111 mice:
+  - Green: HTT1a (intron-1 terminated, exon 1 only)
+  - Orange: fl-HTT
+Wildtype mice:
+  - Blue: HTT1a
+  - Purple: fl-HTT
+
+METHODOLOGY:
+--------------------------------------------------------------------------------
+mRNA quantification:
+  - Single mRNA: Individual diffraction-limited spots (N_spots)
+  - Clustered mRNA: Aggregated signal normalized by single-spot peak intensity
+  - Total mRNA/nucleus = N_spots + (I_cluster_total / I_single_peak) / N_nuclei
+  - Total mRNA/nucleus = Single mRNA + Clustered mRNA
+
+Normalization:
+  - Slide-specific peak intensity determined via Kernel Density Estimation (KDE)
+  - Accounts for slide-to-slide variation in signal intensity
+
+Field-of-view (FOV) filtering:
+  - Minimum 40 nuclei per FOV (ensures adequate DAPI segmentation)
+  - Excludes FOVs with poor tissue quality or imaging artifacts
+
+STATISTICAL NOTES:
+--------------------------------------------------------------------------------
+All data points represent individual FOVs (biological replicates).
+Error bars in panel rows E-F represent SEM (standard error of the mean).
+Box plots show median (removed for clarity), mean (diamond), IQR (box),
+and 1.5×IQR whiskers with outliers as individual points.
+
+================================================================================
+Generated: 2026-01-12 11:35:43
+================================================================================
